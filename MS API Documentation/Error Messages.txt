@@ -1,0 +1,24 @@
+Help Page Home
+
+ErrorMessage
+ErrCode	ErrMsg	Description
+4001	Invalid url	(404) The server has not found anything matching the Request-URI
+4002	Invalid credential	(401) Missing Authentication: Basic {base64 apikey} in header or the authentication value is not correct
+4003	Invalid parameter	(400) Invalid parameter, parameter type mismatch
+4004	Invalid m2Id	(400) MeasureSquare ID no found
+4005	Invalid projectId	(400) Project no found
+4006	Invalid updateTime	(400) Invalid UpdateTime
+4101	Parsing file failed	(400) Parsing file failed
+5001	Unknown Error	(500) Unknown error
+Sample
+        Request without Authentication 
+
+        Response
+
+        Status: 401/Unauthorized
+        Body:
+        {
+            "ErrCode": 4002,
+            "ErrMsg": "Invalid credential"
+        }
+        

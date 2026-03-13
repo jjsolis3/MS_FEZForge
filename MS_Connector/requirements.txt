@@ -1,0 +1,37 @@
+# MeasureSquare Data Extractor Dependencies
+
+# HTTP requests library for API calls
+# Why: Provides easy-to-use interface for making HTTP requests
+# with session support (connection pooling) for better performance
+requests>=2.31.0
+
+# PDF manipulation library for page filtering
+# Why: Allows us to remove unwanted pages (blank 3D renderings)
+# from MeasureSquare PDFs after downloading from cloud
+PyPDF2>=3.0.0
+
+# Note: The following are built-in Python libraries (no installation needed):
+# - xml.etree.ElementTree (XML parsing)
+# - zipfile (ZIP file handling for FEZ files)
+# - json (JSON serialization)
+# - hmac, hashlib, base64 (authentication)
+# - pathlib (modern file path handling)
+# - dataclasses (data structures)
+# - typing (type hints)
+# - datetime (timestamps)
+# - io (in-memory file operations)
+
+# Optional: If you want to add more features
+# Uncomment these if needed:
+
+# For prettier JSON output
+# pip install pygments
+
+# For progress bars during downloads
+# pip install tqdm
+
+# For Excel export
+# pip install openpyxl
+
+# For advanced XML parsing
+# pip install lxml

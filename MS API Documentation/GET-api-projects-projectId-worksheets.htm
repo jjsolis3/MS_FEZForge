@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,maximum-scale=1" />
+    <meta name="root" content="/" />
+    <title></title>
+    
+
+<link href="/Content/Styles/jquery-ui.css" rel="stylesheet" />
+<link href="/Areas/HelpPage/TestClient.css" rel="stylesheet" />
+<script src="/Content/Scripts/jquery-2.1.1.js"></script>
+<script src="/Content/Scripts/jquery-ui-1.10.4.custom.js"></script>
+<script src="/Areas/HelpPage/jquery.base64.min.js"></script>
+<script src="/Areas/HelpPage/knockout-3.2.0.js"></script>
+<script src="/Areas/HelpPage/WebApiTestClient.js" defer="defer"></script>
+
+</head>
+<body>
+    
+
+<link type="text/css" href="/Areas/HelpPage/HelpPage.css" rel="stylesheet" />
+<div id="body" class="help-page">
+    <section class="featured">
+        <div class="content-wrapper">
+            <p>
+                <a href="/Help">Help Page Home</a>
+            </p>
+        </div>
+    </section>
+    <section class="content-wrapper main-content clear-fix">
+        
+<h1>GET api/projects/{projectId}/worksheets</h1>
+<div>
+        <p>Get project worksheets</p>
+
+    <h2>Request Information</h2>
+
+    <h3>URI Parameters</h3>
+        <table class="help-page-table">
+        <thead>
+            <tr><th>Name</th><th>Description</th><th>Type</th><th>Additional information</th></tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td class="parameter-name">projectId</td>
+                    <td class="parameter-documentation">
+                        <p>Project ID</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                                <p>Required</p>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+
+
+
+    <h3>Body Parameters</h3>
+
+    <p></p>
+
+        <p>None.</p>
+
+
+    <h2>Response Information</h2>
+
+    <h3>Resource Description</h3>
+
+    <p>the worksheets</p>
+
+        Collection of <a href="/Help/ResourceModel?modelName=Fep.Cloud.M2CoreExtension.CloudWorksheet">Fep.Cloud.M2CoreExtension.CloudWorksheet</a>
+    <table class="help-page-table">
+        <thead>
+            <tr><th>Name</th><th>Description</th><th>Type</th><th>Additional information</th></tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td class="parameter-name">Name</td>
+                    <td class="parameter-documentation">
+                        <p>Name</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">Type</td>
+                    <td class="parameter-documentation">
+                        <p>Type</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">TaxName</td>
+                    <td class="parameter-documentation">
+                        <p>Tax Name</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">TaxRate</td>
+                    <td class="parameter-documentation">
+                        <p>Tax Rate</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">TotalSalesAmount</td>
+                    <td class="parameter-documentation">
+                        <p>Total Sales Amount</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">TotalCostAmount</td>
+                    <td class="parameter-documentation">
+                        <p>Total Cost Amount</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">TotalTaxAmount</td>
+                    <td class="parameter-documentation">
+                        <p>Total Tax Amount</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">TotalSalesTaxAmount</td>
+                    <td class="parameter-documentation">
+                        <p>Total Sales Tax Amount</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">BillTo</td>
+                    <td class="parameter-documentation">
+                        <p>Bill To</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">ShipTo</td>
+                    <td class="parameter-documentation">
+                        <p>Ship To</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">CurrencySymbol</td>
+                    <td class="parameter-documentation">
+                        <p>Currency</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">CurrencySymbolOnLeft</td>
+                    <td class="parameter-documentation">
+                        <p>Currency On Left</p>
+                    </td>
+                    <td class="parameter-type">
+                        boolean
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">IsUseTax</td>
+                    <td class="parameter-documentation">
+                        <p>Use Tax</p>
+                    </td>
+                    <td class="parameter-type">
+                        boolean
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">FreightAmount</td>
+                    <td class="parameter-documentation">
+                        <p>Freight Amount</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">DiscountAmount</td>
+                    <td class="parameter-documentation">
+                        <p>Discount Amount</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">DepositAmount</td>
+                    <td class="parameter-documentation">
+                        <p>Deposit Amount</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">Instruction</td>
+                    <td class="parameter-documentation">
+                        <p>Instruction</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">Items</td>
+                    <td class="parameter-documentation">
+                        <p>Worksheet Items</p>
+                    </td>
+                    <td class="parameter-type">
+                                Collection of <a href="/Help/ResourceModel?modelName=Fep.Cloud.M2CoreExtension.CloudWorksheetItem">Fep.Cloud.M2CoreExtension.CloudWorksheetItem</a>
+
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+
+
+        <h3>Response Formats</h3>
+
+<div>
+        <h4 class="sample-header">application/json, text/json</h4>
+        <div class="sample-content">
+            <span><b>Sample:</b></span>
+<pre class="wrapped">
+[
+  {
+    &quot;Name&quot;: &quot;sample string 1&quot;,
+    &quot;Type&quot;: &quot;sample string 2&quot;,
+    &quot;TaxName&quot;: &quot;sample string 3&quot;,
+    &quot;TaxRate&quot;: &quot;sample string 4&quot;,
+    &quot;TotalSalesAmount&quot;: &quot;sample string 5&quot;,
+    &quot;TotalCostAmount&quot;: &quot;sample string 6&quot;,
+    &quot;TotalTaxAmount&quot;: &quot;sample string 7&quot;,
+    &quot;TotalSalesTaxAmount&quot;: &quot;sample string 8&quot;,
+    &quot;BillTo&quot;: &quot;sample string 9&quot;,
+    &quot;ShipTo&quot;: &quot;sample string 10&quot;,
+    &quot;CurrencySymbol&quot;: &quot;sample string 11&quot;,
+    &quot;CurrencySymbolOnLeft&quot;: true,
+    &quot;IsUseTax&quot;: true,
+    &quot;FreightAmount&quot;: &quot;sample string 14&quot;,
+    &quot;DiscountAmount&quot;: &quot;sample string 15&quot;,
+    &quot;DepositAmount&quot;: &quot;sample string 16&quot;,
+    &quot;Instruction&quot;: &quot;sample string 17&quot;,
+    &quot;Items&quot;: [
+      {
+        &quot;FloorName&quot;: &quot;sample string 1&quot;,
+        &quot;RoomName&quot;: &quot;sample string 2&quot;,
+        &quot;ItemName&quot;: &quot;sample string 3&quot;,
+        &quot;Description&quot;: &quot;sample string 4&quot;,
+        &quot;Vendor&quot;: &quot;sample string 5&quot;,
+        &quot;VendorSku&quot;: &quot;sample string 6&quot;,
+        &quot;SourceShapes&quot;: &quot;sample string 7&quot;,
+        &quot;Unit&quot;: &quot;sample string 8&quot;,
+        &quot;Qty&quot;: &quot;sample string 9&quot;,
+        &quot;ExtraQty&quot;: &quot;sample string 10&quot;,
+        &quot;CostPrice&quot;: &quot;sample string 11&quot;,
+        &quot;SalesPrice&quot;: &quot;sample string 12&quot;,
+        &quot;Markup&quot;: &quot;sample string 13&quot;,
+        &quot;ProfitMargin&quot;: &quot;sample string 14&quot;,
+        &quot;CostAmount&quot;: &quot;sample string 15&quot;,
+        &quot;SalesAmount&quot;: &quot;sample string 16&quot;,
+        &quot;IsLabor&quot;: true,
+        &quot;Taxable&quot;: true,
+        &quot;TaxAmount&quot;: &quot;sample string 19&quot;,
+        &quot;SalesTaxAmount&quot;: &quot;sample string 20&quot;,
+        &quot;AssignUnitQty&quot;: &quot;sample string 21&quot;,
+        &quot;WasteRatio&quot;: &quot;sample string 22&quot;,
+        &quot;WasteAddon&quot;: &quot;sample string 23&quot;,
+        &quot;BasePerimeter&quot;: &quot;sample string 24&quot;,
+        &quot;ProdCategory&quot;: &quot;sample string 25&quot;,
+        &quot;TradeType&quot;: &quot;sample string 26&quot;,
+        &quot;OriginalUnit&quot;: &quot;sample string 27&quot;,
+        &quot;OriginalQty&quot;: &quot;sample string 28&quot;
+      },
+      {
+        &quot;FloorName&quot;: &quot;sample string 1&quot;,
+        &quot;RoomName&quot;: &quot;sample string 2&quot;,
+        &quot;ItemName&quot;: &quot;sample string 3&quot;,
+        &quot;Description&quot;: &quot;sample string 4&quot;,
+        &quot;Vendor&quot;: &quot;sample string 5&quot;,
+        &quot;VendorSku&quot;: &quot;sample string 6&quot;,
+        &quot;SourceShapes&quot;: &quot;sample string 7&quot;,
+        &quot;Unit&quot;: &quot;sample string 8&quot;,
+        &quot;Qty&quot;: &quot;sample string 9&quot;,
+        &quot;ExtraQty&quot;: &quot;sample string 10&quot;,
+        &quot;CostPrice&quot;: &quot;sample string 11&quot;,
+        &quot;SalesPrice&quot;: &quot;sample string 12&quot;,
+        &quot;Markup&quot;: &quot;sample string 13&quot;,
+        &quot;ProfitMargin&quot;: &quot;sample string 14&quot;,
+        &quot;CostAmount&quot;: &quot;sample string 15&quot;,
+        &quot;SalesAmount&quot;: &quot;sample string 16&quot;,
+        &quot;IsLabor&quot;: true,
+        &quot;Taxable&quot;: true,
+        &quot;TaxAmount&quot;: &quot;sample string 19&quot;,
+        &quot;SalesTaxAmount&quot;: &quot;sample string 20&quot;,
+        &quot;AssignUnitQty&quot;: &quot;sample string 21&quot;,
+        &quot;WasteRatio&quot;: &quot;sample string 22&quot;,
+        &quot;WasteAddon&quot;: &quot;sample string 23&quot;,
+        &quot;BasePerimeter&quot;: &quot;sample string 24&quot;,
+        &quot;ProdCategory&quot;: &quot;sample string 25&quot;,
+        &quot;TradeType&quot;: &quot;sample string 26&quot;,
+        &quot;OriginalUnit&quot;: &quot;sample string 27&quot;,
+        &quot;OriginalQty&quot;: &quot;sample string 28&quot;
+      }
+    ]
+  },
+  {
+    &quot;Name&quot;: &quot;sample string 1&quot;,
+    &quot;Type&quot;: &quot;sample string 2&quot;,
+    &quot;TaxName&quot;: &quot;sample string 3&quot;,
+    &quot;TaxRate&quot;: &quot;sample string 4&quot;,
+    &quot;TotalSalesAmount&quot;: &quot;sample string 5&quot;,
+    &quot;TotalCostAmount&quot;: &quot;sample string 6&quot;,
+    &quot;TotalTaxAmount&quot;: &quot;sample string 7&quot;,
+    &quot;TotalSalesTaxAmount&quot;: &quot;sample string 8&quot;,
+    &quot;BillTo&quot;: &quot;sample string 9&quot;,
+    &quot;ShipTo&quot;: &quot;sample string 10&quot;,
+    &quot;CurrencySymbol&quot;: &quot;sample string 11&quot;,
+    &quot;CurrencySymbolOnLeft&quot;: true,
+    &quot;IsUseTax&quot;: true,
+    &quot;FreightAmount&quot;: &quot;sample string 14&quot;,
+    &quot;DiscountAmount&quot;: &quot;sample string 15&quot;,
+    &quot;DepositAmount&quot;: &quot;sample string 16&quot;,
+    &quot;Instruction&quot;: &quot;sample string 17&quot;,
+    &quot;Items&quot;: [
+      {
+        &quot;FloorName&quot;: &quot;sample string 1&quot;,
+        &quot;RoomName&quot;: &quot;sample string 2&quot;,
+        &quot;ItemName&quot;: &quot;sample string 3&quot;,
+        &quot;Description&quot;: &quot;sample string 4&quot;,
+        &quot;Vendor&quot;: &quot;sample string 5&quot;,
+        &quot;VendorSku&quot;: &quot;sample string 6&quot;,
+        &quot;SourceShapes&quot;: &quot;sample string 7&quot;,
+        &quot;Unit&quot;: &quot;sample string 8&quot;,
+        &quot;Qty&quot;: &quot;sample string 9&quot;,
+        &quot;ExtraQty&quot;: &quot;sample string 10&quot;,
+        &quot;CostPrice&quot;: &quot;sample string 11&quot;,
+        &quot;SalesPrice&quot;: &quot;sample string 12&quot;,
+        &quot;Markup&quot;: &quot;sample string 13&quot;,
+        &quot;ProfitMargin&quot;: &quot;sample string 14&quot;,
+        &quot;CostAmount&quot;: &quot;sample string 15&quot;,
+        &quot;SalesAmount&quot;: &quot;sample string 16&quot;,
+        &quot;IsLabor&quot;: true,
+        &quot;Taxable&quot;: true,
+        &quot;TaxAmount&quot;: &quot;sample string 19&quot;,
+        &quot;SalesTaxAmount&quot;: &quot;sample string 20&quot;,
+        &quot;AssignUnitQty&quot;: &quot;sample string 21&quot;,
+        &quot;WasteRatio&quot;: &quot;sample string 22&quot;,
+        &quot;WasteAddon&quot;: &quot;sample string 23&quot;,
+        &quot;BasePerimeter&quot;: &quot;sample string 24&quot;,
+        &quot;ProdCategory&quot;: &quot;sample string 25&quot;,
+        &quot;TradeType&quot;: &quot;sample string 26&quot;,
+        &quot;OriginalUnit&quot;: &quot;sample string 27&quot;,
+        &quot;OriginalQty&quot;: &quot;sample string 28&quot;
+      },
+      {
+        &quot;FloorName&quot;: &quot;sample string 1&quot;,
+        &quot;RoomName&quot;: &quot;sample string 2&quot;,
+        &quot;ItemName&quot;: &quot;sample string 3&quot;,
+        &quot;Description&quot;: &quot;sample string 4&quot;,
+        &quot;Vendor&quot;: &quot;sample string 5&quot;,
+        &quot;VendorSku&quot;: &quot;sample string 6&quot;,
+        &quot;SourceShapes&quot;: &quot;sample string 7&quot;,
+        &quot;Unit&quot;: &quot;sample string 8&quot;,
+        &quot;Qty&quot;: &quot;sample string 9&quot;,
+        &quot;ExtraQty&quot;: &quot;sample string 10&quot;,
+        &quot;CostPrice&quot;: &quot;sample string 11&quot;,
+        &quot;SalesPrice&quot;: &quot;sample string 12&quot;,
+        &quot;Markup&quot;: &quot;sample string 13&quot;,
+        &quot;ProfitMargin&quot;: &quot;sample string 14&quot;,
+        &quot;CostAmount&quot;: &quot;sample string 15&quot;,
+        &quot;SalesAmount&quot;: &quot;sample string 16&quot;,
+        &quot;IsLabor&quot;: true,
+        &quot;Taxable&quot;: true,
+        &quot;TaxAmount&quot;: &quot;sample string 19&quot;,
+        &quot;SalesTaxAmount&quot;: &quot;sample string 20&quot;,
+        &quot;AssignUnitQty&quot;: &quot;sample string 21&quot;,
+        &quot;WasteRatio&quot;: &quot;sample string 22&quot;,
+        &quot;WasteAddon&quot;: &quot;sample string 23&quot;,
+        &quot;BasePerimeter&quot;: &quot;sample string 24&quot;,
+        &quot;ProdCategory&quot;: &quot;sample string 25&quot;,
+        &quot;TradeType&quot;: &quot;sample string 26&quot;,
+        &quot;OriginalUnit&quot;: &quot;sample string 27&quot;,
+        &quot;OriginalQty&quot;: &quot;sample string 28&quot;
+      }
+    ]
+  }
+]
+</pre>
+        </div>
+        <h4 class="sample-header">application/xml, text/xml</h4>
+        <div class="sample-content">
+            <span><b>Sample:</b></span>
+<pre class="wrapped">
+&lt;ArrayOfCloudWorksheet&gt;
+  &lt;CloudWorksheet&gt;
+    &lt;Name&gt;sample string 1&lt;/Name&gt;
+    &lt;Type&gt;sample string 2&lt;/Type&gt;
+    &lt;TaxName&gt;sample string 3&lt;/TaxName&gt;
+    &lt;TaxRate&gt;sample string 4&lt;/TaxRate&gt;
+    &lt;TotalSalesAmount&gt;sample string 5&lt;/TotalSalesAmount&gt;
+    &lt;TotalCostAmount&gt;sample string 6&lt;/TotalCostAmount&gt;
+    &lt;TotalTaxAmount&gt;sample string 7&lt;/TotalTaxAmount&gt;
+    &lt;TotalSalesTaxAmount&gt;sample string 8&lt;/TotalSalesTaxAmount&gt;
+    &lt;BillTo&gt;sample string 9&lt;/BillTo&gt;
+    &lt;ShipTo&gt;sample string 10&lt;/ShipTo&gt;
+    &lt;CurrencySymbol&gt;sample string 11&lt;/CurrencySymbol&gt;
+    &lt;CurrencySymbolOnLeft&gt;true&lt;/CurrencySymbolOnLeft&gt;
+    &lt;IsUseTax&gt;true&lt;/IsUseTax&gt;
+    &lt;FreightAmount&gt;sample string 14&lt;/FreightAmount&gt;
+    &lt;DiscountAmount&gt;sample string 15&lt;/DiscountAmount&gt;
+    &lt;DepositAmount&gt;sample string 16&lt;/DepositAmount&gt;
+    &lt;Instruction&gt;sample string 17&lt;/Instruction&gt;
+    &lt;Items&gt;
+      &lt;CloudWorksheetItem&gt;
+        &lt;FloorName&gt;sample string 1&lt;/FloorName&gt;
+        &lt;RoomName&gt;sample string 2&lt;/RoomName&gt;
+        &lt;ItemName&gt;sample string 3&lt;/ItemName&gt;
+        &lt;Description&gt;sample string 4&lt;/Description&gt;
+        &lt;Vendor&gt;sample string 5&lt;/Vendor&gt;
+        &lt;VendorSku&gt;sample string 6&lt;/VendorSku&gt;
+        &lt;SourceShapes&gt;sample string 7&lt;/SourceShapes&gt;
+        &lt;Unit&gt;sample string 8&lt;/Unit&gt;
+        &lt;Qty&gt;sample string 9&lt;/Qty&gt;
+        &lt;ExtraQty&gt;sample string 10&lt;/ExtraQty&gt;
+        &lt;CostPrice&gt;sample string 11&lt;/CostPrice&gt;
+        &lt;SalesPrice&gt;sample string 12&lt;/SalesPrice&gt;
+        &lt;Markup&gt;sample string 13&lt;/Markup&gt;
+        &lt;ProfitMargin&gt;sample string 14&lt;/ProfitMargin&gt;
+        &lt;CostAmount&gt;sample string 15&lt;/CostAmount&gt;
+        &lt;SalesAmount&gt;sample string 16&lt;/SalesAmount&gt;
+        &lt;IsLabor&gt;true&lt;/IsLabor&gt;
+        &lt;Taxable&gt;true&lt;/Taxable&gt;
+        &lt;TaxAmount&gt;sample string 19&lt;/TaxAmount&gt;
+        &lt;SalesTaxAmount&gt;sample string 20&lt;/SalesTaxAmount&gt;
+        &lt;AssignUnitQty&gt;sample string 21&lt;/AssignUnitQty&gt;
+        &lt;WasteRatio&gt;sample string 22&lt;/WasteRatio&gt;
+        &lt;WasteAddon&gt;sample string 23&lt;/WasteAddon&gt;
+        &lt;BasePerimeter&gt;sample string 24&lt;/BasePerimeter&gt;
+        &lt;ProdCategory&gt;sample string 25&lt;/ProdCategory&gt;
+        &lt;TradeType&gt;sample string 26&lt;/TradeType&gt;
+        &lt;OriginalUnit&gt;sample string 27&lt;/OriginalUnit&gt;
+        &lt;OriginalQty&gt;sample string 28&lt;/OriginalQty&gt;
+      &lt;/CloudWorksheetItem&gt;
+      &lt;CloudWorksheetItem&gt;
+        &lt;FloorName&gt;sample string 1&lt;/FloorName&gt;
+        &lt;RoomName&gt;sample string 2&lt;/RoomName&gt;
+        &lt;ItemName&gt;sample string 3&lt;/ItemName&gt;
+        &lt;Description&gt;sample string 4&lt;/Description&gt;
+        &lt;Vendor&gt;sample string 5&lt;/Vendor&gt;
+        &lt;VendorSku&gt;sample string 6&lt;/VendorSku&gt;
+        &lt;SourceShapes&gt;sample string 7&lt;/SourceShapes&gt;
+        &lt;Unit&gt;sample string 8&lt;/Unit&gt;
+        &lt;Qty&gt;sample string 9&lt;/Qty&gt;
+        &lt;ExtraQty&gt;sample string 10&lt;/ExtraQty&gt;
+        &lt;CostPrice&gt;sample string 11&lt;/CostPrice&gt;
+        &lt;SalesPrice&gt;sample string 12&lt;/SalesPrice&gt;
+        &lt;Markup&gt;sample string 13&lt;/Markup&gt;
+        &lt;ProfitMargin&gt;sample string 14&lt;/ProfitMargin&gt;
+        &lt;CostAmount&gt;sample string 15&lt;/CostAmount&gt;
+        &lt;SalesAmount&gt;sample string 16&lt;/SalesAmount&gt;
+        &lt;IsLabor&gt;true&lt;/IsLabor&gt;
+        &lt;Taxable&gt;true&lt;/Taxable&gt;
+        &lt;TaxAmount&gt;sample string 19&lt;/TaxAmount&gt;
+        &lt;SalesTaxAmount&gt;sample string 20&lt;/SalesTaxAmount&gt;
+        &lt;AssignUnitQty&gt;sample string 21&lt;/AssignUnitQty&gt;
+        &lt;WasteRatio&gt;sample string 22&lt;/WasteRatio&gt;
+        &lt;WasteAddon&gt;sample string 23&lt;/WasteAddon&gt;
+        &lt;BasePerimeter&gt;sample string 24&lt;/BasePerimeter&gt;
+        &lt;ProdCategory&gt;sample string 25&lt;/ProdCategory&gt;
+        &lt;TradeType&gt;sample string 26&lt;/TradeType&gt;
+        &lt;OriginalUnit&gt;sample string 27&lt;/OriginalUnit&gt;
+        &lt;OriginalQty&gt;sample string 28&lt;/OriginalQty&gt;
+      &lt;/CloudWorksheetItem&gt;
+    &lt;/Items&gt;
+  &lt;/CloudWorksheet&gt;
+  &lt;CloudWorksheet&gt;
+    &lt;Name&gt;sample string 1&lt;/Name&gt;
+    &lt;Type&gt;sample string 2&lt;/Type&gt;
+    &lt;TaxName&gt;sample string 3&lt;/TaxName&gt;
+    &lt;TaxRate&gt;sample string 4&lt;/TaxRate&gt;
+    &lt;TotalSalesAmount&gt;sample string 5&lt;/TotalSalesAmount&gt;
+    &lt;TotalCostAmount&gt;sample string 6&lt;/TotalCostAmount&gt;
+    &lt;TotalTaxAmount&gt;sample string 7&lt;/TotalTaxAmount&gt;
+    &lt;TotalSalesTaxAmount&gt;sample string 8&lt;/TotalSalesTaxAmount&gt;
+    &lt;BillTo&gt;sample string 9&lt;/BillTo&gt;
+    &lt;ShipTo&gt;sample string 10&lt;/ShipTo&gt;
+    &lt;CurrencySymbol&gt;sample string 11&lt;/CurrencySymbol&gt;
+    &lt;CurrencySymbolOnLeft&gt;true&lt;/CurrencySymbolOnLeft&gt;
+    &lt;IsUseTax&gt;true&lt;/IsUseTax&gt;
+    &lt;FreightAmount&gt;sample string 14&lt;/FreightAmount&gt;
+    &lt;DiscountAmount&gt;sample string 15&lt;/DiscountAmount&gt;
+    &lt;DepositAmount&gt;sample string 16&lt;/DepositAmount&gt;
+    &lt;Instruction&gt;sample string 17&lt;/Instruction&gt;
+    &lt;Items&gt;
+      &lt;CloudWorksheetItem&gt;
+        &lt;FloorName&gt;sample string 1&lt;/FloorName&gt;
+        &lt;RoomName&gt;sample string 2&lt;/RoomName&gt;
+        &lt;ItemName&gt;sample string 3&lt;/ItemName&gt;
+        &lt;Description&gt;sample string 4&lt;/Description&gt;
+        &lt;Vendor&gt;sample string 5&lt;/Vendor&gt;
+        &lt;VendorSku&gt;sample string 6&lt;/VendorSku&gt;
+        &lt;SourceShapes&gt;sample string 7&lt;/SourceShapes&gt;
+        &lt;Unit&gt;sample string 8&lt;/Unit&gt;
+        &lt;Qty&gt;sample string 9&lt;/Qty&gt;
+        &lt;ExtraQty&gt;sample string 10&lt;/ExtraQty&gt;
+        &lt;CostPrice&gt;sample string 11&lt;/CostPrice&gt;
+        &lt;SalesPrice&gt;sample string 12&lt;/SalesPrice&gt;
+        &lt;Markup&gt;sample string 13&lt;/Markup&gt;
+        &lt;ProfitMargin&gt;sample string 14&lt;/ProfitMargin&gt;
+        &lt;CostAmount&gt;sample string 15&lt;/CostAmount&gt;
+        &lt;SalesAmount&gt;sample string 16&lt;/SalesAmount&gt;
+        &lt;IsLabor&gt;true&lt;/IsLabor&gt;
+        &lt;Taxable&gt;true&lt;/Taxable&gt;
+        &lt;TaxAmount&gt;sample string 19&lt;/TaxAmount&gt;
+        &lt;SalesTaxAmount&gt;sample string 20&lt;/SalesTaxAmount&gt;
+        &lt;AssignUnitQty&gt;sample string 21&lt;/AssignUnitQty&gt;
+        &lt;WasteRatio&gt;sample string 22&lt;/WasteRatio&gt;
+        &lt;WasteAddon&gt;sample string 23&lt;/WasteAddon&gt;
+        &lt;BasePerimeter&gt;sample string 24&lt;/BasePerimeter&gt;
+        &lt;ProdCategory&gt;sample string 25&lt;/ProdCategory&gt;
+        &lt;TradeType&gt;sample string 26&lt;/TradeType&gt;
+        &lt;OriginalUnit&gt;sample string 27&lt;/OriginalUnit&gt;
+        &lt;OriginalQty&gt;sample string 28&lt;/OriginalQty&gt;
+      &lt;/CloudWorksheetItem&gt;
+      &lt;CloudWorksheetItem&gt;
+        &lt;FloorName&gt;sample string 1&lt;/FloorName&gt;
+        &lt;RoomName&gt;sample string 2&lt;/RoomName&gt;
+        &lt;ItemName&gt;sample string 3&lt;/ItemName&gt;
+        &lt;Description&gt;sample string 4&lt;/Description&gt;
+        &lt;Vendor&gt;sample string 5&lt;/Vendor&gt;
+        &lt;VendorSku&gt;sample string 6&lt;/VendorSku&gt;
+        &lt;SourceShapes&gt;sample string 7&lt;/SourceShapes&gt;
+        &lt;Unit&gt;sample string 8&lt;/Unit&gt;
+        &lt;Qty&gt;sample string 9&lt;/Qty&gt;
+        &lt;ExtraQty&gt;sample string 10&lt;/ExtraQty&gt;
+        &lt;CostPrice&gt;sample string 11&lt;/CostPrice&gt;
+        &lt;SalesPrice&gt;sample string 12&lt;/SalesPrice&gt;
+        &lt;Markup&gt;sample string 13&lt;/Markup&gt;
+        &lt;ProfitMargin&gt;sample string 14&lt;/ProfitMargin&gt;
+        &lt;CostAmount&gt;sample string 15&lt;/CostAmount&gt;
+        &lt;SalesAmount&gt;sample string 16&lt;/SalesAmount&gt;
+        &lt;IsLabor&gt;true&lt;/IsLabor&gt;
+        &lt;Taxable&gt;true&lt;/Taxable&gt;
+        &lt;TaxAmount&gt;sample string 19&lt;/TaxAmount&gt;
+        &lt;SalesTaxAmount&gt;sample string 20&lt;/SalesTaxAmount&gt;
+        &lt;AssignUnitQty&gt;sample string 21&lt;/AssignUnitQty&gt;
+        &lt;WasteRatio&gt;sample string 22&lt;/WasteRatio&gt;
+        &lt;WasteAddon&gt;sample string 23&lt;/WasteAddon&gt;
+        &lt;BasePerimeter&gt;sample string 24&lt;/BasePerimeter&gt;
+        &lt;ProdCategory&gt;sample string 25&lt;/ProdCategory&gt;
+        &lt;TradeType&gt;sample string 26&lt;/TradeType&gt;
+        &lt;OriginalUnit&gt;sample string 27&lt;/OriginalUnit&gt;
+        &lt;OriginalQty&gt;sample string 28&lt;/OriginalQty&gt;
+      &lt;/CloudWorksheetItem&gt;
+    &lt;/Items&gt;
+  &lt;/CloudWorksheet&gt;
+&lt;/ArrayOfCloudWorksheet&gt;
+</pre>
+        </div>
+</div>
+</div>
+    </section>
+</div>
+
+<button id="testClientButton">Test API</button>
+<div id="testClientDialog" title="GET api/projects/{projectId}/worksheets">
+    <input class="httpMethod" readonly="true" spellcheck="false" data-bind="value: HttpMethod" />
+    <input class="uriPath" spellcheck="false" data-bind="value: UriPath" />
+    <div data-bind="visible: UriParameters.length > 0">
+        <h5 class="ui-widget-header">URI parameters</h5>
+        <div class="panel">
+            <div data-bind="foreach: UriParameters">
+                <div style="height:30px;"> 
+                    <input readonly="true" spellcheck="false" tabindex="100" class="uriParameterLabel" data-bind="value: '{' + name + '}'" />
+                    <span>= </span>
+                    <input spellcheck="false" style="width:450px;" data-bind="value: value, valueUpdate: 'afterkeydown', enable: enabled" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <h5 class="ui-widget-header">
+        Headers (F12->Console input $.base64.encode("your apikey") to get the base64 string)
+    </h5>
+    <div class="panel">
+        <div data-bind="foreach: RequestHeaders">
+            <div style="height:30px;">
+                <input class="uriParameterLabel" readonly="true" spellcheck="false" data-bind='value: name, uniqueName: true' />
+                <span>: </span>
+                <input spellcheck="false" style="width:600px" data-bind='value: value, uniqueName: true' />
+            </div>
+        </div>
+    </div>
+    <h5 class="ui-widget-header">
+        <input type='checkbox' data-bind='checked: ShouldShowBody' />Body
+    </h5>
+    <div data-bind="visible: ShouldShowBody">
+        <div data-bind="visible: SampleTypes.length > 0">
+            <span>Samples: </span>
+            <select data-bind="options: SampleTypes, value: RequestMediaType"></select>
+        </div>
+        <pre><textarea id="req-body" class="sampleArea" spellcheck="false" data-bind="value: RequestBody, valueUpdate: 'afterkeydown'" rows="7"></textarea></pre>
+    </div>
+</div>
+<div id="testClientResponseDialog" title="Response for GET api/projects/{projectId}/worksheets" data-bind="with: response">
+    <div class="responseStatusDiv">
+        <h5 class="ui-widget-header">Status</h5>
+        <span data-bind="text: status"></span>
+    </div>
+    <div class="responseHeaderDiv" style="display:none;">
+        <h5 class="ui-widget-header">Headers</h5>
+        <textarea spellcheck="false" data-bind="value: headers" class="sampleArea" readonly='readonly' rows="6"></textarea>
+    </div>
+    <div class="responseBodyDiv">
+        <h5 class="ui-widget-header">Body</h5>
+        <textarea spellcheck="false" data-bind="value: content" class="sampleArea" readonly='readonly' rows="10"></textarea>
+                
+        
+    </div>
+</div>
+<script>
+    testClientModel = {
+        HttpMethod: 'GET',
+        UriPathTemplate: "api/projects/{projectId}/worksheets",
+        UriParameters: [
+                    { name: "projectId", value: "" },
+        ],
+        Samples: {
+            
+        },
+        BaseAddress: '/'
+    };
+</script>
+
+
+</body>
+</html>

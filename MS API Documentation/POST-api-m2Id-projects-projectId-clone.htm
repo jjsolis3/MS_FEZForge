@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,maximum-scale=1" />
+    <meta name="root" content="/" />
+    <title></title>
+    
+
+<link href="/Content/Styles/jquery-ui.css" rel="stylesheet" />
+<link href="/Areas/HelpPage/TestClient.css" rel="stylesheet" />
+<script src="/Content/Scripts/jquery-2.1.1.js"></script>
+<script src="/Content/Scripts/jquery-ui-1.10.4.custom.js"></script>
+<script src="/Areas/HelpPage/jquery.base64.min.js"></script>
+<script src="/Areas/HelpPage/knockout-3.2.0.js"></script>
+<script src="/Areas/HelpPage/WebApiTestClient.js" defer="defer"></script>
+
+</head>
+<body>
+    
+
+<link type="text/css" href="/Areas/HelpPage/HelpPage.css" rel="stylesheet" />
+<div id="body" class="help-page">
+    <section class="featured">
+        <div class="content-wrapper">
+            <p>
+                <a href="/Help">Help Page Home</a>
+            </p>
+        </div>
+    </section>
+    <section class="content-wrapper main-content clear-fix">
+        
+<h1>POST api/{m2Id}/projects/{projectId}/clone</h1>
+<div>
+        <p>Clone one project from designated project</p>
+
+    <h2>Request Information</h2>
+
+    <h3>URI Parameters</h3>
+        <table class="help-page-table">
+        <thead>
+            <tr><th>Name</th><th>Description</th><th>Type</th><th>Additional information</th></tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td class="parameter-name">m2Id</td>
+                    <td class="parameter-documentation">
+                        <p>Creator's MeasureSquare ID</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                                <p>Required</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">projectId</td>
+                    <td class="parameter-documentation">
+                        <p>The source project's Id, to copy from</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                                <p>Required</p>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+
+
+
+    <h3>Body Parameters</h3>
+
+    <p>Only Name required for the new project name</p>
+
+<a href="/Help/ResourceModel?modelName=M2Cloud.Services.CloneProjectInfoDTO">M2Cloud.Services.CloneProjectInfoDTO</a>    <table class="help-page-table">
+        <thead>
+            <tr><th>Name</th><th>Description</th><th>Type</th><th>Additional information</th></tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td class="parameter-name">ProjectId</td>
+                    <td class="parameter-documentation">
+                        <p>ProjectId</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">Name</td>
+                    <td class="parameter-documentation">
+                        <p>Project Name</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">ApplicationType</td>
+                    <td class="parameter-documentation">
+                        <p>ApplicationType. Only avaliable while creating project.</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">ProjectNote</td>
+                    <td class="parameter-documentation">
+                        <p>Note</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">ProjectName</td>
+                    <td class="parameter-documentation">
+                        <p>Name. (Job Site Contact and Address)</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">ProjectStreet</td>
+                    <td class="parameter-documentation">
+                        <p>Street. (Job Site Contact and Address)</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">ProjectCity</td>
+                    <td class="parameter-documentation">
+                        <p>City. (Job Site Contact and Address)</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">ProjectState</td>
+                    <td class="parameter-documentation">
+                        <p>State. (Job Site Contact and Address)</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">ProjectZipCode</td>
+                    <td class="parameter-documentation">
+                        <p>ZipCode. (Job Site Contact and Address)</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">ProjectCountry</td>
+                    <td class="parameter-documentation">
+                        <p>Country. (Job Site Contact and Address)</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">ProjectEmail</td>
+                    <td class="parameter-documentation">
+                        <p>Email. (Job Site Contact and Address)</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">ProjectPhone</td>
+                    <td class="parameter-documentation">
+                        <p>Phone. (Job Site Contact and Address)</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">ProjectMobile</td>
+                    <td class="parameter-documentation">
+                        <p>Mobile. (Job Site Contact and Address)</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">ProjectFax</td>
+                    <td class="parameter-documentation">
+                        <p>Fax. (Job Site Contact and Address)</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">ProjectMemo</td>
+                    <td class="parameter-documentation">
+                        <p>Memo. (Job Site Contact and Address)</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">ContactName</td>
+                    <td class="parameter-documentation">
+                        <p>Customer Name</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">Email</td>
+                    <td class="parameter-documentation">
+                        <p>Customer Email</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">Phone</td>
+                    <td class="parameter-documentation">
+                        <p>Customer Phone</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">Mobile</td>
+                    <td class="parameter-documentation">
+                        <p>Customer Mobile</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">Fax</td>
+                    <td class="parameter-documentation">
+                        <p>Customer Fax</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">Memo</td>
+                    <td class="parameter-documentation">
+                        <p>Customer Memo</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">Street</td>
+                    <td class="parameter-documentation">
+                        <p>Customer Street</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">City</td>
+                    <td class="parameter-documentation">
+                        <p>Customer City</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">State</td>
+                    <td class="parameter-documentation">
+                        <p>Customer State</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">ZipCode</td>
+                    <td class="parameter-documentation">
+                        <p>Customer ZipCode</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">Country</td>
+                    <td class="parameter-documentation">
+                        <p>Customer Country</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">InstallationDate</td>
+                    <td class="parameter-documentation">
+                        <p>timestamp</p>
+                    </td>
+                    <td class="parameter-type">
+                        integer
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">InstallationBy</td>
+                    <td class="parameter-documentation">
+                        <p>InstallationBy</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">MeasurementDate</td>
+                    <td class="parameter-documentation">
+                        <p>timestamp</p>
+                    </td>
+                    <td class="parameter-type">
+                        integer
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">MeasurementBy</td>
+                    <td class="parameter-documentation">
+                        <p>MeasurementBy</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">CutDate</td>
+                    <td class="parameter-documentation">
+                        <p>timestamp</p>
+                    </td>
+                    <td class="parameter-type">
+                        integer
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">CutBy</td>
+                    <td class="parameter-documentation">
+                        <p>CutBy</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">UpdateProjectInfo</td>
+                    <td class="parameter-documentation">
+                        <p>Update Project Info</p>
+                    </td>
+                    <td class="parameter-type">
+                        boolean
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">CloneToM2ID</td>
+                    <td class="parameter-documentation">
+                        <p>Clone To M2ID, optional</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+
+
+        <h3>Request Formats</h3>
+
+<div>
+        <h4 class="sample-header">application/json, text/json</h4>
+        <div class="sample-content">
+            <span><b>Sample:</b></span>
+<pre class="wrapped">
+{
+  &quot;UpdateProjectInfo&quot;: true,
+  &quot;CloneToM2ID&quot;: &quot;sample string 2&quot;,
+  &quot;ProjectId&quot;: &quot;sample string 3&quot;,
+  &quot;Name&quot;: &quot;sample string 4&quot;,
+  &quot;ApplicationType&quot;: &quot;sample string 5&quot;,
+  &quot;ProjectNote&quot;: &quot;sample string 6&quot;,
+  &quot;ProjectName&quot;: &quot;sample string 7&quot;,
+  &quot;ProjectStreet&quot;: &quot;sample string 8&quot;,
+  &quot;ProjectCity&quot;: &quot;sample string 9&quot;,
+  &quot;ProjectState&quot;: &quot;sample string 10&quot;,
+  &quot;ProjectZipCode&quot;: &quot;sample string 11&quot;,
+  &quot;ProjectCountry&quot;: &quot;sample string 12&quot;,
+  &quot;ProjectEmail&quot;: &quot;sample string 13&quot;,
+  &quot;ProjectPhone&quot;: &quot;sample string 14&quot;,
+  &quot;ProjectMobile&quot;: &quot;sample string 15&quot;,
+  &quot;ProjectFax&quot;: &quot;sample string 16&quot;,
+  &quot;ProjectMemo&quot;: &quot;sample string 17&quot;,
+  &quot;ContactName&quot;: &quot;sample string 18&quot;,
+  &quot;Email&quot;: &quot;sample string 19&quot;,
+  &quot;Phone&quot;: &quot;sample string 20&quot;,
+  &quot;Mobile&quot;: &quot;sample string 21&quot;,
+  &quot;Fax&quot;: &quot;sample string 22&quot;,
+  &quot;Memo&quot;: &quot;sample string 23&quot;,
+  &quot;Street&quot;: &quot;sample string 24&quot;,
+  &quot;City&quot;: &quot;sample string 25&quot;,
+  &quot;State&quot;: &quot;sample string 26&quot;,
+  &quot;ZipCode&quot;: &quot;sample string 27&quot;,
+  &quot;Country&quot;: &quot;sample string 28&quot;,
+  &quot;InstallationDate&quot;: 1,
+  &quot;InstallationBy&quot;: &quot;sample string 29&quot;,
+  &quot;MeasurementDate&quot;: 1,
+  &quot;MeasurementBy&quot;: &quot;sample string 30&quot;,
+  &quot;CutDate&quot;: 1,
+  &quot;CutBy&quot;: &quot;sample string 31&quot;
+}
+</pre>
+        </div>
+        <h4 class="sample-header">application/xml, text/xml</h4>
+        <div class="sample-content">
+            <span><b>Sample:</b></span>
+<pre class="wrapped">
+&lt;CloneProjectInfoDTO&gt;
+  &lt;ProjectId&gt;sample string 3&lt;/ProjectId&gt;
+  &lt;Name&gt;sample string 4&lt;/Name&gt;
+  &lt;ApplicationType&gt;sample string 5&lt;/ApplicationType&gt;
+  &lt;ProjectNote&gt;sample string 6&lt;/ProjectNote&gt;
+  &lt;ProjectName&gt;sample string 7&lt;/ProjectName&gt;
+  &lt;ProjectStreet&gt;sample string 8&lt;/ProjectStreet&gt;
+  &lt;ProjectCity&gt;sample string 9&lt;/ProjectCity&gt;
+  &lt;ProjectState&gt;sample string 10&lt;/ProjectState&gt;
+  &lt;ProjectZipCode&gt;sample string 11&lt;/ProjectZipCode&gt;
+  &lt;ProjectCountry&gt;sample string 12&lt;/ProjectCountry&gt;
+  &lt;ProjectEmail&gt;sample string 13&lt;/ProjectEmail&gt;
+  &lt;ProjectPhone&gt;sample string 14&lt;/ProjectPhone&gt;
+  &lt;ProjectMobile&gt;sample string 15&lt;/ProjectMobile&gt;
+  &lt;ProjectFax&gt;sample string 16&lt;/ProjectFax&gt;
+  &lt;ProjectMemo&gt;sample string 17&lt;/ProjectMemo&gt;
+  &lt;ContactName&gt;sample string 18&lt;/ContactName&gt;
+  &lt;Email&gt;sample string 19&lt;/Email&gt;
+  &lt;Phone&gt;sample string 20&lt;/Phone&gt;
+  &lt;Mobile&gt;sample string 21&lt;/Mobile&gt;
+  &lt;Fax&gt;sample string 22&lt;/Fax&gt;
+  &lt;Memo&gt;sample string 23&lt;/Memo&gt;
+  &lt;Street&gt;sample string 24&lt;/Street&gt;
+  &lt;City&gt;sample string 25&lt;/City&gt;
+  &lt;State&gt;sample string 26&lt;/State&gt;
+  &lt;ZipCode&gt;sample string 27&lt;/ZipCode&gt;
+  &lt;Country&gt;sample string 28&lt;/Country&gt;
+  &lt;InstallationDate&gt;1&lt;/InstallationDate&gt;
+  &lt;InstallationBy&gt;sample string 29&lt;/InstallationBy&gt;
+  &lt;MeasurementDate&gt;1&lt;/MeasurementDate&gt;
+  &lt;MeasurementBy&gt;sample string 30&lt;/MeasurementBy&gt;
+  &lt;CutDate&gt;1&lt;/CutDate&gt;
+  &lt;CutBy&gt;sample string 31&lt;/CutBy&gt;
+  &lt;UpdateProjectInfo&gt;true&lt;/UpdateProjectInfo&gt;
+  &lt;CloneToM2ID&gt;sample string 2&lt;/CloneToM2ID&gt;
+&lt;/CloneProjectInfoDTO&gt;
+</pre>
+        </div>
+</div>
+    <h2>Response Information</h2>
+
+    <h3>Resource Description</h3>
+
+    <p>the cloned project info. If cloned fail, the value of ProjectId is null.</p>
+
+<a href="/Help/ResourceModel?modelName=M2Cloud.Services.ProjectDTO">M2Cloud.Services.ProjectDTO</a>    <table class="help-page-table">
+        <thead>
+            <tr><th>Name</th><th>Description</th><th>Type</th><th>Additional information</th></tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td class="parameter-name">ProjectId</td>
+                    <td class="parameter-documentation">
+                        <p>Project ID</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">Name</td>
+                    <td class="parameter-documentation">
+                        <p>Project Name</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">Revision</td>
+                    <td class="parameter-documentation">
+                        <p>Revision. the project's latest revision</p>
+                    </td>
+                    <td class="parameter-type">
+                        integer
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">OwnerM2Id</td>
+                    <td class="parameter-documentation">
+                        <p>The project owner</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">CreatorM2Id</td>
+                    <td class="parameter-documentation">
+                        <p>The project createor</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">UsedM2Id</td>
+                    <td class="parameter-documentation">
+                        <p>Who uses the project</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">LastUpdatedOn</td>
+                    <td class="parameter-documentation">
+                        <p>Timestamp. the project's latest updated time.</p>
+                    </td>
+                    <td class="parameter-type">
+                        integer
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">Size</td>
+                    <td class="parameter-documentation">
+                        <p>File Size</p>
+                    </td>
+                    <td class="parameter-type">
+                        integer
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">ProjectInfo</td>
+                    <td class="parameter-documentation">
+                        <p>Detail project info. customer, job site and products information.<br>            This value will not be returned while getting from project list api.</p>
+                    </td>
+                    <td class="parameter-type">
+                        <a href="/Help/ResourceModel?modelName=Fep.Cloud.M2CoreExtension.PatternProjectInfo">Fep.Cloud.M2CoreExtension.PatternProjectInfo</a>
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">IsArchived</td>
+                    <td class="parameter-documentation">
+                        <p>Project is archived or not</p>
+                    </td>
+                    <td class="parameter-type">
+                        boolean
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">ApplicationType</td>
+                    <td class="parameter-documentation">
+                        <p>ApplicationType  enum{ FloorCovering, RenoPlan, CounterTop }</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">Mode</td>
+                    <td class="parameter-documentation">
+                        <p>EstimateMode  enum{ ByProject, ByLayer, ByPhase }</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">Tags</td>
+                    <td class="parameter-documentation">
+                        <p>Project tags</p>
+                    </td>
+                    <td class="parameter-type">
+                                Collection of string
+
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+
+
+        <h3>Response Formats</h3>
+
+<div>
+        <h4 class="sample-header">application/json, text/json</h4>
+        <div class="sample-content">
+            <span><b>Sample:</b></span>
+<pre class="wrapped">
+{
+  &quot;ProjectId&quot;: &quot;sample string 1&quot;,
+  &quot;Name&quot;: &quot;sample string 2&quot;,
+  &quot;Revision&quot;: 3,
+  &quot;OwnerM2Id&quot;: &quot;sample string 4&quot;,
+  &quot;CreatorM2Id&quot;: &quot;sample string 5&quot;,
+  &quot;UsedM2Id&quot;: &quot;sample string 6&quot;,
+  &quot;LastUpdatedOn&quot;: 7,
+  &quot;Size&quot;: 8,
+  &quot;ProjectInfo&quot;: {
+    &quot;TilePatternList&quot;: [
+      {
+        &quot;ID&quot;: &quot;sample string 1&quot;,
+        &quot;IsRandomHardwood&quot;: true,
+        &quot;IsHardwood&quot;: true,
+        &quot;Grout&quot;: &quot;sample string 4&quot;,
+        &quot;GroutWidth&quot;: &quot;sample string 5&quot;,
+        &quot;Thickness&quot;: &quot;sample string 6&quot;,
+        &quot;PatternTiles&quot;: [
+          {
+            &quot;ID&quot;: &quot;sample string 1&quot;,
+            &quot;CountInPattern&quot;: 2,
+            &quot;Randomizers&quot;: [
+              {
+                &quot;ID&quot;: &quot;sample string 1&quot;,
+                &quot;Percent&quot;: &quot;sample string 2&quot;
+              },
+              {
+                &quot;ID&quot;: &quot;sample string 1&quot;,
+                &quot;Percent&quot;: &quot;sample string 2&quot;
+              }
+            ]
+          },
+          {
+            &quot;ID&quot;: &quot;sample string 1&quot;,
+            &quot;CountInPattern&quot;: 2,
+            &quot;Randomizers&quot;: [
+              {
+                &quot;ID&quot;: &quot;sample string 1&quot;,
+                &quot;Percent&quot;: &quot;sample string 2&quot;
+              },
+              {
+                &quot;ID&quot;: &quot;sample string 1&quot;,
+                &quot;Percent&quot;: &quot;sample string 2&quot;
+              }
+            ]
+          }
+        ]
+      },
+      {
+        &quot;ID&quot;: &quot;sample string 1&quot;,
+        &quot;IsRandomHardwood&quot;: true,
+        &quot;IsHardwood&quot;: true,
+        &quot;Grout&quot;: &quot;sample string 4&quot;,
+        &quot;GroutWidth&quot;: &quot;sample string 5&quot;,
+        &quot;Thickness&quot;: &quot;sample string 6&quot;,
+        &quot;PatternTiles&quot;: [
+          {
+            &quot;ID&quot;: &quot;sample string 1&quot;,
+            &quot;CountInPattern&quot;: 2,
+            &quot;Randomizers&quot;: [
+              {
+                &quot;ID&quot;: &quot;sample string 1&quot;,
+                &quot;Percent&quot;: &quot;sample string 2&quot;
+              },
+              {
+                &quot;ID&quot;: &quot;sample string 1&quot;,
+                &quot;Percent&quot;: &quot;sample string 2&quot;
+              }
+            ]
+          },
+          {
+            &quot;ID&quot;: &quot;sample string 1&quot;,
+            &quot;CountInPattern&quot;: 2,
+            &quot;Randomizers&quot;: [
+              {
+                &quot;ID&quot;: &quot;sample string 1&quot;,
+                &quot;Percent&quot;: &quot;sample string 2&quot;
+              },
+              {
+                &quot;ID&quot;: &quot;sample string 1&quot;,
+                &quot;Percent&quot;: &quot;sample string 2&quot;
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    &quot;ProductList&quot;: [
+      {
+        &quot;Width&quot;: &quot;sample string 1&quot;,
+        &quot;Length&quot;: &quot;sample string 2&quot;,
+        &quot;Thickness&quot;: &quot;sample string 3&quot;,
+        &quot;HoriRepeat&quot;: &quot;sample string 4&quot;,
+        &quot;VertRepeat&quot;: &quot;sample string 5&quot;,
+        &quot;HoriDrop&quot;: &quot;sample string 6&quot;,
+        &quot;VertDrop&quot;: &quot;sample string 7&quot;,
+        &quot;EstimatingWidth&quot;: &quot;sample string 8&quot;,
+        &quot;EstimatingLength&quot;: &quot;sample string 9&quot;,
+        &quot;WidthMargin&quot;: &quot;sample string 10&quot;,
+        &quot;LengthMargin&quot;: &quot;sample string 11&quot;,
+        &quot;TileCalcMethod&quot;: &quot;sample string 12&quot;,
+        &quot;TileMinimumWaste&quot;: &quot;sample string 13&quot;,
+        &quot;TileShape&quot;: &quot;sample string 14&quot;,
+        &quot;TileEdgeSize&quot;: &quot;sample string 15&quot;,
+        &quot;WasteAddon&quot;: &quot;sample string 16&quot;,
+        &quot;IsAddOn&quot;: true,
+        &quot;AddOns&quot;: [
+          {
+            &quot;ID&quot;: &quot;sample string 1&quot;,
+            &quot;Method&quot;: &quot;sample string 2&quot;
+          },
+          {
+            &quot;ID&quot;: &quot;sample string 1&quot;,
+            &quot;Method&quot;: &quot;sample string 2&quot;
+          }
+        ],
+        &quot;Datas&quot;: {
+          &quot;sample string 1&quot;: &quot;sample string 2&quot;,
+          &quot;sample string 3&quot;: &quot;sample string 4&quot;
+        },
+        &quot;NoPiecingTogether&quot;: true,
+        &quot;BoxRoundUp&quot;: &quot;sample string 18&quot;,
+        &quot;ID&quot;: &quot;sample string 19&quot;,
+        &quot;Type&quot;: &quot;sample string 20&quot;,
+        &quot;Trade&quot;: &quot;sample string 21&quot;,
+        &quot;Desc&quot;: &quot;sample string 22&quot;,
+        &quot;Vendor&quot;: &quot;sample string 23&quot;,
+        &quot;VendorSku&quot;: &quot;sample string 24&quot;,
+        &quot;Color&quot;: &quot;sample string 25&quot;,
+        &quot;Unit&quot;: &quot;sample string 26&quot;,
+        &quot;Manufacturer&quot;: &quot;sample string 27&quot;,
+        &quot;SalesPrice&quot;: &quot;sample string 28&quot;,
+        &quot;CostPrice&quot;: &quot;sample string 29&quot;,
+        &quot;BoxName&quot;: &quot;sample string 30&quot;,
+        &quot;SellByBox&quot;: true,
+        &quot;BoxSalesPrice&quot;: &quot;sample string 31&quot;,
+        &quot;BoxCostPrice&quot;: &quot;sample string 32&quot;,
+        &quot;UnitsPerBox&quot;: &quot;sample string 33&quot;,
+        &quot;Taxable&quot;: true
+      },
+      {
+        &quot;Width&quot;: &quot;sample string 1&quot;,
+        &quot;Length&quot;: &quot;sample string 2&quot;,
+        &quot;Thickness&quot;: &quot;sample string 3&quot;,
+        &quot;HoriRepeat&quot;: &quot;sample string 4&quot;,
+        &quot;VertRepeat&quot;: &quot;sample string 5&quot;,
+        &quot;HoriDrop&quot;: &quot;sample string 6&quot;,
+        &quot;VertDrop&quot;: &quot;sample string 7&quot;,
+        &quot;EstimatingWidth&quot;: &quot;sample string 8&quot;,
+        &quot;EstimatingLength&quot;: &quot;sample string 9&quot;,
+        &quot;WidthMargin&quot;: &quot;sample string 10&quot;,
+        &quot;LengthMargin&quot;: &quot;sample string 11&quot;,
+        &quot;TileCalcMethod&quot;: &quot;sample string 12&quot;,
+        &quot;TileMinimumWaste&quot;: &quot;sample string 13&quot;,
+        &quot;TileShape&quot;: &quot;sample string 14&quot;,
+        &quot;TileEdgeSize&quot;: &quot;sample string 15&quot;,
+        &quot;WasteAddon&quot;: &quot;sample string 16&quot;,
+        &quot;IsAddOn&quot;: true,
+        &quot;AddOns&quot;: [
+          {
+            &quot;ID&quot;: &quot;sample string 1&quot;,
+            &quot;Method&quot;: &quot;sample string 2&quot;
+          },
+          {
+            &quot;ID&quot;: &quot;sample string 1&quot;,
+            &quot;Method&quot;: &quot;sample string 2&quot;
+          }
+        ],
+        &quot;Datas&quot;: {
+          &quot;sample string 1&quot;: &quot;sample string 2&quot;,
+          &quot;sample string 3&quot;: &quot;sample string 4&quot;
+        },
+        &quot;NoPiecingTogether&quot;: true,
+        &quot;BoxRoundUp&quot;: &quot;sample string 18&quot;,
+        &quot;ID&quot;: &quot;sample string 19&quot;,
+        &quot;Type&quot;: &quot;sample string 20&quot;,
+        &quot;Trade&quot;: &quot;sample string 21&quot;,
+        &quot;Desc&quot;: &quot;sample string 22&quot;,
+        &quot;Vendor&quot;: &quot;sample string 23&quot;,
+        &quot;VendorSku&quot;: &quot;sample string 24&quot;,
+        &quot;Color&quot;: &quot;sample string 25&quot;,
+        &quot;Unit&quot;: &quot;sample string 26&quot;,
+        &quot;Manufacturer&quot;: &quot;sample string 27&quot;,
+        &quot;SalesPrice&quot;: &quot;sample string 28&quot;,
+        &quot;CostPrice&quot;: &quot;sample string 29&quot;,
+        &quot;BoxName&quot;: &quot;sample string 30&quot;,
+        &quot;SellByBox&quot;: true,
+        &quot;BoxSalesPrice&quot;: &quot;sample string 31&quot;,
+        &quot;BoxCostPrice&quot;: &quot;sample string 32&quot;,
+        &quot;UnitsPerBox&quot;: &quot;sample string 33&quot;,
+        &quot;Taxable&quot;: true
+      }
+    ],
+    &quot;ProjectId&quot;: &quot;sample string 1&quot;,
+    &quot;Name&quot;: &quot;sample string 2&quot;,
+    &quot;ApplicationType&quot;: &quot;sample string 3&quot;,
+    &quot;ProjectNote&quot;: &quot;sample string 4&quot;,
+    &quot;ProjectName&quot;: &quot;sample string 5&quot;,
+    &quot;ProjectStreet&quot;: &quot;sample string 6&quot;,
+    &quot;ProjectCity&quot;: &quot;sample string 7&quot;,
+    &quot;ProjectState&quot;: &quot;sample string 8&quot;,
+    &quot;ProjectZipCode&quot;: &quot;sample string 9&quot;,
+    &quot;ProjectCountry&quot;: &quot;sample string 10&quot;,
+    &quot;ProjectEmail&quot;: &quot;sample string 11&quot;,
+    &quot;ProjectPhone&quot;: &quot;sample string 12&quot;,
+    &quot;ProjectMobile&quot;: &quot;sample string 13&quot;,
+    &quot;ProjectFax&quot;: &quot;sample string 14&quot;,
+    &quot;ProjectMemo&quot;: &quot;sample string 15&quot;,
+    &quot;ContactName&quot;: &quot;sample string 16&quot;,
+    &quot;Email&quot;: &quot;sample string 17&quot;,
+    &quot;Phone&quot;: &quot;sample string 18&quot;,
+    &quot;Mobile&quot;: &quot;sample string 19&quot;,
+    &quot;Fax&quot;: &quot;sample string 20&quot;,
+    &quot;Memo&quot;: &quot;sample string 21&quot;,
+    &quot;Street&quot;: &quot;sample string 22&quot;,
+    &quot;City&quot;: &quot;sample string 23&quot;,
+    &quot;State&quot;: &quot;sample string 24&quot;,
+    &quot;ZipCode&quot;: &quot;sample string 25&quot;,
+    &quot;Country&quot;: &quot;sample string 26&quot;,
+    &quot;InstallationDate&quot;: 1,
+    &quot;InstallationBy&quot;: &quot;sample string 27&quot;,
+    &quot;MeasurementDate&quot;: 1,
+    &quot;MeasurementBy&quot;: &quot;sample string 28&quot;,
+    &quot;CutDate&quot;: 1,
+    &quot;CutBy&quot;: &quot;sample string 29&quot;
+  },
+  &quot;IsArchived&quot;: true,
+  &quot;ApplicationType&quot;: &quot;sample string 10&quot;,
+  &quot;Mode&quot;: &quot;sample string 11&quot;,
+  &quot;Tags&quot;: [
+    &quot;sample string 1&quot;,
+    &quot;sample string 2&quot;
+  ]
+}
+</pre>
+        </div>
+        <h4 class="sample-header">application/xml, text/xml</h4>
+        <div class="sample-content">
+            <span><b>Sample:</b></span>
+<pre class="wrapped">
+&lt;ProjectDTO&gt;
+  &lt;ProjectId&gt;sample string 1&lt;/ProjectId&gt;
+  &lt;Name&gt;sample string 2&lt;/Name&gt;
+  &lt;Revision&gt;3&lt;/Revision&gt;
+  &lt;OwnerM2Id&gt;sample string 4&lt;/OwnerM2Id&gt;
+  &lt;CreatorM2Id&gt;sample string 5&lt;/CreatorM2Id&gt;
+  &lt;UsedM2Id&gt;sample string 6&lt;/UsedM2Id&gt;
+  &lt;LastUpdatedOn&gt;7&lt;/LastUpdatedOn&gt;
+  &lt;Size&gt;8&lt;/Size&gt;
+  &lt;ProjectInfo&gt;
+    &lt;ProjectId&gt;sample string 1&lt;/ProjectId&gt;
+    &lt;Name&gt;sample string 2&lt;/Name&gt;
+    &lt;ApplicationType&gt;sample string 3&lt;/ApplicationType&gt;
+    &lt;ProjectNote&gt;sample string 4&lt;/ProjectNote&gt;
+    &lt;ProjectName&gt;sample string 5&lt;/ProjectName&gt;
+    &lt;ProjectStreet&gt;sample string 6&lt;/ProjectStreet&gt;
+    &lt;ProjectCity&gt;sample string 7&lt;/ProjectCity&gt;
+    &lt;ProjectState&gt;sample string 8&lt;/ProjectState&gt;
+    &lt;ProjectZipCode&gt;sample string 9&lt;/ProjectZipCode&gt;
+    &lt;ProjectCountry&gt;sample string 10&lt;/ProjectCountry&gt;
+    &lt;ProjectEmail&gt;sample string 11&lt;/ProjectEmail&gt;
+    &lt;ProjectPhone&gt;sample string 12&lt;/ProjectPhone&gt;
+    &lt;ProjectMobile&gt;sample string 13&lt;/ProjectMobile&gt;
+    &lt;ProjectFax&gt;sample string 14&lt;/ProjectFax&gt;
+    &lt;ProjectMemo&gt;sample string 15&lt;/ProjectMemo&gt;
+    &lt;ContactName&gt;sample string 16&lt;/ContactName&gt;
+    &lt;Email&gt;sample string 17&lt;/Email&gt;
+    &lt;Phone&gt;sample string 18&lt;/Phone&gt;
+    &lt;Mobile&gt;sample string 19&lt;/Mobile&gt;
+    &lt;Fax&gt;sample string 20&lt;/Fax&gt;
+    &lt;Memo&gt;sample string 21&lt;/Memo&gt;
+    &lt;Street&gt;sample string 22&lt;/Street&gt;
+    &lt;City&gt;sample string 23&lt;/City&gt;
+    &lt;State&gt;sample string 24&lt;/State&gt;
+    &lt;ZipCode&gt;sample string 25&lt;/ZipCode&gt;
+    &lt;Country&gt;sample string 26&lt;/Country&gt;
+    &lt;InstallationDate&gt;1&lt;/InstallationDate&gt;
+    &lt;InstallationBy&gt;sample string 27&lt;/InstallationBy&gt;
+    &lt;MeasurementDate&gt;1&lt;/MeasurementDate&gt;
+    &lt;MeasurementBy&gt;sample string 28&lt;/MeasurementBy&gt;
+    &lt;CutDate&gt;1&lt;/CutDate&gt;
+    &lt;CutBy&gt;sample string 29&lt;/CutBy&gt;
+    &lt;ProductList&gt;
+      &lt;CloudProduct&gt;
+        &lt;ID&gt;sample string 19&lt;/ID&gt;
+        &lt;Type&gt;sample string 20&lt;/Type&gt;
+        &lt;Trade&gt;sample string 21&lt;/Trade&gt;
+        &lt;Desc&gt;sample string 22&lt;/Desc&gt;
+        &lt;Vendor&gt;sample string 23&lt;/Vendor&gt;
+        &lt;VendorSku&gt;sample string 24&lt;/VendorSku&gt;
+        &lt;Color&gt;sample string 25&lt;/Color&gt;
+        &lt;Unit&gt;sample string 26&lt;/Unit&gt;
+        &lt;Manufacturer&gt;sample string 27&lt;/Manufacturer&gt;
+        &lt;SalesPrice&gt;sample string 28&lt;/SalesPrice&gt;
+        &lt;CostPrice&gt;sample string 29&lt;/CostPrice&gt;
+        &lt;BoxName&gt;sample string 30&lt;/BoxName&gt;
+        &lt;SellByBox&gt;true&lt;/SellByBox&gt;
+        &lt;BoxSalesPrice&gt;sample string 31&lt;/BoxSalesPrice&gt;
+        &lt;BoxCostPrice&gt;sample string 32&lt;/BoxCostPrice&gt;
+        &lt;UnitsPerBox&gt;sample string 33&lt;/UnitsPerBox&gt;
+        &lt;Taxable&gt;true&lt;/Taxable&gt;
+        &lt;Width&gt;sample string 1&lt;/Width&gt;
+        &lt;Length&gt;sample string 2&lt;/Length&gt;
+        &lt;Thickness&gt;sample string 3&lt;/Thickness&gt;
+        &lt;HoriRepeat&gt;sample string 4&lt;/HoriRepeat&gt;
+        &lt;VertRepeat&gt;sample string 5&lt;/VertRepeat&gt;
+        &lt;HoriDrop&gt;sample string 6&lt;/HoriDrop&gt;
+        &lt;VertDrop&gt;sample string 7&lt;/VertDrop&gt;
+        &lt;WidthMargin&gt;sample string 10&lt;/WidthMargin&gt;
+        &lt;LengthMargin&gt;sample string 11&lt;/LengthMargin&gt;
+        &lt;TileCalcMethod&gt;sample string 12&lt;/TileCalcMethod&gt;
+        &lt;TileMinimumWaste&gt;sample string 13&lt;/TileMinimumWaste&gt;
+        &lt;TileShape&gt;sample string 14&lt;/TileShape&gt;
+        &lt;TileEdgeSize&gt;sample string 15&lt;/TileEdgeSize&gt;
+        &lt;WasteAddon&gt;sample string 16&lt;/WasteAddon&gt;
+        &lt;IsAddOn&gt;true&lt;/IsAddOn&gt;
+        &lt;AddOns&gt;
+          &lt;CloudProductAddOn&gt;
+            &lt;ID&gt;sample string 1&lt;/ID&gt;
+            &lt;Method&gt;sample string 2&lt;/Method&gt;
+          &lt;/CloudProductAddOn&gt;
+          &lt;CloudProductAddOn&gt;
+            &lt;ID&gt;sample string 1&lt;/ID&gt;
+            &lt;Method&gt;sample string 2&lt;/Method&gt;
+          &lt;/CloudProductAddOn&gt;
+        &lt;/AddOns&gt;
+        &lt;Datas&gt;
+          &lt;item key=&quot;sample string 1&quot; value=&quot;sample string 2&quot; /&gt;
+          &lt;item key=&quot;sample string 3&quot; value=&quot;sample string 4&quot; /&gt;
+        &lt;/Datas&gt;
+        &lt;NoPiecingTogether&gt;true&lt;/NoPiecingTogether&gt;
+        &lt;BoxRoundUp&gt;sample string 18&lt;/BoxRoundUp&gt;
+      &lt;/CloudProduct&gt;
+      &lt;CloudProduct&gt;
+        &lt;ID&gt;sample string 19&lt;/ID&gt;
+        &lt;Type&gt;sample string 20&lt;/Type&gt;
+        &lt;Trade&gt;sample string 21&lt;/Trade&gt;
+        &lt;Desc&gt;sample string 22&lt;/Desc&gt;
+        &lt;Vendor&gt;sample string 23&lt;/Vendor&gt;
+        &lt;VendorSku&gt;sample string 24&lt;/VendorSku&gt;
+        &lt;Color&gt;sample string 25&lt;/Color&gt;
+        &lt;Unit&gt;sample string 26&lt;/Unit&gt;
+        &lt;Manufacturer&gt;sample string 27&lt;/Manufacturer&gt;
+        &lt;SalesPrice&gt;sample string 28&lt;/SalesPrice&gt;
+        &lt;CostPrice&gt;sample string 29&lt;/CostPrice&gt;
+        &lt;BoxName&gt;sample string 30&lt;/BoxName&gt;
+        &lt;SellByBox&gt;true&lt;/SellByBox&gt;
+        &lt;BoxSalesPrice&gt;sample string 31&lt;/BoxSalesPrice&gt;
+        &lt;BoxCostPrice&gt;sample string 32&lt;/BoxCostPrice&gt;
+        &lt;UnitsPerBox&gt;sample string 33&lt;/UnitsPerBox&gt;
+        &lt;Taxable&gt;true&lt;/Taxable&gt;
+        &lt;Width&gt;sample string 1&lt;/Width&gt;
+        &lt;Length&gt;sample string 2&lt;/Length&gt;
+        &lt;Thickness&gt;sample string 3&lt;/Thickness&gt;
+        &lt;HoriRepeat&gt;sample string 4&lt;/HoriRepeat&gt;
+        &lt;VertRepeat&gt;sample string 5&lt;/VertRepeat&gt;
+        &lt;HoriDrop&gt;sample string 6&lt;/HoriDrop&gt;
+        &lt;VertDrop&gt;sample string 7&lt;/VertDrop&gt;
+        &lt;WidthMargin&gt;sample string 10&lt;/WidthMargin&gt;
+        &lt;LengthMargin&gt;sample string 11&lt;/LengthMargin&gt;
+        &lt;TileCalcMethod&gt;sample string 12&lt;/TileCalcMethod&gt;
+        &lt;TileMinimumWaste&gt;sample string 13&lt;/TileMinimumWaste&gt;
+        &lt;TileShape&gt;sample string 14&lt;/TileShape&gt;
+        &lt;TileEdgeSize&gt;sample string 15&lt;/TileEdgeSize&gt;
+        &lt;WasteAddon&gt;sample string 16&lt;/WasteAddon&gt;
+        &lt;IsAddOn&gt;true&lt;/IsAddOn&gt;
+        &lt;AddOns&gt;
+          &lt;CloudProductAddOn&gt;
+            &lt;ID&gt;sample string 1&lt;/ID&gt;
+            &lt;Method&gt;sample string 2&lt;/Method&gt;
+          &lt;/CloudProductAddOn&gt;
+          &lt;CloudProductAddOn&gt;
+            &lt;ID&gt;sample string 1&lt;/ID&gt;
+            &lt;Method&gt;sample string 2&lt;/Method&gt;
+          &lt;/CloudProductAddOn&gt;
+        &lt;/AddOns&gt;
+        &lt;Datas&gt;
+          &lt;item key=&quot;sample string 1&quot; value=&quot;sample string 2&quot; /&gt;
+          &lt;item key=&quot;sample string 3&quot; value=&quot;sample string 4&quot; /&gt;
+        &lt;/Datas&gt;
+        &lt;NoPiecingTogether&gt;true&lt;/NoPiecingTogether&gt;
+        &lt;BoxRoundUp&gt;sample string 18&lt;/BoxRoundUp&gt;
+      &lt;/CloudProduct&gt;
+    &lt;/ProductList&gt;
+    &lt;TilePatternList&gt;
+      &lt;CloudPattern&gt;
+        &lt;ID&gt;sample string 1&lt;/ID&gt;
+        &lt;IsRandomHardwood&gt;true&lt;/IsRandomHardwood&gt;
+        &lt;IsHardwood&gt;true&lt;/IsHardwood&gt;
+        &lt;Grout&gt;sample string 4&lt;/Grout&gt;
+        &lt;GroutWidth&gt;sample string 5&lt;/GroutWidth&gt;
+        &lt;Thickness&gt;sample string 6&lt;/Thickness&gt;
+        &lt;PatternTiles&gt;
+          &lt;CloudPatternUnit&gt;
+            &lt;ID&gt;sample string 1&lt;/ID&gt;
+            &lt;CountInPattern&gt;2&lt;/CountInPattern&gt;
+            &lt;Randomizers&gt;
+              &lt;CloudPatternRandomizer&gt;
+                &lt;ID&gt;sample string 1&lt;/ID&gt;
+                &lt;Percent&gt;sample string 2&lt;/Percent&gt;
+              &lt;/CloudPatternRandomizer&gt;
+              &lt;CloudPatternRandomizer&gt;
+                &lt;ID&gt;sample string 1&lt;/ID&gt;
+                &lt;Percent&gt;sample string 2&lt;/Percent&gt;
+              &lt;/CloudPatternRandomizer&gt;
+            &lt;/Randomizers&gt;
+          &lt;/CloudPatternUnit&gt;
+          &lt;CloudPatternUnit&gt;
+            &lt;ID&gt;sample string 1&lt;/ID&gt;
+            &lt;CountInPattern&gt;2&lt;/CountInPattern&gt;
+            &lt;Randomizers&gt;
+              &lt;CloudPatternRandomizer&gt;
+                &lt;ID&gt;sample string 1&lt;/ID&gt;
+                &lt;Percent&gt;sample string 2&lt;/Percent&gt;
+              &lt;/CloudPatternRandomizer&gt;
+              &lt;CloudPatternRandomizer&gt;
+                &lt;ID&gt;sample string 1&lt;/ID&gt;
+                &lt;Percent&gt;sample string 2&lt;/Percent&gt;
+              &lt;/CloudPatternRandomizer&gt;
+            &lt;/Randomizers&gt;
+          &lt;/CloudPatternUnit&gt;
+        &lt;/PatternTiles&gt;
+      &lt;/CloudPattern&gt;
+      &lt;CloudPattern&gt;
+        &lt;ID&gt;sample string 1&lt;/ID&gt;
+        &lt;IsRandomHardwood&gt;true&lt;/IsRandomHardwood&gt;
+        &lt;IsHardwood&gt;true&lt;/IsHardwood&gt;
+        &lt;Grout&gt;sample string 4&lt;/Grout&gt;
+        &lt;GroutWidth&gt;sample string 5&lt;/GroutWidth&gt;
+        &lt;Thickness&gt;sample string 6&lt;/Thickness&gt;
+        &lt;PatternTiles&gt;
+          &lt;CloudPatternUnit&gt;
+            &lt;ID&gt;sample string 1&lt;/ID&gt;
+            &lt;CountInPattern&gt;2&lt;/CountInPattern&gt;
+            &lt;Randomizers&gt;
+              &lt;CloudPatternRandomizer&gt;
+                &lt;ID&gt;sample string 1&lt;/ID&gt;
+                &lt;Percent&gt;sample string 2&lt;/Percent&gt;
+              &lt;/CloudPatternRandomizer&gt;
+              &lt;CloudPatternRandomizer&gt;
+                &lt;ID&gt;sample string 1&lt;/ID&gt;
+                &lt;Percent&gt;sample string 2&lt;/Percent&gt;
+              &lt;/CloudPatternRandomizer&gt;
+            &lt;/Randomizers&gt;
+          &lt;/CloudPatternUnit&gt;
+          &lt;CloudPatternUnit&gt;
+            &lt;ID&gt;sample string 1&lt;/ID&gt;
+            &lt;CountInPattern&gt;2&lt;/CountInPattern&gt;
+            &lt;Randomizers&gt;
+              &lt;CloudPatternRandomizer&gt;
+                &lt;ID&gt;sample string 1&lt;/ID&gt;
+                &lt;Percent&gt;sample string 2&lt;/Percent&gt;
+              &lt;/CloudPatternRandomizer&gt;
+              &lt;CloudPatternRandomizer&gt;
+                &lt;ID&gt;sample string 1&lt;/ID&gt;
+                &lt;Percent&gt;sample string 2&lt;/Percent&gt;
+              &lt;/CloudPatternRandomizer&gt;
+            &lt;/Randomizers&gt;
+          &lt;/CloudPatternUnit&gt;
+        &lt;/PatternTiles&gt;
+      &lt;/CloudPattern&gt;
+    &lt;/TilePatternList&gt;
+  &lt;/ProjectInfo&gt;
+  &lt;IsArchived&gt;true&lt;/IsArchived&gt;
+  &lt;ApplicationType&gt;sample string 10&lt;/ApplicationType&gt;
+  &lt;Mode&gt;sample string 11&lt;/Mode&gt;
+  &lt;Tags&gt;
+    &lt;string&gt;sample string 1&lt;/string&gt;
+    &lt;string&gt;sample string 2&lt;/string&gt;
+  &lt;/Tags&gt;
+&lt;/ProjectDTO&gt;
+</pre>
+        </div>
+</div>
+</div>
+    </section>
+</div>
+
+<button id="testClientButton">Test API</button>
+<div id="testClientDialog" title="POST api/{m2Id}/projects/{projectId}/clone">
+    <input class="httpMethod" readonly="true" spellcheck="false" data-bind="value: HttpMethod" />
+    <input class="uriPath" spellcheck="false" data-bind="value: UriPath" />
+    <div data-bind="visible: UriParameters.length > 0">
+        <h5 class="ui-widget-header">URI parameters</h5>
+        <div class="panel">
+            <div data-bind="foreach: UriParameters">
+                <div style="height:30px;"> 
+                    <input readonly="true" spellcheck="false" tabindex="100" class="uriParameterLabel" data-bind="value: '{' + name + '}'" />
+                    <span>= </span>
+                    <input spellcheck="false" style="width:450px;" data-bind="value: value, valueUpdate: 'afterkeydown', enable: enabled" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <h5 class="ui-widget-header">
+        Headers (F12->Console input $.base64.encode("your apikey") to get the base64 string)
+    </h5>
+    <div class="panel">
+        <div data-bind="foreach: RequestHeaders">
+            <div style="height:30px;">
+                <input class="uriParameterLabel" readonly="true" spellcheck="false" data-bind='value: name, uniqueName: true' />
+                <span>: </span>
+                <input spellcheck="false" style="width:600px" data-bind='value: value, uniqueName: true' />
+            </div>
+        </div>
+    </div>
+    <h5 class="ui-widget-header">
+        <input type='checkbox' data-bind='checked: ShouldShowBody' />Body
+    </h5>
+    <div data-bind="visible: ShouldShowBody">
+        <div data-bind="visible: SampleTypes.length > 0">
+            <span>Samples: </span>
+            <select data-bind="options: SampleTypes, value: RequestMediaType"></select>
+        </div>
+        <pre><textarea id="req-body" class="sampleArea" spellcheck="false" data-bind="value: RequestBody, valueUpdate: 'afterkeydown'" rows="7"></textarea></pre>
+    </div>
+</div>
+<div id="testClientResponseDialog" title="Response for POST api/{m2Id}/projects/{projectId}/clone" data-bind="with: response">
+    <div class="responseStatusDiv">
+        <h5 class="ui-widget-header">Status</h5>
+        <span data-bind="text: status"></span>
+    </div>
+    <div class="responseHeaderDiv" style="display:none;">
+        <h5 class="ui-widget-header">Headers</h5>
+        <textarea spellcheck="false" data-bind="value: headers" class="sampleArea" readonly='readonly' rows="6"></textarea>
+    </div>
+    <div class="responseBodyDiv">
+        <h5 class="ui-widget-header">Body</h5>
+        <textarea spellcheck="false" data-bind="value: content" class="sampleArea" readonly='readonly' rows="10"></textarea>
+                
+        
+    </div>
+</div>
+<script>
+    testClientModel = {
+        HttpMethod: 'POST',
+        UriPathTemplate: "api/{m2Id}/projects/{projectId}/clone",
+        UriParameters: [
+                    { name: "m2Id", value: "" },
+                    { name: "projectId", value: "" },
+        ],
+        Samples: {
+            "application/json": "%7b%0d%0a++%22UpdateProjectInfo%22%3a+true%2c%0d%0a++%22CloneToM2ID%22%3a+%22sample+string+2%22%2c%0d%0a++%22ProjectId%22%3a+%22sample+string+3%22%2c%0d%0a++%22Name%22%3a+%22sample+string+4%22%2c%0d%0a++%22ApplicationType%22%3a+%22sample+string+5%22%2c%0d%0a++%22ProjectNote%22%3a+%22sample+string+6%22%2c%0d%0a++%22ProjectName%22%3a+%22sample+string+7%22%2c%0d%0a++%22ProjectStreet%22%3a+%22sample+string+8%22%2c%0d%0a++%22ProjectCity%22%3a+%22sample+string+9%22%2c%0d%0a++%22ProjectState%22%3a+%22sample+string+10%22%2c%0d%0a++%22ProjectZipCode%22%3a+%22sample+string+11%22%2c%0d%0a++%22ProjectCountry%22%3a+%22sample+string+12%22%2c%0d%0a++%22ProjectEmail%22%3a+%22sample+string+13%22%2c%0d%0a++%22ProjectPhone%22%3a+%22sample+string+14%22%2c%0d%0a++%22ProjectMobile%22%3a+%22sample+string+15%22%2c%0d%0a++%22ProjectFax%22%3a+%22sample+string+16%22%2c%0d%0a++%22ProjectMemo%22%3a+%22sample+string+17%22%2c%0d%0a++%22ContactName%22%3a+%22sample+string+18%22%2c%0d%0a++%22Email%22%3a+%22sample+string+19%22%2c%0d%0a++%22Phone%22%3a+%22sample+string+20%22%2c%0d%0a++%22Mobile%22%3a+%22sample+string+21%22%2c%0d%0a++%22Fax%22%3a+%22sample+string+22%22%2c%0d%0a++%22Memo%22%3a+%22sample+string+23%22%2c%0d%0a++%22Street%22%3a+%22sample+string+24%22%2c%0d%0a++%22City%22%3a+%22sample+string+25%22%2c%0d%0a++%22State%22%3a+%22sample+string+26%22%2c%0d%0a++%22ZipCode%22%3a+%22sample+string+27%22%2c%0d%0a++%22Country%22%3a+%22sample+string+28%22%2c%0d%0a++%22InstallationDate%22%3a+1%2c%0d%0a++%22InstallationBy%22%3a+%22sample+string+29%22%2c%0d%0a++%22MeasurementDate%22%3a+1%2c%0d%0a++%22MeasurementBy%22%3a+%22sample+string+30%22%2c%0d%0a++%22CutDate%22%3a+1%2c%0d%0a++%22CutBy%22%3a+%22sample+string+31%22%0d%0a%7d","text/json": "%7b%0d%0a++%22UpdateProjectInfo%22%3a+true%2c%0d%0a++%22CloneToM2ID%22%3a+%22sample+string+2%22%2c%0d%0a++%22ProjectId%22%3a+%22sample+string+3%22%2c%0d%0a++%22Name%22%3a+%22sample+string+4%22%2c%0d%0a++%22ApplicationType%22%3a+%22sample+string+5%22%2c%0d%0a++%22ProjectNote%22%3a+%22sample+string+6%22%2c%0d%0a++%22ProjectName%22%3a+%22sample+string+7%22%2c%0d%0a++%22ProjectStreet%22%3a+%22sample+string+8%22%2c%0d%0a++%22ProjectCity%22%3a+%22sample+string+9%22%2c%0d%0a++%22ProjectState%22%3a+%22sample+string+10%22%2c%0d%0a++%22ProjectZipCode%22%3a+%22sample+string+11%22%2c%0d%0a++%22ProjectCountry%22%3a+%22sample+string+12%22%2c%0d%0a++%22ProjectEmail%22%3a+%22sample+string+13%22%2c%0d%0a++%22ProjectPhone%22%3a+%22sample+string+14%22%2c%0d%0a++%22ProjectMobile%22%3a+%22sample+string+15%22%2c%0d%0a++%22ProjectFax%22%3a+%22sample+string+16%22%2c%0d%0a++%22ProjectMemo%22%3a+%22sample+string+17%22%2c%0d%0a++%22ContactName%22%3a+%22sample+string+18%22%2c%0d%0a++%22Email%22%3a+%22sample+string+19%22%2c%0d%0a++%22Phone%22%3a+%22sample+string+20%22%2c%0d%0a++%22Mobile%22%3a+%22sample+string+21%22%2c%0d%0a++%22Fax%22%3a+%22sample+string+22%22%2c%0d%0a++%22Memo%22%3a+%22sample+string+23%22%2c%0d%0a++%22Street%22%3a+%22sample+string+24%22%2c%0d%0a++%22City%22%3a+%22sample+string+25%22%2c%0d%0a++%22State%22%3a+%22sample+string+26%22%2c%0d%0a++%22ZipCode%22%3a+%22sample+string+27%22%2c%0d%0a++%22Country%22%3a+%22sample+string+28%22%2c%0d%0a++%22InstallationDate%22%3a+1%2c%0d%0a++%22InstallationBy%22%3a+%22sample+string+29%22%2c%0d%0a++%22MeasurementDate%22%3a+1%2c%0d%0a++%22MeasurementBy%22%3a+%22sample+string+30%22%2c%0d%0a++%22CutDate%22%3a+1%2c%0d%0a++%22CutBy%22%3a+%22sample+string+31%22%0d%0a%7d","application/xml": "%3cCloneProjectInfoDTO%3e%0d%0a++%3cProjectId%3esample+string+3%3c%2fProjectId%3e%0d%0a++%3cName%3esample+string+4%3c%2fName%3e%0d%0a++%3cApplicationType%3esample+string+5%3c%2fApplicationType%3e%0d%0a++%3cProjectNote%3esample+string+6%3c%2fProjectNote%3e%0d%0a++%3cProjectName%3esample+string+7%3c%2fProjectName%3e%0d%0a++%3cProjectStreet%3esample+string+8%3c%2fProjectStreet%3e%0d%0a++%3cProjectCity%3esample+string+9%3c%2fProjectCity%3e%0d%0a++%3cProjectState%3esample+string+10%3c%2fProjectState%3e%0d%0a++%3cProjectZipCode%3esample+string+11%3c%2fProjectZipCode%3e%0d%0a++%3cProjectCountry%3esample+string+12%3c%2fProjectCountry%3e%0d%0a++%3cProjectEmail%3esample+string+13%3c%2fProjectEmail%3e%0d%0a++%3cProjectPhone%3esample+string+14%3c%2fProjectPhone%3e%0d%0a++%3cProjectMobile%3esample+string+15%3c%2fProjectMobile%3e%0d%0a++%3cProjectFax%3esample+string+16%3c%2fProjectFax%3e%0d%0a++%3cProjectMemo%3esample+string+17%3c%2fProjectMemo%3e%0d%0a++%3cContactName%3esample+string+18%3c%2fContactName%3e%0d%0a++%3cEmail%3esample+string+19%3c%2fEmail%3e%0d%0a++%3cPhone%3esample+string+20%3c%2fPhone%3e%0d%0a++%3cMobile%3esample+string+21%3c%2fMobile%3e%0d%0a++%3cFax%3esample+string+22%3c%2fFax%3e%0d%0a++%3cMemo%3esample+string+23%3c%2fMemo%3e%0d%0a++%3cStreet%3esample+string+24%3c%2fStreet%3e%0d%0a++%3cCity%3esample+string+25%3c%2fCity%3e%0d%0a++%3cState%3esample+string+26%3c%2fState%3e%0d%0a++%3cZipCode%3esample+string+27%3c%2fZipCode%3e%0d%0a++%3cCountry%3esample+string+28%3c%2fCountry%3e%0d%0a++%3cInstallationDate%3e1%3c%2fInstallationDate%3e%0d%0a++%3cInstallationBy%3esample+string+29%3c%2fInstallationBy%3e%0d%0a++%3cMeasurementDate%3e1%3c%2fMeasurementDate%3e%0d%0a++%3cMeasurementBy%3esample+string+30%3c%2fMeasurementBy%3e%0d%0a++%3cCutDate%3e1%3c%2fCutDate%3e%0d%0a++%3cCutBy%3esample+string+31%3c%2fCutBy%3e%0d%0a++%3cUpdateProjectInfo%3etrue%3c%2fUpdateProjectInfo%3e%0d%0a++%3cCloneToM2ID%3esample+string+2%3c%2fCloneToM2ID%3e%0d%0a%3c%2fCloneProjectInfoDTO%3e","text/xml": "%3cCloneProjectInfoDTO%3e%0d%0a++%3cProjectId%3esample+string+3%3c%2fProjectId%3e%0d%0a++%3cName%3esample+string+4%3c%2fName%3e%0d%0a++%3cApplicationType%3esample+string+5%3c%2fApplicationType%3e%0d%0a++%3cProjectNote%3esample+string+6%3c%2fProjectNote%3e%0d%0a++%3cProjectName%3esample+string+7%3c%2fProjectName%3e%0d%0a++%3cProjectStreet%3esample+string+8%3c%2fProjectStreet%3e%0d%0a++%3cProjectCity%3esample+string+9%3c%2fProjectCity%3e%0d%0a++%3cProjectState%3esample+string+10%3c%2fProjectState%3e%0d%0a++%3cProjectZipCode%3esample+string+11%3c%2fProjectZipCode%3e%0d%0a++%3cProjectCountry%3esample+string+12%3c%2fProjectCountry%3e%0d%0a++%3cProjectEmail%3esample+string+13%3c%2fProjectEmail%3e%0d%0a++%3cProjectPhone%3esample+string+14%3c%2fProjectPhone%3e%0d%0a++%3cProjectMobile%3esample+string+15%3c%2fProjectMobile%3e%0d%0a++%3cProjectFax%3esample+string+16%3c%2fProjectFax%3e%0d%0a++%3cProjectMemo%3esample+string+17%3c%2fProjectMemo%3e%0d%0a++%3cContactName%3esample+string+18%3c%2fContactName%3e%0d%0a++%3cEmail%3esample+string+19%3c%2fEmail%3e%0d%0a++%3cPhone%3esample+string+20%3c%2fPhone%3e%0d%0a++%3cMobile%3esample+string+21%3c%2fMobile%3e%0d%0a++%3cFax%3esample+string+22%3c%2fFax%3e%0d%0a++%3cMemo%3esample+string+23%3c%2fMemo%3e%0d%0a++%3cStreet%3esample+string+24%3c%2fStreet%3e%0d%0a++%3cCity%3esample+string+25%3c%2fCity%3e%0d%0a++%3cState%3esample+string+26%3c%2fState%3e%0d%0a++%3cZipCode%3esample+string+27%3c%2fZipCode%3e%0d%0a++%3cCountry%3esample+string+28%3c%2fCountry%3e%0d%0a++%3cInstallationDate%3e1%3c%2fInstallationDate%3e%0d%0a++%3cInstallationBy%3esample+string+29%3c%2fInstallationBy%3e%0d%0a++%3cMeasurementDate%3e1%3c%2fMeasurementDate%3e%0d%0a++%3cMeasurementBy%3esample+string+30%3c%2fMeasurementBy%3e%0d%0a++%3cCutDate%3e1%3c%2fCutDate%3e%0d%0a++%3cCutBy%3esample+string+31%3c%2fCutBy%3e%0d%0a++%3cUpdateProjectInfo%3etrue%3c%2fUpdateProjectInfo%3e%0d%0a++%3cCloneToM2ID%3esample+string+2%3c%2fCloneToM2ID%3e%0d%0a%3c%2fCloneProjectInfoDTO%3e"
+        },
+        BaseAddress: '/'
+    };
+</script>
+
+
+</body>
+</html>

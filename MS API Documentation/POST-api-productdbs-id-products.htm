@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,maximum-scale=1" />
+    <meta name="root" content="/" />
+    <title></title>
+    
+
+<link href="/Content/Styles/jquery-ui.css" rel="stylesheet" />
+<link href="/Areas/HelpPage/TestClient.css" rel="stylesheet" />
+<script src="/Content/Scripts/jquery-2.1.1.js"></script>
+<script src="/Content/Scripts/jquery-ui-1.10.4.custom.js"></script>
+<script src="/Areas/HelpPage/jquery.base64.min.js"></script>
+<script src="/Areas/HelpPage/knockout-3.2.0.js"></script>
+<script src="/Areas/HelpPage/WebApiTestClient.js" defer="defer"></script>
+
+</head>
+<body>
+    
+
+<link type="text/css" href="/Areas/HelpPage/HelpPage.css" rel="stylesheet" />
+<div id="body" class="help-page">
+    <section class="featured">
+        <div class="content-wrapper">
+            <p>
+                <a href="/Help">Help Page Home</a>
+            </p>
+        </div>
+    </section>
+    <section class="content-wrapper main-content clear-fix">
+        
+<h1>POST api/productdbs/{id}/products</h1>
+<div>
+        <p>Create/Update/Delete the products in product catalog.<br />            It is allowed to only pass the attribute values of the product that need to be updated<br />            Notes:<br />            1. The default value of MatchKeyField is ID, which can be set to VendorSKU. If set to VendorSKU, the product's VendorSKU needs to be passed as a non empty string.<br />            2. The default value of OverWrite is false. If you want to clear all existing old product datas in the product catalog, set it to true.<br />            3. Update_Keep_Existing is best to set it to true, so it will keep the estimation values which may be updated in M8. otherwise, the product will be updated with default estimation value if you do not transfer estimation properties.<br />            4. The default value of Update_Del_Existing is false. If you want to delete the existing products that are not in the passed updated product list, set it to true.</p>
+
+    <h2>Request Information</h2>
+
+    <h3>URI Parameters</h3>
+        <table class="help-page-table">
+        <thead>
+            <tr><th>Name</th><th>Description</th><th>Type</th><th>Additional information</th></tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td class="parameter-name">id</td>
+                    <td class="parameter-documentation">
+                        <p>product catalog id</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                                <p>Required</p>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+
+
+
+    <h3>Body Parameters</h3>
+
+    <p>product datas</p>
+
+<a href="/Help/ResourceModel?modelName=Fep.Cloud.M2CoreExtension.PdbSyncDatas">Fep.Cloud.M2CoreExtension.PdbSyncDatas</a>    <table class="help-page-table">
+        <thead>
+            <tr><th>Name</th><th>Description</th><th>Type</th><th>Additional information</th></tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td class="parameter-name">Products</td>
+                    <td class="parameter-documentation">
+                        <p>The products to be created/updated</p>
+                    </td>
+                    <td class="parameter-type">
+                                Collection of <a href="/Help/ResourceModel?modelName=Fep.Cloud.M2CoreExtension.CloudFullProduct">Fep.Cloud.M2CoreExtension.CloudFullProduct</a>
+
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">MatchKeyField</td>
+                    <td class="parameter-documentation">
+                        <p>Specify the Key for product matching, for example, the value can be set to VendorSku</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">OverWrite</td>
+                    <td class="parameter-documentation">
+                        <p>Update or overwrite the productdatabase</p>
+                    </td>
+                    <td class="parameter-type">
+                        boolean
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">Update_Keep_Existing</td>
+                    <td class="parameter-documentation">
+                        <p>If update productdatabase, whether keep the existing product properties</p>
+                    </td>
+                    <td class="parameter-type">
+                        boolean
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">Update_Del_Existing</td>
+                    <td class="parameter-documentation">
+                        <p>If update productdatabase, whether delete the existing products which not in passed products</p>
+                    </td>
+                    <td class="parameter-type">
+                        boolean
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+
+
+        <h3>Request Formats</h3>
+
+<div>
+        <h4 class="sample-header">application/json, text/json</h4>
+        <div class="sample-content">
+            <span><b>Sample:</b></span>
+<pre class="wrapped">
+{
+  &quot;Products&quot;: [
+    {
+      &quot;Path&quot;: &quot;sample string 1&quot;,
+      &quot;Images&quot;: [
+        &quot;sample string 1&quot;,
+        &quot;sample string 2&quot;
+      ],
+      &quot;Width&quot;: &quot;sample string 2&quot;,
+      &quot;Length&quot;: &quot;sample string 3&quot;,
+      &quot;Thickness&quot;: &quot;sample string 4&quot;,
+      &quot;HoriRepeat&quot;: &quot;sample string 5&quot;,
+      &quot;VertRepeat&quot;: &quot;sample string 6&quot;,
+      &quot;HoriDrop&quot;: &quot;sample string 7&quot;,
+      &quot;VertDrop&quot;: &quot;sample string 8&quot;,
+      &quot;EstimatingWidth&quot;: &quot;sample string 9&quot;,
+      &quot;EstimatingLength&quot;: &quot;sample string 10&quot;,
+      &quot;WidthMargin&quot;: &quot;sample string 11&quot;,
+      &quot;LengthMargin&quot;: &quot;sample string 12&quot;,
+      &quot;TileCalcMethod&quot;: &quot;sample string 13&quot;,
+      &quot;TileMinimumWaste&quot;: &quot;sample string 14&quot;,
+      &quot;TileShape&quot;: &quot;sample string 15&quot;,
+      &quot;TileEdgeSize&quot;: &quot;sample string 16&quot;,
+      &quot;WasteAddon&quot;: &quot;sample string 17&quot;,
+      &quot;IsAddOn&quot;: true,
+      &quot;AddOns&quot;: [
+        {
+          &quot;ID&quot;: &quot;sample string 1&quot;,
+          &quot;Method&quot;: &quot;sample string 2&quot;
+        },
+        {
+          &quot;ID&quot;: &quot;sample string 1&quot;,
+          &quot;Method&quot;: &quot;sample string 2&quot;
+        }
+      ],
+      &quot;Datas&quot;: {
+        &quot;sample string 1&quot;: &quot;sample string 2&quot;,
+        &quot;sample string 3&quot;: &quot;sample string 4&quot;
+      },
+      &quot;NoPiecingTogether&quot;: true,
+      &quot;BoxRoundUp&quot;: &quot;sample string 19&quot;,
+      &quot;ID&quot;: &quot;sample string 20&quot;,
+      &quot;Type&quot;: &quot;sample string 21&quot;,
+      &quot;Trade&quot;: &quot;sample string 22&quot;,
+      &quot;Desc&quot;: &quot;sample string 23&quot;,
+      &quot;Vendor&quot;: &quot;sample string 24&quot;,
+      &quot;VendorSku&quot;: &quot;sample string 25&quot;,
+      &quot;Color&quot;: &quot;sample string 26&quot;,
+      &quot;Unit&quot;: &quot;sample string 27&quot;,
+      &quot;Manufacturer&quot;: &quot;sample string 28&quot;,
+      &quot;SalesPrice&quot;: &quot;sample string 29&quot;,
+      &quot;CostPrice&quot;: &quot;sample string 30&quot;,
+      &quot;BoxName&quot;: &quot;sample string 31&quot;,
+      &quot;SellByBox&quot;: true,
+      &quot;BoxSalesPrice&quot;: &quot;sample string 32&quot;,
+      &quot;BoxCostPrice&quot;: &quot;sample string 33&quot;,
+      &quot;UnitsPerBox&quot;: &quot;sample string 34&quot;,
+      &quot;Taxable&quot;: true
+    },
+    {
+      &quot;Path&quot;: &quot;sample string 1&quot;,
+      &quot;Images&quot;: [
+        &quot;sample string 1&quot;,
+        &quot;sample string 2&quot;
+      ],
+      &quot;Width&quot;: &quot;sample string 2&quot;,
+      &quot;Length&quot;: &quot;sample string 3&quot;,
+      &quot;Thickness&quot;: &quot;sample string 4&quot;,
+      &quot;HoriRepeat&quot;: &quot;sample string 5&quot;,
+      &quot;VertRepeat&quot;: &quot;sample string 6&quot;,
+      &quot;HoriDrop&quot;: &quot;sample string 7&quot;,
+      &quot;VertDrop&quot;: &quot;sample string 8&quot;,
+      &quot;EstimatingWidth&quot;: &quot;sample string 9&quot;,
+      &quot;EstimatingLength&quot;: &quot;sample string 10&quot;,
+      &quot;WidthMargin&quot;: &quot;sample string 11&quot;,
+      &quot;LengthMargin&quot;: &quot;sample string 12&quot;,
+      &quot;TileCalcMethod&quot;: &quot;sample string 13&quot;,
+      &quot;TileMinimumWaste&quot;: &quot;sample string 14&quot;,
+      &quot;TileShape&quot;: &quot;sample string 15&quot;,
+      &quot;TileEdgeSize&quot;: &quot;sample string 16&quot;,
+      &quot;WasteAddon&quot;: &quot;sample string 17&quot;,
+      &quot;IsAddOn&quot;: true,
+      &quot;AddOns&quot;: [
+        {
+          &quot;ID&quot;: &quot;sample string 1&quot;,
+          &quot;Method&quot;: &quot;sample string 2&quot;
+        },
+        {
+          &quot;ID&quot;: &quot;sample string 1&quot;,
+          &quot;Method&quot;: &quot;sample string 2&quot;
+        }
+      ],
+      &quot;Datas&quot;: {
+        &quot;sample string 1&quot;: &quot;sample string 2&quot;,
+        &quot;sample string 3&quot;: &quot;sample string 4&quot;
+      },
+      &quot;NoPiecingTogether&quot;: true,
+      &quot;BoxRoundUp&quot;: &quot;sample string 19&quot;,
+      &quot;ID&quot;: &quot;sample string 20&quot;,
+      &quot;Type&quot;: &quot;sample string 21&quot;,
+      &quot;Trade&quot;: &quot;sample string 22&quot;,
+      &quot;Desc&quot;: &quot;sample string 23&quot;,
+      &quot;Vendor&quot;: &quot;sample string 24&quot;,
+      &quot;VendorSku&quot;: &quot;sample string 25&quot;,
+      &quot;Color&quot;: &quot;sample string 26&quot;,
+      &quot;Unit&quot;: &quot;sample string 27&quot;,
+      &quot;Manufacturer&quot;: &quot;sample string 28&quot;,
+      &quot;SalesPrice&quot;: &quot;sample string 29&quot;,
+      &quot;CostPrice&quot;: &quot;sample string 30&quot;,
+      &quot;BoxName&quot;: &quot;sample string 31&quot;,
+      &quot;SellByBox&quot;: true,
+      &quot;BoxSalesPrice&quot;: &quot;sample string 32&quot;,
+      &quot;BoxCostPrice&quot;: &quot;sample string 33&quot;,
+      &quot;UnitsPerBox&quot;: &quot;sample string 34&quot;,
+      &quot;Taxable&quot;: true
+    }
+  ],
+  &quot;MatchKeyField&quot;: &quot;sample string 1&quot;,
+  &quot;OverWrite&quot;: true,
+  &quot;Update_Keep_Existing&quot;: true,
+  &quot;Update_Del_Existing&quot;: true
+}
+</pre>
+        </div>
+        <h4 class="sample-header">application/xml, text/xml</h4>
+        <div class="sample-content">
+            <span><b>Sample:</b></span>
+<pre class="wrapped">
+&lt;PdbSyncDatas&gt;
+  &lt;Products&gt;
+    &lt;CloudFullProduct&gt;
+      &lt;ID&gt;sample string 20&lt;/ID&gt;
+      &lt;Type&gt;sample string 21&lt;/Type&gt;
+      &lt;Trade&gt;sample string 22&lt;/Trade&gt;
+      &lt;Desc&gt;sample string 23&lt;/Desc&gt;
+      &lt;Vendor&gt;sample string 24&lt;/Vendor&gt;
+      &lt;VendorSku&gt;sample string 25&lt;/VendorSku&gt;
+      &lt;Color&gt;sample string 26&lt;/Color&gt;
+      &lt;Unit&gt;sample string 27&lt;/Unit&gt;
+      &lt;Manufacturer&gt;sample string 28&lt;/Manufacturer&gt;
+      &lt;SalesPrice&gt;sample string 29&lt;/SalesPrice&gt;
+      &lt;CostPrice&gt;sample string 30&lt;/CostPrice&gt;
+      &lt;BoxName&gt;sample string 31&lt;/BoxName&gt;
+      &lt;SellByBox&gt;true&lt;/SellByBox&gt;
+      &lt;BoxSalesPrice&gt;sample string 32&lt;/BoxSalesPrice&gt;
+      &lt;BoxCostPrice&gt;sample string 33&lt;/BoxCostPrice&gt;
+      &lt;UnitsPerBox&gt;sample string 34&lt;/UnitsPerBox&gt;
+      &lt;Taxable&gt;true&lt;/Taxable&gt;
+      &lt;Width&gt;sample string 2&lt;/Width&gt;
+      &lt;Length&gt;sample string 3&lt;/Length&gt;
+      &lt;Thickness&gt;sample string 4&lt;/Thickness&gt;
+      &lt;HoriRepeat&gt;sample string 5&lt;/HoriRepeat&gt;
+      &lt;VertRepeat&gt;sample string 6&lt;/VertRepeat&gt;
+      &lt;HoriDrop&gt;sample string 7&lt;/HoriDrop&gt;
+      &lt;VertDrop&gt;sample string 8&lt;/VertDrop&gt;
+      &lt;WidthMargin&gt;sample string 11&lt;/WidthMargin&gt;
+      &lt;LengthMargin&gt;sample string 12&lt;/LengthMargin&gt;
+      &lt;TileCalcMethod&gt;sample string 13&lt;/TileCalcMethod&gt;
+      &lt;TileMinimumWaste&gt;sample string 14&lt;/TileMinimumWaste&gt;
+      &lt;TileShape&gt;sample string 15&lt;/TileShape&gt;
+      &lt;TileEdgeSize&gt;sample string 16&lt;/TileEdgeSize&gt;
+      &lt;WasteAddon&gt;sample string 17&lt;/WasteAddon&gt;
+      &lt;IsAddOn&gt;true&lt;/IsAddOn&gt;
+      &lt;AddOns&gt;
+        &lt;CloudProductAddOn&gt;
+          &lt;ID&gt;sample string 1&lt;/ID&gt;
+          &lt;Method&gt;sample string 2&lt;/Method&gt;
+        &lt;/CloudProductAddOn&gt;
+        &lt;CloudProductAddOn&gt;
+          &lt;ID&gt;sample string 1&lt;/ID&gt;
+          &lt;Method&gt;sample string 2&lt;/Method&gt;
+        &lt;/CloudProductAddOn&gt;
+      &lt;/AddOns&gt;
+      &lt;Datas&gt;
+        &lt;item key=&quot;sample string 1&quot; value=&quot;sample string 2&quot; /&gt;
+        &lt;item key=&quot;sample string 3&quot; value=&quot;sample string 4&quot; /&gt;
+      &lt;/Datas&gt;
+      &lt;NoPiecingTogether&gt;true&lt;/NoPiecingTogether&gt;
+      &lt;BoxRoundUp&gt;sample string 19&lt;/BoxRoundUp&gt;
+      &lt;Images&gt;
+        &lt;string&gt;sample string 1&lt;/string&gt;
+        &lt;string&gt;sample string 2&lt;/string&gt;
+      &lt;/Images&gt;
+      &lt;Path&gt;sample string 1&lt;/Path&gt;
+    &lt;/CloudFullProduct&gt;
+    &lt;CloudFullProduct&gt;
+      &lt;ID&gt;sample string 20&lt;/ID&gt;
+      &lt;Type&gt;sample string 21&lt;/Type&gt;
+      &lt;Trade&gt;sample string 22&lt;/Trade&gt;
+      &lt;Desc&gt;sample string 23&lt;/Desc&gt;
+      &lt;Vendor&gt;sample string 24&lt;/Vendor&gt;
+      &lt;VendorSku&gt;sample string 25&lt;/VendorSku&gt;
+      &lt;Color&gt;sample string 26&lt;/Color&gt;
+      &lt;Unit&gt;sample string 27&lt;/Unit&gt;
+      &lt;Manufacturer&gt;sample string 28&lt;/Manufacturer&gt;
+      &lt;SalesPrice&gt;sample string 29&lt;/SalesPrice&gt;
+      &lt;CostPrice&gt;sample string 30&lt;/CostPrice&gt;
+      &lt;BoxName&gt;sample string 31&lt;/BoxName&gt;
+      &lt;SellByBox&gt;true&lt;/SellByBox&gt;
+      &lt;BoxSalesPrice&gt;sample string 32&lt;/BoxSalesPrice&gt;
+      &lt;BoxCostPrice&gt;sample string 33&lt;/BoxCostPrice&gt;
+      &lt;UnitsPerBox&gt;sample string 34&lt;/UnitsPerBox&gt;
+      &lt;Taxable&gt;true&lt;/Taxable&gt;
+      &lt;Width&gt;sample string 2&lt;/Width&gt;
+      &lt;Length&gt;sample string 3&lt;/Length&gt;
+      &lt;Thickness&gt;sample string 4&lt;/Thickness&gt;
+      &lt;HoriRepeat&gt;sample string 5&lt;/HoriRepeat&gt;
+      &lt;VertRepeat&gt;sample string 6&lt;/VertRepeat&gt;
+      &lt;HoriDrop&gt;sample string 7&lt;/HoriDrop&gt;
+      &lt;VertDrop&gt;sample string 8&lt;/VertDrop&gt;
+      &lt;WidthMargin&gt;sample string 11&lt;/WidthMargin&gt;
+      &lt;LengthMargin&gt;sample string 12&lt;/LengthMargin&gt;
+      &lt;TileCalcMethod&gt;sample string 13&lt;/TileCalcMethod&gt;
+      &lt;TileMinimumWaste&gt;sample string 14&lt;/TileMinimumWaste&gt;
+      &lt;TileShape&gt;sample string 15&lt;/TileShape&gt;
+      &lt;TileEdgeSize&gt;sample string 16&lt;/TileEdgeSize&gt;
+      &lt;WasteAddon&gt;sample string 17&lt;/WasteAddon&gt;
+      &lt;IsAddOn&gt;true&lt;/IsAddOn&gt;
+      &lt;AddOns&gt;
+        &lt;CloudProductAddOn&gt;
+          &lt;ID&gt;sample string 1&lt;/ID&gt;
+          &lt;Method&gt;sample string 2&lt;/Method&gt;
+        &lt;/CloudProductAddOn&gt;
+        &lt;CloudProductAddOn&gt;
+          &lt;ID&gt;sample string 1&lt;/ID&gt;
+          &lt;Method&gt;sample string 2&lt;/Method&gt;
+        &lt;/CloudProductAddOn&gt;
+      &lt;/AddOns&gt;
+      &lt;Datas&gt;
+        &lt;item key=&quot;sample string 1&quot; value=&quot;sample string 2&quot; /&gt;
+        &lt;item key=&quot;sample string 3&quot; value=&quot;sample string 4&quot; /&gt;
+      &lt;/Datas&gt;
+      &lt;NoPiecingTogether&gt;true&lt;/NoPiecingTogether&gt;
+      &lt;BoxRoundUp&gt;sample string 19&lt;/BoxRoundUp&gt;
+      &lt;Images&gt;
+        &lt;string&gt;sample string 1&lt;/string&gt;
+        &lt;string&gt;sample string 2&lt;/string&gt;
+      &lt;/Images&gt;
+      &lt;Path&gt;sample string 1&lt;/Path&gt;
+    &lt;/CloudFullProduct&gt;
+  &lt;/Products&gt;
+  &lt;MatchKeyField&gt;sample string 1&lt;/MatchKeyField&gt;
+  &lt;OverWrite&gt;true&lt;/OverWrite&gt;
+  &lt;Update_Keep_Existing&gt;true&lt;/Update_Keep_Existing&gt;
+  &lt;Update_Del_Existing&gt;true&lt;/Update_Del_Existing&gt;
+&lt;/PdbSyncDatas&gt;
+</pre>
+        </div>
+</div>
+    <h2>Response Information</h2>
+
+    <h3>Resource Description</h3>
+
+    <p>whether success</p>
+
+boolean
+        <h3>Response Formats</h3>
+
+<div>
+        <h4 class="sample-header">application/json, text/json</h4>
+        <div class="sample-content">
+            <span><b>Sample:</b></span>
+<pre class="wrapped">
+true
+</pre>
+        </div>
+        <h4 class="sample-header">application/xml, text/xml</h4>
+        <div class="sample-content">
+            <span><b>Sample:</b></span>
+<pre class="wrapped">
+&lt;boolean&gt;true&lt;/boolean&gt;
+</pre>
+        </div>
+</div>
+</div>
+    </section>
+</div>
+
+<button id="testClientButton">Test API</button>
+<div id="testClientDialog" title="POST api/productdbs/{id}/products">
+    <input class="httpMethod" readonly="true" spellcheck="false" data-bind="value: HttpMethod" />
+    <input class="uriPath" spellcheck="false" data-bind="value: UriPath" />
+    <div data-bind="visible: UriParameters.length > 0">
+        <h5 class="ui-widget-header">URI parameters</h5>
+        <div class="panel">
+            <div data-bind="foreach: UriParameters">
+                <div style="height:30px;"> 
+                    <input readonly="true" spellcheck="false" tabindex="100" class="uriParameterLabel" data-bind="value: '{' + name + '}'" />
+                    <span>= </span>
+                    <input spellcheck="false" style="width:450px;" data-bind="value: value, valueUpdate: 'afterkeydown', enable: enabled" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <h5 class="ui-widget-header">
+        Headers (F12->Console input $.base64.encode("your apikey") to get the base64 string)
+    </h5>
+    <div class="panel">
+        <div data-bind="foreach: RequestHeaders">
+            <div style="height:30px;">
+                <input class="uriParameterLabel" readonly="true" spellcheck="false" data-bind='value: name, uniqueName: true' />
+                <span>: </span>
+                <input spellcheck="false" style="width:600px" data-bind='value: value, uniqueName: true' />
+            </div>
+        </div>
+    </div>
+    <h5 class="ui-widget-header">
+        <input type='checkbox' data-bind='checked: ShouldShowBody' />Body
+    </h5>
+    <div data-bind="visible: ShouldShowBody">
+        <div data-bind="visible: SampleTypes.length > 0">
+            <span>Samples: </span>
+            <select data-bind="options: SampleTypes, value: RequestMediaType"></select>
+        </div>
+        <pre><textarea id="req-body" class="sampleArea" spellcheck="false" data-bind="value: RequestBody, valueUpdate: 'afterkeydown'" rows="7"></textarea></pre>
+    </div>
+</div>
+<div id="testClientResponseDialog" title="Response for POST api/productdbs/{id}/products" data-bind="with: response">
+    <div class="responseStatusDiv">
+        <h5 class="ui-widget-header">Status</h5>
+        <span data-bind="text: status"></span>
+    </div>
+    <div class="responseHeaderDiv" style="display:none;">
+        <h5 class="ui-widget-header">Headers</h5>
+        <textarea spellcheck="false" data-bind="value: headers" class="sampleArea" readonly='readonly' rows="6"></textarea>
+    </div>
+    <div class="responseBodyDiv">
+        <h5 class="ui-widget-header">Body</h5>
+        <textarea spellcheck="false" data-bind="value: content" class="sampleArea" readonly='readonly' rows="10"></textarea>
+                
+        
+    </div>
+</div>
+<script>
+    testClientModel = {
+        HttpMethod: 'POST',
+        UriPathTemplate: "api/productdbs/{id}/products",
+        UriParameters: [
+                    { name: "id", value: "" },
+        ],
+        Samples: {
+            "application/json": "%7b%0d%0a++%22Products%22%3a+%5b%0d%0a++++%7b%0d%0a++++++%22Path%22%3a+%22sample+string+1%22%2c%0d%0a++++++%22Images%22%3a+%5b%0d%0a++++++++%22sample+string+1%22%2c%0d%0a++++++++%22sample+string+2%22%0d%0a++++++%5d%2c%0d%0a++++++%22Width%22%3a+%22sample+string+2%22%2c%0d%0a++++++%22Length%22%3a+%22sample+string+3%22%2c%0d%0a++++++%22Thickness%22%3a+%22sample+string+4%22%2c%0d%0a++++++%22HoriRepeat%22%3a+%22sample+string+5%22%2c%0d%0a++++++%22VertRepeat%22%3a+%22sample+string+6%22%2c%0d%0a++++++%22HoriDrop%22%3a+%22sample+string+7%22%2c%0d%0a++++++%22VertDrop%22%3a+%22sample+string+8%22%2c%0d%0a++++++%22EstimatingWidth%22%3a+%22sample+string+9%22%2c%0d%0a++++++%22EstimatingLength%22%3a+%22sample+string+10%22%2c%0d%0a++++++%22WidthMargin%22%3a+%22sample+string+11%22%2c%0d%0a++++++%22LengthMargin%22%3a+%22sample+string+12%22%2c%0d%0a++++++%22TileCalcMethod%22%3a+%22sample+string+13%22%2c%0d%0a++++++%22TileMinimumWaste%22%3a+%22sample+string+14%22%2c%0d%0a++++++%22TileShape%22%3a+%22sample+string+15%22%2c%0d%0a++++++%22TileEdgeSize%22%3a+%22sample+string+16%22%2c%0d%0a++++++%22WasteAddon%22%3a+%22sample+string+17%22%2c%0d%0a++++++%22IsAddOn%22%3a+true%2c%0d%0a++++++%22AddOns%22%3a+%5b%0d%0a++++++++%7b%0d%0a++++++++++%22ID%22%3a+%22sample+string+1%22%2c%0d%0a++++++++++%22Method%22%3a+%22sample+string+2%22%0d%0a++++++++%7d%2c%0d%0a++++++++%7b%0d%0a++++++++++%22ID%22%3a+%22sample+string+1%22%2c%0d%0a++++++++++%22Method%22%3a+%22sample+string+2%22%0d%0a++++++++%7d%0d%0a++++++%5d%2c%0d%0a++++++%22Datas%22%3a+%7b%0d%0a++++++++%22sample+string+1%22%3a+%22sample+string+2%22%2c%0d%0a++++++++%22sample+string+3%22%3a+%22sample+string+4%22%0d%0a++++++%7d%2c%0d%0a++++++%22NoPiecingTogether%22%3a+true%2c%0d%0a++++++%22BoxRoundUp%22%3a+%22sample+string+19%22%2c%0d%0a++++++%22ID%22%3a+%22sample+string+20%22%2c%0d%0a++++++%22Type%22%3a+%22sample+string+21%22%2c%0d%0a++++++%22Trade%22%3a+%22sample+string+22%22%2c%0d%0a++++++%22Desc%22%3a+%22sample+string+23%22%2c%0d%0a++++++%22Vendor%22%3a+%22sample+string+24%22%2c%0d%0a++++++%22VendorSku%22%3a+%22sample+string+25%22%2c%0d%0a++++++%22Color%22%3a+%22sample+string+26%22%2c%0d%0a++++++%22Unit%22%3a+%22sample+string+27%22%2c%0d%0a++++++%22Manufacturer%22%3a+%22sample+string+28%22%2c%0d%0a++++++%22SalesPrice%22%3a+%22sample+string+29%22%2c%0d%0a++++++%22CostPrice%22%3a+%22sample+string+30%22%2c%0d%0a++++++%22BoxName%22%3a+%22sample+string+31%22%2c%0d%0a++++++%22SellByBox%22%3a+true%2c%0d%0a++++++%22BoxSalesPrice%22%3a+%22sample+string+32%22%2c%0d%0a++++++%22BoxCostPrice%22%3a+%22sample+string+33%22%2c%0d%0a++++++%22UnitsPerBox%22%3a+%22sample+string+34%22%2c%0d%0a++++++%22Taxable%22%3a+true%0d%0a++++%7d%2c%0d%0a++++%7b%0d%0a++++++%22Path%22%3a+%22sample+string+1%22%2c%0d%0a++++++%22Images%22%3a+%5b%0d%0a++++++++%22sample+string+1%22%2c%0d%0a++++++++%22sample+string+2%22%0d%0a++++++%5d%2c%0d%0a++++++%22Width%22%3a+%22sample+string+2%22%2c%0d%0a++++++%22Length%22%3a+%22sample+string+3%22%2c%0d%0a++++++%22Thickness%22%3a+%22sample+string+4%22%2c%0d%0a++++++%22HoriRepeat%22%3a+%22sample+string+5%22%2c%0d%0a++++++%22VertRepeat%22%3a+%22sample+string+6%22%2c%0d%0a++++++%22HoriDrop%22%3a+%22sample+string+7%22%2c%0d%0a++++++%22VertDrop%22%3a+%22sample+string+8%22%2c%0d%0a++++++%22EstimatingWidth%22%3a+%22sample+string+9%22%2c%0d%0a++++++%22EstimatingLength%22%3a+%22sample+string+10%22%2c%0d%0a++++++%22WidthMargin%22%3a+%22sample+string+11%22%2c%0d%0a++++++%22LengthMargin%22%3a+%22sample+string+12%22%2c%0d%0a++++++%22TileCalcMethod%22%3a+%22sample+string+13%22%2c%0d%0a++++++%22TileMinimumWaste%22%3a+%22sample+string+14%22%2c%0d%0a++++++%22TileShape%22%3a+%22sample+string+15%22%2c%0d%0a++++++%22TileEdgeSize%22%3a+%22sample+string+16%22%2c%0d%0a++++++%22WasteAddon%22%3a+%22sample+string+17%22%2c%0d%0a++++++%22IsAddOn%22%3a+true%2c%0d%0a++++++%22AddOns%22%3a+%5b%0d%0a++++++++%7b%0d%0a++++++++++%22ID%22%3a+%22sample+string+1%22%2c%0d%0a++++++++++%22Method%22%3a+%22sample+string+2%22%0d%0a++++++++%7d%2c%0d%0a++++++++%7b%0d%0a++++++++++%22ID%22%3a+%22sample+string+1%22%2c%0d%0a++++++++++%22Method%22%3a+%22sample+string+2%22%0d%0a++++++++%7d%0d%0a++++++%5d%2c%0d%0a++++++%22Datas%22%3a+%7b%0d%0a++++++++%22sample+string+1%22%3a+%22sample+string+2%22%2c%0d%0a++++++++%22sample+string+3%22%3a+%22sample+string+4%22%0d%0a++++++%7d%2c%0d%0a++++++%22NoPiecingTogether%22%3a+true%2c%0d%0a++++++%22BoxRoundUp%22%3a+%22sample+string+19%22%2c%0d%0a++++++%22ID%22%3a+%22sample+string+20%22%2c%0d%0a++++++%22Type%22%3a+%22sample+string+21%22%2c%0d%0a++++++%22Trade%22%3a+%22sample+string+22%22%2c%0d%0a++++++%22Desc%22%3a+%22sample+string+23%22%2c%0d%0a++++++%22Vendor%22%3a+%22sample+string+24%22%2c%0d%0a++++++%22VendorSku%22%3a+%22sample+string+25%22%2c%0d%0a++++++%22Color%22%3a+%22sample+string+26%22%2c%0d%0a++++++%22Unit%22%3a+%22sample+string+27%22%2c%0d%0a++++++%22Manufacturer%22%3a+%22sample+string+28%22%2c%0d%0a++++++%22SalesPrice%22%3a+%22sample+string+29%22%2c%0d%0a++++++%22CostPrice%22%3a+%22sample+string+30%22%2c%0d%0a++++++%22BoxName%22%3a+%22sample+string+31%22%2c%0d%0a++++++%22SellByBox%22%3a+true%2c%0d%0a++++++%22BoxSalesPrice%22%3a+%22sample+string+32%22%2c%0d%0a++++++%22BoxCostPrice%22%3a+%22sample+string+33%22%2c%0d%0a++++++%22UnitsPerBox%22%3a+%22sample+string+34%22%2c%0d%0a++++++%22Taxable%22%3a+true%0d%0a++++%7d%0d%0a++%5d%2c%0d%0a++%22MatchKeyField%22%3a+%22sample+string+1%22%2c%0d%0a++%22OverWrite%22%3a+true%2c%0d%0a++%22Update_Keep_Existing%22%3a+true%2c%0d%0a++%22Update_Del_Existing%22%3a+true%0d%0a%7d","text/json": "%7b%0d%0a++%22Products%22%3a+%5b%0d%0a++++%7b%0d%0a++++++%22Path%22%3a+%22sample+string+1%22%2c%0d%0a++++++%22Images%22%3a+%5b%0d%0a++++++++%22sample+string+1%22%2c%0d%0a++++++++%22sample+string+2%22%0d%0a++++++%5d%2c%0d%0a++++++%22Width%22%3a+%22sample+string+2%22%2c%0d%0a++++++%22Length%22%3a+%22sample+string+3%22%2c%0d%0a++++++%22Thickness%22%3a+%22sample+string+4%22%2c%0d%0a++++++%22HoriRepeat%22%3a+%22sample+string+5%22%2c%0d%0a++++++%22VertRepeat%22%3a+%22sample+string+6%22%2c%0d%0a++++++%22HoriDrop%22%3a+%22sample+string+7%22%2c%0d%0a++++++%22VertDrop%22%3a+%22sample+string+8%22%2c%0d%0a++++++%22EstimatingWidth%22%3a+%22sample+string+9%22%2c%0d%0a++++++%22EstimatingLength%22%3a+%22sample+string+10%22%2c%0d%0a++++++%22WidthMargin%22%3a+%22sample+string+11%22%2c%0d%0a++++++%22LengthMargin%22%3a+%22sample+string+12%22%2c%0d%0a++++++%22TileCalcMethod%22%3a+%22sample+string+13%22%2c%0d%0a++++++%22TileMinimumWaste%22%3a+%22sample+string+14%22%2c%0d%0a++++++%22TileShape%22%3a+%22sample+string+15%22%2c%0d%0a++++++%22TileEdgeSize%22%3a+%22sample+string+16%22%2c%0d%0a++++++%22WasteAddon%22%3a+%22sample+string+17%22%2c%0d%0a++++++%22IsAddOn%22%3a+true%2c%0d%0a++++++%22AddOns%22%3a+%5b%0d%0a++++++++%7b%0d%0a++++++++++%22ID%22%3a+%22sample+string+1%22%2c%0d%0a++++++++++%22Method%22%3a+%22sample+string+2%22%0d%0a++++++++%7d%2c%0d%0a++++++++%7b%0d%0a++++++++++%22ID%22%3a+%22sample+string+1%22%2c%0d%0a++++++++++%22Method%22%3a+%22sample+string+2%22%0d%0a++++++++%7d%0d%0a++++++%5d%2c%0d%0a++++++%22Datas%22%3a+%7b%0d%0a++++++++%22sample+string+1%22%3a+%22sample+string+2%22%2c%0d%0a++++++++%22sample+string+3%22%3a+%22sample+string+4%22%0d%0a++++++%7d%2c%0d%0a++++++%22NoPiecingTogether%22%3a+true%2c%0d%0a++++++%22BoxRoundUp%22%3a+%22sample+string+19%22%2c%0d%0a++++++%22ID%22%3a+%22sample+string+20%22%2c%0d%0a++++++%22Type%22%3a+%22sample+string+21%22%2c%0d%0a++++++%22Trade%22%3a+%22sample+string+22%22%2c%0d%0a++++++%22Desc%22%3a+%22sample+string+23%22%2c%0d%0a++++++%22Vendor%22%3a+%22sample+string+24%22%2c%0d%0a++++++%22VendorSku%22%3a+%22sample+string+25%22%2c%0d%0a++++++%22Color%22%3a+%22sample+string+26%22%2c%0d%0a++++++%22Unit%22%3a+%22sample+string+27%22%2c%0d%0a++++++%22Manufacturer%22%3a+%22sample+string+28%22%2c%0d%0a++++++%22SalesPrice%22%3a+%22sample+string+29%22%2c%0d%0a++++++%22CostPrice%22%3a+%22sample+string+30%22%2c%0d%0a++++++%22BoxName%22%3a+%22sample+string+31%22%2c%0d%0a++++++%22SellByBox%22%3a+true%2c%0d%0a++++++%22BoxSalesPrice%22%3a+%22sample+string+32%22%2c%0d%0a++++++%22BoxCostPrice%22%3a+%22sample+string+33%22%2c%0d%0a++++++%22UnitsPerBox%22%3a+%22sample+string+34%22%2c%0d%0a++++++%22Taxable%22%3a+true%0d%0a++++%7d%2c%0d%0a++++%7b%0d%0a++++++%22Path%22%3a+%22sample+string+1%22%2c%0d%0a++++++%22Images%22%3a+%5b%0d%0a++++++++%22sample+string+1%22%2c%0d%0a++++++++%22sample+string+2%22%0d%0a++++++%5d%2c%0d%0a++++++%22Width%22%3a+%22sample+string+2%22%2c%0d%0a++++++%22Length%22%3a+%22sample+string+3%22%2c%0d%0a++++++%22Thickness%22%3a+%22sample+string+4%22%2c%0d%0a++++++%22HoriRepeat%22%3a+%22sample+string+5%22%2c%0d%0a++++++%22VertRepeat%22%3a+%22sample+string+6%22%2c%0d%0a++++++%22HoriDrop%22%3a+%22sample+string+7%22%2c%0d%0a++++++%22VertDrop%22%3a+%22sample+string+8%22%2c%0d%0a++++++%22EstimatingWidth%22%3a+%22sample+string+9%22%2c%0d%0a++++++%22EstimatingLength%22%3a+%22sample+string+10%22%2c%0d%0a++++++%22WidthMargin%22%3a+%22sample+string+11%22%2c%0d%0a++++++%22LengthMargin%22%3a+%22sample+string+12%22%2c%0d%0a++++++%22TileCalcMethod%22%3a+%22sample+string+13%22%2c%0d%0a++++++%22TileMinimumWaste%22%3a+%22sample+string+14%22%2c%0d%0a++++++%22TileShape%22%3a+%22sample+string+15%22%2c%0d%0a++++++%22TileEdgeSize%22%3a+%22sample+string+16%22%2c%0d%0a++++++%22WasteAddon%22%3a+%22sample+string+17%22%2c%0d%0a++++++%22IsAddOn%22%3a+true%2c%0d%0a++++++%22AddOns%22%3a+%5b%0d%0a++++++++%7b%0d%0a++++++++++%22ID%22%3a+%22sample+string+1%22%2c%0d%0a++++++++++%22Method%22%3a+%22sample+string+2%22%0d%0a++++++++%7d%2c%0d%0a++++++++%7b%0d%0a++++++++++%22ID%22%3a+%22sample+string+1%22%2c%0d%0a++++++++++%22Method%22%3a+%22sample+string+2%22%0d%0a++++++++%7d%0d%0a++++++%5d%2c%0d%0a++++++%22Datas%22%3a+%7b%0d%0a++++++++%22sample+string+1%22%3a+%22sample+string+2%22%2c%0d%0a++++++++%22sample+string+3%22%3a+%22sample+string+4%22%0d%0a++++++%7d%2c%0d%0a++++++%22NoPiecingTogether%22%3a+true%2c%0d%0a++++++%22BoxRoundUp%22%3a+%22sample+string+19%22%2c%0d%0a++++++%22ID%22%3a+%22sample+string+20%22%2c%0d%0a++++++%22Type%22%3a+%22sample+string+21%22%2c%0d%0a++++++%22Trade%22%3a+%22sample+string+22%22%2c%0d%0a++++++%22Desc%22%3a+%22sample+string+23%22%2c%0d%0a++++++%22Vendor%22%3a+%22sample+string+24%22%2c%0d%0a++++++%22VendorSku%22%3a+%22sample+string+25%22%2c%0d%0a++++++%22Color%22%3a+%22sample+string+26%22%2c%0d%0a++++++%22Unit%22%3a+%22sample+string+27%22%2c%0d%0a++++++%22Manufacturer%22%3a+%22sample+string+28%22%2c%0d%0a++++++%22SalesPrice%22%3a+%22sample+string+29%22%2c%0d%0a++++++%22CostPrice%22%3a+%22sample+string+30%22%2c%0d%0a++++++%22BoxName%22%3a+%22sample+string+31%22%2c%0d%0a++++++%22SellByBox%22%3a+true%2c%0d%0a++++++%22BoxSalesPrice%22%3a+%22sample+string+32%22%2c%0d%0a++++++%22BoxCostPrice%22%3a+%22sample+string+33%22%2c%0d%0a++++++%22UnitsPerBox%22%3a+%22sample+string+34%22%2c%0d%0a++++++%22Taxable%22%3a+true%0d%0a++++%7d%0d%0a++%5d%2c%0d%0a++%22MatchKeyField%22%3a+%22sample+string+1%22%2c%0d%0a++%22OverWrite%22%3a+true%2c%0d%0a++%22Update_Keep_Existing%22%3a+true%2c%0d%0a++%22Update_Del_Existing%22%3a+true%0d%0a%7d","application/xml": "%3cPdbSyncDatas%3e%0d%0a++%3cProducts%3e%0d%0a++++%3cCloudFullProduct%3e%0d%0a++++++%3cID%3esample+string+20%3c%2fID%3e%0d%0a++++++%3cType%3esample+string+21%3c%2fType%3e%0d%0a++++++%3cTrade%3esample+string+22%3c%2fTrade%3e%0d%0a++++++%3cDesc%3esample+string+23%3c%2fDesc%3e%0d%0a++++++%3cVendor%3esample+string+24%3c%2fVendor%3e%0d%0a++++++%3cVendorSku%3esample+string+25%3c%2fVendorSku%3e%0d%0a++++++%3cColor%3esample+string+26%3c%2fColor%3e%0d%0a++++++%3cUnit%3esample+string+27%3c%2fUnit%3e%0d%0a++++++%3cManufacturer%3esample+string+28%3c%2fManufacturer%3e%0d%0a++++++%3cSalesPrice%3esample+string+29%3c%2fSalesPrice%3e%0d%0a++++++%3cCostPrice%3esample+string+30%3c%2fCostPrice%3e%0d%0a++++++%3cBoxName%3esample+string+31%3c%2fBoxName%3e%0d%0a++++++%3cSellByBox%3etrue%3c%2fSellByBox%3e%0d%0a++++++%3cBoxSalesPrice%3esample+string+32%3c%2fBoxSalesPrice%3e%0d%0a++++++%3cBoxCostPrice%3esample+string+33%3c%2fBoxCostPrice%3e%0d%0a++++++%3cUnitsPerBox%3esample+string+34%3c%2fUnitsPerBox%3e%0d%0a++++++%3cTaxable%3etrue%3c%2fTaxable%3e%0d%0a++++++%3cWidth%3esample+string+2%3c%2fWidth%3e%0d%0a++++++%3cLength%3esample+string+3%3c%2fLength%3e%0d%0a++++++%3cThickness%3esample+string+4%3c%2fThickness%3e%0d%0a++++++%3cHoriRepeat%3esample+string+5%3c%2fHoriRepeat%3e%0d%0a++++++%3cVertRepeat%3esample+string+6%3c%2fVertRepeat%3e%0d%0a++++++%3cHoriDrop%3esample+string+7%3c%2fHoriDrop%3e%0d%0a++++++%3cVertDrop%3esample+string+8%3c%2fVertDrop%3e%0d%0a++++++%3cWidthMargin%3esample+string+11%3c%2fWidthMargin%3e%0d%0a++++++%3cLengthMargin%3esample+string+12%3c%2fLengthMargin%3e%0d%0a++++++%3cTileCalcMethod%3esample+string+13%3c%2fTileCalcMethod%3e%0d%0a++++++%3cTileMinimumWaste%3esample+string+14%3c%2fTileMinimumWaste%3e%0d%0a++++++%3cTileShape%3esample+string+15%3c%2fTileShape%3e%0d%0a++++++%3cTileEdgeSize%3esample+string+16%3c%2fTileEdgeSize%3e%0d%0a++++++%3cWasteAddon%3esample+string+17%3c%2fWasteAddon%3e%0d%0a++++++%3cIsAddOn%3etrue%3c%2fIsAddOn%3e%0d%0a++++++%3cAddOns%3e%0d%0a++++++++%3cCloudProductAddOn%3e%0d%0a++++++++++%3cID%3esample+string+1%3c%2fID%3e%0d%0a++++++++++%3cMethod%3esample+string+2%3c%2fMethod%3e%0d%0a++++++++%3c%2fCloudProductAddOn%3e%0d%0a++++++++%3cCloudProductAddOn%3e%0d%0a++++++++++%3cID%3esample+string+1%3c%2fID%3e%0d%0a++++++++++%3cMethod%3esample+string+2%3c%2fMethod%3e%0d%0a++++++++%3c%2fCloudProductAddOn%3e%0d%0a++++++%3c%2fAddOns%3e%0d%0a++++++%3cDatas%3e%0d%0a++++++++%3citem+key%3d%22sample+string+1%22+value%3d%22sample+string+2%22+%2f%3e%0d%0a++++++++%3citem+key%3d%22sample+string+3%22+value%3d%22sample+string+4%22+%2f%3e%0d%0a++++++%3c%2fDatas%3e%0d%0a++++++%3cNoPiecingTogether%3etrue%3c%2fNoPiecingTogether%3e%0d%0a++++++%3cBoxRoundUp%3esample+string+19%3c%2fBoxRoundUp%3e%0d%0a++++++%3cImages%3e%0d%0a++++++++%3cstring%3esample+string+1%3c%2fstring%3e%0d%0a++++++++%3cstring%3esample+string+2%3c%2fstring%3e%0d%0a++++++%3c%2fImages%3e%0d%0a++++++%3cPath%3esample+string+1%3c%2fPath%3e%0d%0a++++%3c%2fCloudFullProduct%3e%0d%0a++++%3cCloudFullProduct%3e%0d%0a++++++%3cID%3esample+string+20%3c%2fID%3e%0d%0a++++++%3cType%3esample+string+21%3c%2fType%3e%0d%0a++++++%3cTrade%3esample+string+22%3c%2fTrade%3e%0d%0a++++++%3cDesc%3esample+string+23%3c%2fDesc%3e%0d%0a++++++%3cVendor%3esample+string+24%3c%2fVendor%3e%0d%0a++++++%3cVendorSku%3esample+string+25%3c%2fVendorSku%3e%0d%0a++++++%3cColor%3esample+string+26%3c%2fColor%3e%0d%0a++++++%3cUnit%3esample+string+27%3c%2fUnit%3e%0d%0a++++++%3cManufacturer%3esample+string+28%3c%2fManufacturer%3e%0d%0a++++++%3cSalesPrice%3esample+string+29%3c%2fSalesPrice%3e%0d%0a++++++%3cCostPrice%3esample+string+30%3c%2fCostPrice%3e%0d%0a++++++%3cBoxName%3esample+string+31%3c%2fBoxName%3e%0d%0a++++++%3cSellByBox%3etrue%3c%2fSellByBox%3e%0d%0a++++++%3cBoxSalesPrice%3esample+string+32%3c%2fBoxSalesPrice%3e%0d%0a++++++%3cBoxCostPrice%3esample+string+33%3c%2fBoxCostPrice%3e%0d%0a++++++%3cUnitsPerBox%3esample+string+34%3c%2fUnitsPerBox%3e%0d%0a++++++%3cTaxable%3etrue%3c%2fTaxable%3e%0d%0a++++++%3cWidth%3esample+string+2%3c%2fWidth%3e%0d%0a++++++%3cLength%3esample+string+3%3c%2fLength%3e%0d%0a++++++%3cThickness%3esample+string+4%3c%2fThickness%3e%0d%0a++++++%3cHoriRepeat%3esample+string+5%3c%2fHoriRepeat%3e%0d%0a++++++%3cVertRepeat%3esample+string+6%3c%2fVertRepeat%3e%0d%0a++++++%3cHoriDrop%3esample+string+7%3c%2fHoriDrop%3e%0d%0a++++++%3cVertDrop%3esample+string+8%3c%2fVertDrop%3e%0d%0a++++++%3cWidthMargin%3esample+string+11%3c%2fWidthMargin%3e%0d%0a++++++%3cLengthMargin%3esample+string+12%3c%2fLengthMargin%3e%0d%0a++++++%3cTileCalcMethod%3esample+string+13%3c%2fTileCalcMethod%3e%0d%0a++++++%3cTileMinimumWaste%3esample+string+14%3c%2fTileMinimumWaste%3e%0d%0a++++++%3cTileShape%3esample+string+15%3c%2fTileShape%3e%0d%0a++++++%3cTileEdgeSize%3esample+string+16%3c%2fTileEdgeSize%3e%0d%0a++++++%3cWasteAddon%3esample+string+17%3c%2fWasteAddon%3e%0d%0a++++++%3cIsAddOn%3etrue%3c%2fIsAddOn%3e%0d%0a++++++%3cAddOns%3e%0d%0a++++++++%3cCloudProductAddOn%3e%0d%0a++++++++++%3cID%3esample+string+1%3c%2fID%3e%0d%0a++++++++++%3cMethod%3esample+string+2%3c%2fMethod%3e%0d%0a++++++++%3c%2fCloudProductAddOn%3e%0d%0a++++++++%3cCloudProductAddOn%3e%0d%0a++++++++++%3cID%3esample+string+1%3c%2fID%3e%0d%0a++++++++++%3cMethod%3esample+string+2%3c%2fMethod%3e%0d%0a++++++++%3c%2fCloudProductAddOn%3e%0d%0a++++++%3c%2fAddOns%3e%0d%0a++++++%3cDatas%3e%0d%0a++++++++%3citem+key%3d%22sample+string+1%22+value%3d%22sample+string+2%22+%2f%3e%0d%0a++++++++%3citem+key%3d%22sample+string+3%22+value%3d%22sample+string+4%22+%2f%3e%0d%0a++++++%3c%2fDatas%3e%0d%0a++++++%3cNoPiecingTogether%3etrue%3c%2fNoPiecingTogether%3e%0d%0a++++++%3cBoxRoundUp%3esample+string+19%3c%2fBoxRoundUp%3e%0d%0a++++++%3cImages%3e%0d%0a++++++++%3cstring%3esample+string+1%3c%2fstring%3e%0d%0a++++++++%3cstring%3esample+string+2%3c%2fstring%3e%0d%0a++++++%3c%2fImages%3e%0d%0a++++++%3cPath%3esample+string+1%3c%2fPath%3e%0d%0a++++%3c%2fCloudFullProduct%3e%0d%0a++%3c%2fProducts%3e%0d%0a++%3cMatchKeyField%3esample+string+1%3c%2fMatchKeyField%3e%0d%0a++%3cOverWrite%3etrue%3c%2fOverWrite%3e%0d%0a++%3cUpdate_Keep_Existing%3etrue%3c%2fUpdate_Keep_Existing%3e%0d%0a++%3cUpdate_Del_Existing%3etrue%3c%2fUpdate_Del_Existing%3e%0d%0a%3c%2fPdbSyncDatas%3e","text/xml": "%3cPdbSyncDatas%3e%0d%0a++%3cProducts%3e%0d%0a++++%3cCloudFullProduct%3e%0d%0a++++++%3cID%3esample+string+20%3c%2fID%3e%0d%0a++++++%3cType%3esample+string+21%3c%2fType%3e%0d%0a++++++%3cTrade%3esample+string+22%3c%2fTrade%3e%0d%0a++++++%3cDesc%3esample+string+23%3c%2fDesc%3e%0d%0a++++++%3cVendor%3esample+string+24%3c%2fVendor%3e%0d%0a++++++%3cVendorSku%3esample+string+25%3c%2fVendorSku%3e%0d%0a++++++%3cColor%3esample+string+26%3c%2fColor%3e%0d%0a++++++%3cUnit%3esample+string+27%3c%2fUnit%3e%0d%0a++++++%3cManufacturer%3esample+string+28%3c%2fManufacturer%3e%0d%0a++++++%3cSalesPrice%3esample+string+29%3c%2fSalesPrice%3e%0d%0a++++++%3cCostPrice%3esample+string+30%3c%2fCostPrice%3e%0d%0a++++++%3cBoxName%3esample+string+31%3c%2fBoxName%3e%0d%0a++++++%3cSellByBox%3etrue%3c%2fSellByBox%3e%0d%0a++++++%3cBoxSalesPrice%3esample+string+32%3c%2fBoxSalesPrice%3e%0d%0a++++++%3cBoxCostPrice%3esample+string+33%3c%2fBoxCostPrice%3e%0d%0a++++++%3cUnitsPerBox%3esample+string+34%3c%2fUnitsPerBox%3e%0d%0a++++++%3cTaxable%3etrue%3c%2fTaxable%3e%0d%0a++++++%3cWidth%3esample+string+2%3c%2fWidth%3e%0d%0a++++++%3cLength%3esample+string+3%3c%2fLength%3e%0d%0a++++++%3cThickness%3esample+string+4%3c%2fThickness%3e%0d%0a++++++%3cHoriRepeat%3esample+string+5%3c%2fHoriRepeat%3e%0d%0a++++++%3cVertRepeat%3esample+string+6%3c%2fVertRepeat%3e%0d%0a++++++%3cHoriDrop%3esample+string+7%3c%2fHoriDrop%3e%0d%0a++++++%3cVertDrop%3esample+string+8%3c%2fVertDrop%3e%0d%0a++++++%3cWidthMargin%3esample+string+11%3c%2fWidthMargin%3e%0d%0a++++++%3cLengthMargin%3esample+string+12%3c%2fLengthMargin%3e%0d%0a++++++%3cTileCalcMethod%3esample+string+13%3c%2fTileCalcMethod%3e%0d%0a++++++%3cTileMinimumWaste%3esample+string+14%3c%2fTileMinimumWaste%3e%0d%0a++++++%3cTileShape%3esample+string+15%3c%2fTileShape%3e%0d%0a++++++%3cTileEdgeSize%3esample+string+16%3c%2fTileEdgeSize%3e%0d%0a++++++%3cWasteAddon%3esample+string+17%3c%2fWasteAddon%3e%0d%0a++++++%3cIsAddOn%3etrue%3c%2fIsAddOn%3e%0d%0a++++++%3cAddOns%3e%0d%0a++++++++%3cCloudProductAddOn%3e%0d%0a++++++++++%3cID%3esample+string+1%3c%2fID%3e%0d%0a++++++++++%3cMethod%3esample+string+2%3c%2fMethod%3e%0d%0a++++++++%3c%2fCloudProductAddOn%3e%0d%0a++++++++%3cCloudProductAddOn%3e%0d%0a++++++++++%3cID%3esample+string+1%3c%2fID%3e%0d%0a++++++++++%3cMethod%3esample+string+2%3c%2fMethod%3e%0d%0a++++++++%3c%2fCloudProductAddOn%3e%0d%0a++++++%3c%2fAddOns%3e%0d%0a++++++%3cDatas%3e%0d%0a++++++++%3citem+key%3d%22sample+string+1%22+value%3d%22sample+string+2%22+%2f%3e%0d%0a++++++++%3citem+key%3d%22sample+string+3%22+value%3d%22sample+string+4%22+%2f%3e%0d%0a++++++%3c%2fDatas%3e%0d%0a++++++%3cNoPiecingTogether%3etrue%3c%2fNoPiecingTogether%3e%0d%0a++++++%3cBoxRoundUp%3esample+string+19%3c%2fBoxRoundUp%3e%0d%0a++++++%3cImages%3e%0d%0a++++++++%3cstring%3esample+string+1%3c%2fstring%3e%0d%0a++++++++%3cstring%3esample+string+2%3c%2fstring%3e%0d%0a++++++%3c%2fImages%3e%0d%0a++++++%3cPath%3esample+string+1%3c%2fPath%3e%0d%0a++++%3c%2fCloudFullProduct%3e%0d%0a++++%3cCloudFullProduct%3e%0d%0a++++++%3cID%3esample+string+20%3c%2fID%3e%0d%0a++++++%3cType%3esample+string+21%3c%2fType%3e%0d%0a++++++%3cTrade%3esample+string+22%3c%2fTrade%3e%0d%0a++++++%3cDesc%3esample+string+23%3c%2fDesc%3e%0d%0a++++++%3cVendor%3esample+string+24%3c%2fVendor%3e%0d%0a++++++%3cVendorSku%3esample+string+25%3c%2fVendorSku%3e%0d%0a++++++%3cColor%3esample+string+26%3c%2fColor%3e%0d%0a++++++%3cUnit%3esample+string+27%3c%2fUnit%3e%0d%0a++++++%3cManufacturer%3esample+string+28%3c%2fManufacturer%3e%0d%0a++++++%3cSalesPrice%3esample+string+29%3c%2fSalesPrice%3e%0d%0a++++++%3cCostPrice%3esample+string+30%3c%2fCostPrice%3e%0d%0a++++++%3cBoxName%3esample+string+31%3c%2fBoxName%3e%0d%0a++++++%3cSellByBox%3etrue%3c%2fSellByBox%3e%0d%0a++++++%3cBoxSalesPrice%3esample+string+32%3c%2fBoxSalesPrice%3e%0d%0a++++++%3cBoxCostPrice%3esample+string+33%3c%2fBoxCostPrice%3e%0d%0a++++++%3cUnitsPerBox%3esample+string+34%3c%2fUnitsPerBox%3e%0d%0a++++++%3cTaxable%3etrue%3c%2fTaxable%3e%0d%0a++++++%3cWidth%3esample+string+2%3c%2fWidth%3e%0d%0a++++++%3cLength%3esample+string+3%3c%2fLength%3e%0d%0a++++++%3cThickness%3esample+string+4%3c%2fThickness%3e%0d%0a++++++%3cHoriRepeat%3esample+string+5%3c%2fHoriRepeat%3e%0d%0a++++++%3cVertRepeat%3esample+string+6%3c%2fVertRepeat%3e%0d%0a++++++%3cHoriDrop%3esample+string+7%3c%2fHoriDrop%3e%0d%0a++++++%3cVertDrop%3esample+string+8%3c%2fVertDrop%3e%0d%0a++++++%3cWidthMargin%3esample+string+11%3c%2fWidthMargin%3e%0d%0a++++++%3cLengthMargin%3esample+string+12%3c%2fLengthMargin%3e%0d%0a++++++%3cTileCalcMethod%3esample+string+13%3c%2fTileCalcMethod%3e%0d%0a++++++%3cTileMinimumWaste%3esample+string+14%3c%2fTileMinimumWaste%3e%0d%0a++++++%3cTileShape%3esample+string+15%3c%2fTileShape%3e%0d%0a++++++%3cTileEdgeSize%3esample+string+16%3c%2fTileEdgeSize%3e%0d%0a++++++%3cWasteAddon%3esample+string+17%3c%2fWasteAddon%3e%0d%0a++++++%3cIsAddOn%3etrue%3c%2fIsAddOn%3e%0d%0a++++++%3cAddOns%3e%0d%0a++++++++%3cCloudProductAddOn%3e%0d%0a++++++++++%3cID%3esample+string+1%3c%2fID%3e%0d%0a++++++++++%3cMethod%3esample+string+2%3c%2fMethod%3e%0d%0a++++++++%3c%2fCloudProductAddOn%3e%0d%0a++++++++%3cCloudProductAddOn%3e%0d%0a++++++++++%3cID%3esample+string+1%3c%2fID%3e%0d%0a++++++++++%3cMethod%3esample+string+2%3c%2fMethod%3e%0d%0a++++++++%3c%2fCloudProductAddOn%3e%0d%0a++++++%3c%2fAddOns%3e%0d%0a++++++%3cDatas%3e%0d%0a++++++++%3citem+key%3d%22sample+string+1%22+value%3d%22sample+string+2%22+%2f%3e%0d%0a++++++++%3citem+key%3d%22sample+string+3%22+value%3d%22sample+string+4%22+%2f%3e%0d%0a++++++%3c%2fDatas%3e%0d%0a++++++%3cNoPiecingTogether%3etrue%3c%2fNoPiecingTogether%3e%0d%0a++++++%3cBoxRoundUp%3esample+string+19%3c%2fBoxRoundUp%3e%0d%0a++++++%3cImages%3e%0d%0a++++++++%3cstring%3esample+string+1%3c%2fstring%3e%0d%0a++++++++%3cstring%3esample+string+2%3c%2fstring%3e%0d%0a++++++%3c%2fImages%3e%0d%0a++++++%3cPath%3esample+string+1%3c%2fPath%3e%0d%0a++++%3c%2fCloudFullProduct%3e%0d%0a++%3c%2fProducts%3e%0d%0a++%3cMatchKeyField%3esample+string+1%3c%2fMatchKeyField%3e%0d%0a++%3cOverWrite%3etrue%3c%2fOverWrite%3e%0d%0a++%3cUpdate_Keep_Existing%3etrue%3c%2fUpdate_Keep_Existing%3e%0d%0a++%3cUpdate_Del_Existing%3etrue%3c%2fUpdate_Del_Existing%3e%0d%0a%3c%2fPdbSyncDatas%3e"
+        },
+        BaseAddress: '/'
+    };
+</script>
+
+
+</body>
+</html>

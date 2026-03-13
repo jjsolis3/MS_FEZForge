@@ -1,0 +1,1077 @@
+GET api/projects/length/{pageLength}/page/{pageIndex}?search={search}&distinct={distinct}&orderby={orderby}&isArchived={isArchived}&applicationType={applicationType}
+Get paging projects in group
+
+Request Information
+URI Parameters
+Name	Description	Type	Additional information
+pageLength	
+the item length of every page. max value is 100.
+
+integer	
+Required
+
+pageIndex	
+current page index
+
+integer	
+Required
+
+search	
+fuzzy query project name
+
+string	
+None.
+
+distinct	
+Count distinct by ProjectId
+
+boolean	
+Default value is False
+
+orderby	
+"asc" or "desc" by updatedon, default is "asc"
+
+string	
+None.
+
+isArchived	
+Project is archived or not
+
+boolean	
+None.
+
+applicationType	
+ApplicationType enum{ FloorCovering, RenoPlan, CounterTop }
+
+string	
+None.
+
+Body Parameters
+None.
+
+Response Information
+Resource Description
+the paging projects
+
+Collection of M2Cloud.Services.ProjectDTO
+Name	Description	Type	Additional information
+ProjectId	
+Project ID
+
+string	
+None.
+
+Name	
+Project Name
+
+string	
+None.
+
+Revision	
+Revision. the project's latest revision
+
+integer	
+None.
+
+OwnerM2Id	
+The project owner
+
+string	
+None.
+
+CreatorM2Id	
+The project createor
+
+string	
+None.
+
+UsedM2Id	
+Who uses the project
+
+string	
+None.
+
+LastUpdatedOn	
+Timestamp. the project's latest updated time.
+
+integer	
+None.
+
+Size	
+File Size
+
+integer	
+None.
+
+ProjectInfo	
+Detail project info. customer, job site and products information.
+This value will not be returned while getting from project list api.
+
+Fep.Cloud.M2CoreExtension.PatternProjectInfo	
+None.
+
+IsArchived	
+Project is archived or not
+
+boolean	
+None.
+
+ApplicationType	
+ApplicationType enum{ FloorCovering, RenoPlan, CounterTop }
+
+string	
+None.
+
+Mode	
+EstimateMode enum{ ByProject, ByLayer, ByPhase }
+
+string	
+None.
+
+Tags	
+Project tags
+
+Collection of string	
+None.
+
+Response Formats
+application/json, text/json
+Sample:
+[
+  {
+    "ProjectId": "sample string 1",
+    "Name": "sample string 2",
+    "Revision": 3,
+    "OwnerM2Id": "sample string 4",
+    "CreatorM2Id": "sample string 5",
+    "UsedM2Id": "sample string 6",
+    "LastUpdatedOn": 7,
+    "Size": 8,
+    "ProjectInfo": {
+      "TilePatternList": [
+        {
+          "ID": "sample string 1",
+          "IsRandomHardwood": true,
+          "IsHardwood": true,
+          "Grout": "sample string 4",
+          "GroutWidth": "sample string 5",
+          "Thickness": "sample string 6",
+          "PatternTiles": [
+            {
+              "ID": "sample string 1",
+              "CountInPattern": 2,
+              "Randomizers": [
+                {
+                  "ID": "sample string 1",
+                  "Percent": "sample string 2"
+                },
+                {
+                  "ID": "sample string 1",
+                  "Percent": "sample string 2"
+                }
+              ]
+            },
+            {
+              "ID": "sample string 1",
+              "CountInPattern": 2,
+              "Randomizers": [
+                {
+                  "ID": "sample string 1",
+                  "Percent": "sample string 2"
+                },
+                {
+                  "ID": "sample string 1",
+                  "Percent": "sample string 2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": "sample string 1",
+          "IsRandomHardwood": true,
+          "IsHardwood": true,
+          "Grout": "sample string 4",
+          "GroutWidth": "sample string 5",
+          "Thickness": "sample string 6",
+          "PatternTiles": [
+            {
+              "ID": "sample string 1",
+              "CountInPattern": 2,
+              "Randomizers": [
+                {
+                  "ID": "sample string 1",
+                  "Percent": "sample string 2"
+                },
+                {
+                  "ID": "sample string 1",
+                  "Percent": "sample string 2"
+                }
+              ]
+            },
+            {
+              "ID": "sample string 1",
+              "CountInPattern": 2,
+              "Randomizers": [
+                {
+                  "ID": "sample string 1",
+                  "Percent": "sample string 2"
+                },
+                {
+                  "ID": "sample string 1",
+                  "Percent": "sample string 2"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ProductList": [
+        {
+          "Width": "sample string 1",
+          "Length": "sample string 2",
+          "Thickness": "sample string 3",
+          "HoriRepeat": "sample string 4",
+          "VertRepeat": "sample string 5",
+          "HoriDrop": "sample string 6",
+          "VertDrop": "sample string 7",
+          "EstimatingWidth": "sample string 8",
+          "EstimatingLength": "sample string 9",
+          "WidthMargin": "sample string 10",
+          "LengthMargin": "sample string 11",
+          "TileCalcMethod": "sample string 12",
+          "TileMinimumWaste": "sample string 13",
+          "TileShape": "sample string 14",
+          "TileEdgeSize": "sample string 15",
+          "WasteAddon": "sample string 16",
+          "IsAddOn": true,
+          "AddOns": [
+            {
+              "ID": "sample string 1",
+              "Method": "sample string 2"
+            },
+            {
+              "ID": "sample string 1",
+              "Method": "sample string 2"
+            }
+          ],
+          "Datas": {
+            "sample string 1": "sample string 2",
+            "sample string 3": "sample string 4"
+          },
+          "NoPiecingTogether": true,
+          "BoxRoundUp": "sample string 18",
+          "ID": "sample string 19",
+          "Type": "sample string 20",
+          "Trade": "sample string 21",
+          "Desc": "sample string 22",
+          "Vendor": "sample string 23",
+          "VendorSku": "sample string 24",
+          "Color": "sample string 25",
+          "Unit": "sample string 26",
+          "Manufacturer": "sample string 27",
+          "SalesPrice": "sample string 28",
+          "CostPrice": "sample string 29",
+          "BoxName": "sample string 30",
+          "SellByBox": true,
+          "BoxSalesPrice": "sample string 31",
+          "BoxCostPrice": "sample string 32",
+          "UnitsPerBox": "sample string 33",
+          "Taxable": true
+        },
+        {
+          "Width": "sample string 1",
+          "Length": "sample string 2",
+          "Thickness": "sample string 3",
+          "HoriRepeat": "sample string 4",
+          "VertRepeat": "sample string 5",
+          "HoriDrop": "sample string 6",
+          "VertDrop": "sample string 7",
+          "EstimatingWidth": "sample string 8",
+          "EstimatingLength": "sample string 9",
+          "WidthMargin": "sample string 10",
+          "LengthMargin": "sample string 11",
+          "TileCalcMethod": "sample string 12",
+          "TileMinimumWaste": "sample string 13",
+          "TileShape": "sample string 14",
+          "TileEdgeSize": "sample string 15",
+          "WasteAddon": "sample string 16",
+          "IsAddOn": true,
+          "AddOns": [
+            {
+              "ID": "sample string 1",
+              "Method": "sample string 2"
+            },
+            {
+              "ID": "sample string 1",
+              "Method": "sample string 2"
+            }
+          ],
+          "Datas": {
+            "sample string 1": "sample string 2",
+            "sample string 3": "sample string 4"
+          },
+          "NoPiecingTogether": true,
+          "BoxRoundUp": "sample string 18",
+          "ID": "sample string 19",
+          "Type": "sample string 20",
+          "Trade": "sample string 21",
+          "Desc": "sample string 22",
+          "Vendor": "sample string 23",
+          "VendorSku": "sample string 24",
+          "Color": "sample string 25",
+          "Unit": "sample string 26",
+          "Manufacturer": "sample string 27",
+          "SalesPrice": "sample string 28",
+          "CostPrice": "sample string 29",
+          "BoxName": "sample string 30",
+          "SellByBox": true,
+          "BoxSalesPrice": "sample string 31",
+          "BoxCostPrice": "sample string 32",
+          "UnitsPerBox": "sample string 33",
+          "Taxable": true
+        }
+      ],
+      "ProjectId": "sample string 1",
+      "Name": "sample string 2",
+      "ApplicationType": "sample string 3",
+      "ProjectNote": "sample string 4",
+      "ProjectName": "sample string 5",
+      "ProjectStreet": "sample string 6",
+      "ProjectCity": "sample string 7",
+      "ProjectState": "sample string 8",
+      "ProjectZipCode": "sample string 9",
+      "ProjectCountry": "sample string 10",
+      "ProjectEmail": "sample string 11",
+      "ProjectPhone": "sample string 12",
+      "ProjectMobile": "sample string 13",
+      "ProjectFax": "sample string 14",
+      "ProjectMemo": "sample string 15",
+      "ContactName": "sample string 16",
+      "Email": "sample string 17",
+      "Phone": "sample string 18",
+      "Mobile": "sample string 19",
+      "Fax": "sample string 20",
+      "Memo": "sample string 21",
+      "Street": "sample string 22",
+      "City": "sample string 23",
+      "State": "sample string 24",
+      "ZipCode": "sample string 25",
+      "Country": "sample string 26",
+      "InstallationDate": 1,
+      "InstallationBy": "sample string 27",
+      "MeasurementDate": 1,
+      "MeasurementBy": "sample string 28",
+      "CutDate": 1,
+      "CutBy": "sample string 29"
+    },
+    "IsArchived": true,
+    "ApplicationType": "sample string 10",
+    "Mode": "sample string 11",
+    "Tags": [
+      "sample string 1",
+      "sample string 2"
+    ]
+  },
+  {
+    "ProjectId": "sample string 1",
+    "Name": "sample string 2",
+    "Revision": 3,
+    "OwnerM2Id": "sample string 4",
+    "CreatorM2Id": "sample string 5",
+    "UsedM2Id": "sample string 6",
+    "LastUpdatedOn": 7,
+    "Size": 8,
+    "ProjectInfo": {
+      "TilePatternList": [
+        {
+          "ID": "sample string 1",
+          "IsRandomHardwood": true,
+          "IsHardwood": true,
+          "Grout": "sample string 4",
+          "GroutWidth": "sample string 5",
+          "Thickness": "sample string 6",
+          "PatternTiles": [
+            {
+              "ID": "sample string 1",
+              "CountInPattern": 2,
+              "Randomizers": [
+                {
+                  "ID": "sample string 1",
+                  "Percent": "sample string 2"
+                },
+                {
+                  "ID": "sample string 1",
+                  "Percent": "sample string 2"
+                }
+              ]
+            },
+            {
+              "ID": "sample string 1",
+              "CountInPattern": 2,
+              "Randomizers": [
+                {
+                  "ID": "sample string 1",
+                  "Percent": "sample string 2"
+                },
+                {
+                  "ID": "sample string 1",
+                  "Percent": "sample string 2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ID": "sample string 1",
+          "IsRandomHardwood": true,
+          "IsHardwood": true,
+          "Grout": "sample string 4",
+          "GroutWidth": "sample string 5",
+          "Thickness": "sample string 6",
+          "PatternTiles": [
+            {
+              "ID": "sample string 1",
+              "CountInPattern": 2,
+              "Randomizers": [
+                {
+                  "ID": "sample string 1",
+                  "Percent": "sample string 2"
+                },
+                {
+                  "ID": "sample string 1",
+                  "Percent": "sample string 2"
+                }
+              ]
+            },
+            {
+              "ID": "sample string 1",
+              "CountInPattern": 2,
+              "Randomizers": [
+                {
+                  "ID": "sample string 1",
+                  "Percent": "sample string 2"
+                },
+                {
+                  "ID": "sample string 1",
+                  "Percent": "sample string 2"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ProductList": [
+        {
+          "Width": "sample string 1",
+          "Length": "sample string 2",
+          "Thickness": "sample string 3",
+          "HoriRepeat": "sample string 4",
+          "VertRepeat": "sample string 5",
+          "HoriDrop": "sample string 6",
+          "VertDrop": "sample string 7",
+          "EstimatingWidth": "sample string 8",
+          "EstimatingLength": "sample string 9",
+          "WidthMargin": "sample string 10",
+          "LengthMargin": "sample string 11",
+          "TileCalcMethod": "sample string 12",
+          "TileMinimumWaste": "sample string 13",
+          "TileShape": "sample string 14",
+          "TileEdgeSize": "sample string 15",
+          "WasteAddon": "sample string 16",
+          "IsAddOn": true,
+          "AddOns": [
+            {
+              "ID": "sample string 1",
+              "Method": "sample string 2"
+            },
+            {
+              "ID": "sample string 1",
+              "Method": "sample string 2"
+            }
+          ],
+          "Datas": {
+            "sample string 1": "sample string 2",
+            "sample string 3": "sample string 4"
+          },
+          "NoPiecingTogether": true,
+          "BoxRoundUp": "sample string 18",
+          "ID": "sample string 19",
+          "Type": "sample string 20",
+          "Trade": "sample string 21",
+          "Desc": "sample string 22",
+          "Vendor": "sample string 23",
+          "VendorSku": "sample string 24",
+          "Color": "sample string 25",
+          "Unit": "sample string 26",
+          "Manufacturer": "sample string 27",
+          "SalesPrice": "sample string 28",
+          "CostPrice": "sample string 29",
+          "BoxName": "sample string 30",
+          "SellByBox": true,
+          "BoxSalesPrice": "sample string 31",
+          "BoxCostPrice": "sample string 32",
+          "UnitsPerBox": "sample string 33",
+          "Taxable": true
+        },
+        {
+          "Width": "sample string 1",
+          "Length": "sample string 2",
+          "Thickness": "sample string 3",
+          "HoriRepeat": "sample string 4",
+          "VertRepeat": "sample string 5",
+          "HoriDrop": "sample string 6",
+          "VertDrop": "sample string 7",
+          "EstimatingWidth": "sample string 8",
+          "EstimatingLength": "sample string 9",
+          "WidthMargin": "sample string 10",
+          "LengthMargin": "sample string 11",
+          "TileCalcMethod": "sample string 12",
+          "TileMinimumWaste": "sample string 13",
+          "TileShape": "sample string 14",
+          "TileEdgeSize": "sample string 15",
+          "WasteAddon": "sample string 16",
+          "IsAddOn": true,
+          "AddOns": [
+            {
+              "ID": "sample string 1",
+              "Method": "sample string 2"
+            },
+            {
+              "ID": "sample string 1",
+              "Method": "sample string 2"
+            }
+          ],
+          "Datas": {
+            "sample string 1": "sample string 2",
+            "sample string 3": "sample string 4"
+          },
+          "NoPiecingTogether": true,
+          "BoxRoundUp": "sample string 18",
+          "ID": "sample string 19",
+          "Type": "sample string 20",
+          "Trade": "sample string 21",
+          "Desc": "sample string 22",
+          "Vendor": "sample string 23",
+          "VendorSku": "sample string 24",
+          "Color": "sample string 25",
+          "Unit": "sample string 26",
+          "Manufacturer": "sample string 27",
+          "SalesPrice": "sample string 28",
+          "CostPrice": "sample string 29",
+          "BoxName": "sample string 30",
+          "SellByBox": true,
+          "BoxSalesPrice": "sample string 31",
+          "BoxCostPrice": "sample string 32",
+          "UnitsPerBox": "sample string 33",
+          "Taxable": true
+        }
+      ],
+      "ProjectId": "sample string 1",
+      "Name": "sample string 2",
+      "ApplicationType": "sample string 3",
+      "ProjectNote": "sample string 4",
+      "ProjectName": "sample string 5",
+      "ProjectStreet": "sample string 6",
+      "ProjectCity": "sample string 7",
+      "ProjectState": "sample string 8",
+      "ProjectZipCode": "sample string 9",
+      "ProjectCountry": "sample string 10",
+      "ProjectEmail": "sample string 11",
+      "ProjectPhone": "sample string 12",
+      "ProjectMobile": "sample string 13",
+      "ProjectFax": "sample string 14",
+      "ProjectMemo": "sample string 15",
+      "ContactName": "sample string 16",
+      "Email": "sample string 17",
+      "Phone": "sample string 18",
+      "Mobile": "sample string 19",
+      "Fax": "sample string 20",
+      "Memo": "sample string 21",
+      "Street": "sample string 22",
+      "City": "sample string 23",
+      "State": "sample string 24",
+      "ZipCode": "sample string 25",
+      "Country": "sample string 26",
+      "InstallationDate": 1,
+      "InstallationBy": "sample string 27",
+      "MeasurementDate": 1,
+      "MeasurementBy": "sample string 28",
+      "CutDate": 1,
+      "CutBy": "sample string 29"
+    },
+    "IsArchived": true,
+    "ApplicationType": "sample string 10",
+    "Mode": "sample string 11",
+    "Tags": [
+      "sample string 1",
+      "sample string 2"
+    ]
+  }
+]
+application/xml, text/xml
+Sample:
+<ArrayOfProjectDTO>
+  <ProjectDTO>
+    <ProjectId>sample string 1</ProjectId>
+    <Name>sample string 2</Name>
+    <Revision>3</Revision>
+    <OwnerM2Id>sample string 4</OwnerM2Id>
+    <CreatorM2Id>sample string 5</CreatorM2Id>
+    <UsedM2Id>sample string 6</UsedM2Id>
+    <LastUpdatedOn>7</LastUpdatedOn>
+    <Size>8</Size>
+    <ProjectInfo>
+      <ProjectId>sample string 1</ProjectId>
+      <Name>sample string 2</Name>
+      <ApplicationType>sample string 3</ApplicationType>
+      <ProjectNote>sample string 4</ProjectNote>
+      <ProjectName>sample string 5</ProjectName>
+      <ProjectStreet>sample string 6</ProjectStreet>
+      <ProjectCity>sample string 7</ProjectCity>
+      <ProjectState>sample string 8</ProjectState>
+      <ProjectZipCode>sample string 9</ProjectZipCode>
+      <ProjectCountry>sample string 10</ProjectCountry>
+      <ProjectEmail>sample string 11</ProjectEmail>
+      <ProjectPhone>sample string 12</ProjectPhone>
+      <ProjectMobile>sample string 13</ProjectMobile>
+      <ProjectFax>sample string 14</ProjectFax>
+      <ProjectMemo>sample string 15</ProjectMemo>
+      <ContactName>sample string 16</ContactName>
+      <Email>sample string 17</Email>
+      <Phone>sample string 18</Phone>
+      <Mobile>sample string 19</Mobile>
+      <Fax>sample string 20</Fax>
+      <Memo>sample string 21</Memo>
+      <Street>sample string 22</Street>
+      <City>sample string 23</City>
+      <State>sample string 24</State>
+      <ZipCode>sample string 25</ZipCode>
+      <Country>sample string 26</Country>
+      <InstallationDate>1</InstallationDate>
+      <InstallationBy>sample string 27</InstallationBy>
+      <MeasurementDate>1</MeasurementDate>
+      <MeasurementBy>sample string 28</MeasurementBy>
+      <CutDate>1</CutDate>
+      <CutBy>sample string 29</CutBy>
+      <ProductList>
+        <CloudProduct>
+          <ID>sample string 19</ID>
+          <Type>sample string 20</Type>
+          <Trade>sample string 21</Trade>
+          <Desc>sample string 22</Desc>
+          <Vendor>sample string 23</Vendor>
+          <VendorSku>sample string 24</VendorSku>
+          <Color>sample string 25</Color>
+          <Unit>sample string 26</Unit>
+          <Manufacturer>sample string 27</Manufacturer>
+          <SalesPrice>sample string 28</SalesPrice>
+          <CostPrice>sample string 29</CostPrice>
+          <BoxName>sample string 30</BoxName>
+          <SellByBox>true</SellByBox>
+          <BoxSalesPrice>sample string 31</BoxSalesPrice>
+          <BoxCostPrice>sample string 32</BoxCostPrice>
+          <UnitsPerBox>sample string 33</UnitsPerBox>
+          <Taxable>true</Taxable>
+          <Width>sample string 1</Width>
+          <Length>sample string 2</Length>
+          <Thickness>sample string 3</Thickness>
+          <HoriRepeat>sample string 4</HoriRepeat>
+          <VertRepeat>sample string 5</VertRepeat>
+          <HoriDrop>sample string 6</HoriDrop>
+          <VertDrop>sample string 7</VertDrop>
+          <WidthMargin>sample string 10</WidthMargin>
+          <LengthMargin>sample string 11</LengthMargin>
+          <TileCalcMethod>sample string 12</TileCalcMethod>
+          <TileMinimumWaste>sample string 13</TileMinimumWaste>
+          <TileShape>sample string 14</TileShape>
+          <TileEdgeSize>sample string 15</TileEdgeSize>
+          <WasteAddon>sample string 16</WasteAddon>
+          <IsAddOn>true</IsAddOn>
+          <AddOns>
+            <CloudProductAddOn>
+              <ID>sample string 1</ID>
+              <Method>sample string 2</Method>
+            </CloudProductAddOn>
+            <CloudProductAddOn>
+              <ID>sample string 1</ID>
+              <Method>sample string 2</Method>
+            </CloudProductAddOn>
+          </AddOns>
+          <Datas>
+            <item key="sample string 1" value="sample string 2" />
+            <item key="sample string 3" value="sample string 4" />
+          </Datas>
+          <NoPiecingTogether>true</NoPiecingTogether>
+          <BoxRoundUp>sample string 18</BoxRoundUp>
+        </CloudProduct>
+        <CloudProduct>
+          <ID>sample string 19</ID>
+          <Type>sample string 20</Type>
+          <Trade>sample string 21</Trade>
+          <Desc>sample string 22</Desc>
+          <Vendor>sample string 23</Vendor>
+          <VendorSku>sample string 24</VendorSku>
+          <Color>sample string 25</Color>
+          <Unit>sample string 26</Unit>
+          <Manufacturer>sample string 27</Manufacturer>
+          <SalesPrice>sample string 28</SalesPrice>
+          <CostPrice>sample string 29</CostPrice>
+          <BoxName>sample string 30</BoxName>
+          <SellByBox>true</SellByBox>
+          <BoxSalesPrice>sample string 31</BoxSalesPrice>
+          <BoxCostPrice>sample string 32</BoxCostPrice>
+          <UnitsPerBox>sample string 33</UnitsPerBox>
+          <Taxable>true</Taxable>
+          <Width>sample string 1</Width>
+          <Length>sample string 2</Length>
+          <Thickness>sample string 3</Thickness>
+          <HoriRepeat>sample string 4</HoriRepeat>
+          <VertRepeat>sample string 5</VertRepeat>
+          <HoriDrop>sample string 6</HoriDrop>
+          <VertDrop>sample string 7</VertDrop>
+          <WidthMargin>sample string 10</WidthMargin>
+          <LengthMargin>sample string 11</LengthMargin>
+          <TileCalcMethod>sample string 12</TileCalcMethod>
+          <TileMinimumWaste>sample string 13</TileMinimumWaste>
+          <TileShape>sample string 14</TileShape>
+          <TileEdgeSize>sample string 15</TileEdgeSize>
+          <WasteAddon>sample string 16</WasteAddon>
+          <IsAddOn>true</IsAddOn>
+          <AddOns>
+            <CloudProductAddOn>
+              <ID>sample string 1</ID>
+              <Method>sample string 2</Method>
+            </CloudProductAddOn>
+            <CloudProductAddOn>
+              <ID>sample string 1</ID>
+              <Method>sample string 2</Method>
+            </CloudProductAddOn>
+          </AddOns>
+          <Datas>
+            <item key="sample string 1" value="sample string 2" />
+            <item key="sample string 3" value="sample string 4" />
+          </Datas>
+          <NoPiecingTogether>true</NoPiecingTogether>
+          <BoxRoundUp>sample string 18</BoxRoundUp>
+        </CloudProduct>
+      </ProductList>
+      <TilePatternList>
+        <CloudPattern>
+          <ID>sample string 1</ID>
+          <IsRandomHardwood>true</IsRandomHardwood>
+          <IsHardwood>true</IsHardwood>
+          <Grout>sample string 4</Grout>
+          <GroutWidth>sample string 5</GroutWidth>
+          <Thickness>sample string 6</Thickness>
+          <PatternTiles>
+            <CloudPatternUnit>
+              <ID>sample string 1</ID>
+              <CountInPattern>2</CountInPattern>
+              <Randomizers>
+                <CloudPatternRandomizer>
+                  <ID>sample string 1</ID>
+                  <Percent>sample string 2</Percent>
+                </CloudPatternRandomizer>
+                <CloudPatternRandomizer>
+                  <ID>sample string 1</ID>
+                  <Percent>sample string 2</Percent>
+                </CloudPatternRandomizer>
+              </Randomizers>
+            </CloudPatternUnit>
+            <CloudPatternUnit>
+              <ID>sample string 1</ID>
+              <CountInPattern>2</CountInPattern>
+              <Randomizers>
+                <CloudPatternRandomizer>
+                  <ID>sample string 1</ID>
+                  <Percent>sample string 2</Percent>
+                </CloudPatternRandomizer>
+                <CloudPatternRandomizer>
+                  <ID>sample string 1</ID>
+                  <Percent>sample string 2</Percent>
+                </CloudPatternRandomizer>
+              </Randomizers>
+            </CloudPatternUnit>
+          </PatternTiles>
+        </CloudPattern>
+        <CloudPattern>
+          <ID>sample string 1</ID>
+          <IsRandomHardwood>true</IsRandomHardwood>
+          <IsHardwood>true</IsHardwood>
+          <Grout>sample string 4</Grout>
+          <GroutWidth>sample string 5</GroutWidth>
+          <Thickness>sample string 6</Thickness>
+          <PatternTiles>
+            <CloudPatternUnit>
+              <ID>sample string 1</ID>
+              <CountInPattern>2</CountInPattern>
+              <Randomizers>
+                <CloudPatternRandomizer>
+                  <ID>sample string 1</ID>
+                  <Percent>sample string 2</Percent>
+                </CloudPatternRandomizer>
+                <CloudPatternRandomizer>
+                  <ID>sample string 1</ID>
+                  <Percent>sample string 2</Percent>
+                </CloudPatternRandomizer>
+              </Randomizers>
+            </CloudPatternUnit>
+            <CloudPatternUnit>
+              <ID>sample string 1</ID>
+              <CountInPattern>2</CountInPattern>
+              <Randomizers>
+                <CloudPatternRandomizer>
+                  <ID>sample string 1</ID>
+                  <Percent>sample string 2</Percent>
+                </CloudPatternRandomizer>
+                <CloudPatternRandomizer>
+                  <ID>sample string 1</ID>
+                  <Percent>sample string 2</Percent>
+                </CloudPatternRandomizer>
+              </Randomizers>
+            </CloudPatternUnit>
+          </PatternTiles>
+        </CloudPattern>
+      </TilePatternList>
+    </ProjectInfo>
+    <IsArchived>true</IsArchived>
+    <ApplicationType>sample string 10</ApplicationType>
+    <Mode>sample string 11</Mode>
+    <Tags>
+      <string>sample string 1</string>
+      <string>sample string 2</string>
+    </Tags>
+  </ProjectDTO>
+  <ProjectDTO>
+    <ProjectId>sample string 1</ProjectId>
+    <Name>sample string 2</Name>
+    <Revision>3</Revision>
+    <OwnerM2Id>sample string 4</OwnerM2Id>
+    <CreatorM2Id>sample string 5</CreatorM2Id>
+    <UsedM2Id>sample string 6</UsedM2Id>
+    <LastUpdatedOn>7</LastUpdatedOn>
+    <Size>8</Size>
+    <ProjectInfo>
+      <ProjectId>sample string 1</ProjectId>
+      <Name>sample string 2</Name>
+      <ApplicationType>sample string 3</ApplicationType>
+      <ProjectNote>sample string 4</ProjectNote>
+      <ProjectName>sample string 5</ProjectName>
+      <ProjectStreet>sample string 6</ProjectStreet>
+      <ProjectCity>sample string 7</ProjectCity>
+      <ProjectState>sample string 8</ProjectState>
+      <ProjectZipCode>sample string 9</ProjectZipCode>
+      <ProjectCountry>sample string 10</ProjectCountry>
+      <ProjectEmail>sample string 11</ProjectEmail>
+      <ProjectPhone>sample string 12</ProjectPhone>
+      <ProjectMobile>sample string 13</ProjectMobile>
+      <ProjectFax>sample string 14</ProjectFax>
+      <ProjectMemo>sample string 15</ProjectMemo>
+      <ContactName>sample string 16</ContactName>
+      <Email>sample string 17</Email>
+      <Phone>sample string 18</Phone>
+      <Mobile>sample string 19</Mobile>
+      <Fax>sample string 20</Fax>
+      <Memo>sample string 21</Memo>
+      <Street>sample string 22</Street>
+      <City>sample string 23</City>
+      <State>sample string 24</State>
+      <ZipCode>sample string 25</ZipCode>
+      <Country>sample string 26</Country>
+      <InstallationDate>1</InstallationDate>
+      <InstallationBy>sample string 27</InstallationBy>
+      <MeasurementDate>1</MeasurementDate>
+      <MeasurementBy>sample string 28</MeasurementBy>
+      <CutDate>1</CutDate>
+      <CutBy>sample string 29</CutBy>
+      <ProductList>
+        <CloudProduct>
+          <ID>sample string 19</ID>
+          <Type>sample string 20</Type>
+          <Trade>sample string 21</Trade>
+          <Desc>sample string 22</Desc>
+          <Vendor>sample string 23</Vendor>
+          <VendorSku>sample string 24</VendorSku>
+          <Color>sample string 25</Color>
+          <Unit>sample string 26</Unit>
+          <Manufacturer>sample string 27</Manufacturer>
+          <SalesPrice>sample string 28</SalesPrice>
+          <CostPrice>sample string 29</CostPrice>
+          <BoxName>sample string 30</BoxName>
+          <SellByBox>true</SellByBox>
+          <BoxSalesPrice>sample string 31</BoxSalesPrice>
+          <BoxCostPrice>sample string 32</BoxCostPrice>
+          <UnitsPerBox>sample string 33</UnitsPerBox>
+          <Taxable>true</Taxable>
+          <Width>sample string 1</Width>
+          <Length>sample string 2</Length>
+          <Thickness>sample string 3</Thickness>
+          <HoriRepeat>sample string 4</HoriRepeat>
+          <VertRepeat>sample string 5</VertRepeat>
+          <HoriDrop>sample string 6</HoriDrop>
+          <VertDrop>sample string 7</VertDrop>
+          <WidthMargin>sample string 10</WidthMargin>
+          <LengthMargin>sample string 11</LengthMargin>
+          <TileCalcMethod>sample string 12</TileCalcMethod>
+          <TileMinimumWaste>sample string 13</TileMinimumWaste>
+          <TileShape>sample string 14</TileShape>
+          <TileEdgeSize>sample string 15</TileEdgeSize>
+          <WasteAddon>sample string 16</WasteAddon>
+          <IsAddOn>true</IsAddOn>
+          <AddOns>
+            <CloudProductAddOn>
+              <ID>sample string 1</ID>
+              <Method>sample string 2</Method>
+            </CloudProductAddOn>
+            <CloudProductAddOn>
+              <ID>sample string 1</ID>
+              <Method>sample string 2</Method>
+            </CloudProductAddOn>
+          </AddOns>
+          <Datas>
+            <item key="sample string 1" value="sample string 2" />
+            <item key="sample string 3" value="sample string 4" />
+          </Datas>
+          <NoPiecingTogether>true</NoPiecingTogether>
+          <BoxRoundUp>sample string 18</BoxRoundUp>
+        </CloudProduct>
+        <CloudProduct>
+          <ID>sample string 19</ID>
+          <Type>sample string 20</Type>
+          <Trade>sample string 21</Trade>
+          <Desc>sample string 22</Desc>
+          <Vendor>sample string 23</Vendor>
+          <VendorSku>sample string 24</VendorSku>
+          <Color>sample string 25</Color>
+          <Unit>sample string 26</Unit>
+          <Manufacturer>sample string 27</Manufacturer>
+          <SalesPrice>sample string 28</SalesPrice>
+          <CostPrice>sample string 29</CostPrice>
+          <BoxName>sample string 30</BoxName>
+          <SellByBox>true</SellByBox>
+          <BoxSalesPrice>sample string 31</BoxSalesPrice>
+          <BoxCostPrice>sample string 32</BoxCostPrice>
+          <UnitsPerBox>sample string 33</UnitsPerBox>
+          <Taxable>true</Taxable>
+          <Width>sample string 1</Width>
+          <Length>sample string 2</Length>
+          <Thickness>sample string 3</Thickness>
+          <HoriRepeat>sample string 4</HoriRepeat>
+          <VertRepeat>sample string 5</VertRepeat>
+          <HoriDrop>sample string 6</HoriDrop>
+          <VertDrop>sample string 7</VertDrop>
+          <WidthMargin>sample string 10</WidthMargin>
+          <LengthMargin>sample string 11</LengthMargin>
+          <TileCalcMethod>sample string 12</TileCalcMethod>
+          <TileMinimumWaste>sample string 13</TileMinimumWaste>
+          <TileShape>sample string 14</TileShape>
+          <TileEdgeSize>sample string 15</TileEdgeSize>
+          <WasteAddon>sample string 16</WasteAddon>
+          <IsAddOn>true</IsAddOn>
+          <AddOns>
+            <CloudProductAddOn>
+              <ID>sample string 1</ID>
+              <Method>sample string 2</Method>
+            </CloudProductAddOn>
+            <CloudProductAddOn>
+              <ID>sample string 1</ID>
+              <Method>sample string 2</Method>
+            </CloudProductAddOn>
+          </AddOns>
+          <Datas>
+            <item key="sample string 1" value="sample string 2" />
+            <item key="sample string 3" value="sample string 4" />
+          </Datas>
+          <NoPiecingTogether>true</NoPiecingTogether>
+          <BoxRoundUp>sample string 18</BoxRoundUp>
+        </CloudProduct>
+      </ProductList>
+      <TilePatternList>
+        <CloudPattern>
+          <ID>sample string 1</ID>
+          <IsRandomHardwood>true</IsRandomHardwood>
+          <IsHardwood>true</IsHardwood>
+          <Grout>sample string 4</Grout>
+          <GroutWidth>sample string 5</GroutWidth>
+          <Thickness>sample string 6</Thickness>
+          <PatternTiles>
+            <CloudPatternUnit>
+              <ID>sample string 1</ID>
+              <CountInPattern>2</CountInPattern>
+              <Randomizers>
+                <CloudPatternRandomizer>
+                  <ID>sample string 1</ID>
+                  <Percent>sample string 2</Percent>
+                </CloudPatternRandomizer>
+                <CloudPatternRandomizer>
+                  <ID>sample string 1</ID>
+                  <Percent>sample string 2</Percent>
+                </CloudPatternRandomizer>
+              </Randomizers>
+            </CloudPatternUnit>
+            <CloudPatternUnit>
+              <ID>sample string 1</ID>
+              <CountInPattern>2</CountInPattern>
+              <Randomizers>
+                <CloudPatternRandomizer>
+                  <ID>sample string 1</ID>
+                  <Percent>sample string 2</Percent>
+                </CloudPatternRandomizer>
+                <CloudPatternRandomizer>
+                  <ID>sample string 1</ID>
+                  <Percent>sample string 2</Percent>
+                </CloudPatternRandomizer>
+              </Randomizers>
+            </CloudPatternUnit>
+          </PatternTiles>
+        </CloudPattern>
+        <CloudPattern>
+          <ID>sample string 1</ID>
+          <IsRandomHardwood>true</IsRandomHardwood>
+          <IsHardwood>true</IsHardwood>
+          <Grout>sample string 4</Grout>
+          <GroutWidth>sample string 5</GroutWidth>
+          <Thickness>sample string 6</Thickness>
+          <PatternTiles>
+            <CloudPatternUnit>
+              <ID>sample string 1</ID>
+              <CountInPattern>2</CountInPattern>
+              <Randomizers>
+                <CloudPatternRandomizer>
+                  <ID>sample string 1</ID>
+                  <Percent>sample string 2</Percent>
+                </CloudPatternRandomizer>
+                <CloudPatternRandomizer>
+                  <ID>sample string 1</ID>
+                  <Percent>sample string 2</Percent>
+                </CloudPatternRandomizer>
+              </Randomizers>
+            </CloudPatternUnit>
+            <CloudPatternUnit>
+              <ID>sample string 1</ID>
+              <CountInPattern>2</CountInPattern>
+              <Randomizers>
+                <CloudPatternRandomizer>
+                  <ID>sample string 1</ID>
+                  <Percent>sample string 2</Percent>
+                </CloudPatternRandomizer>
+                <CloudPatternRandomizer>
+                  <ID>sample string 1</ID>
+                  <Percent>sample string 2</Percent>
+                </CloudPatternRandomizer>
+              </Randomizers>
+            </CloudPatternUnit>
+          </PatternTiles>
+        </CloudPattern>
+      </TilePatternList>
+    </ProjectInfo>
+    <IsArchived>true</IsArchived>
+    <ApplicationType>sample string 10</ApplicationType>
+    <Mode>sample string 11</Mode>
+    <Tags>
+      <string>sample string 1</string>
+      <string>sample string 2</string>
+    </Tags>
+  </ProjectDTO>
+</ArrayOfProjectDTO>

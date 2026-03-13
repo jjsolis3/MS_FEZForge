@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,maximum-scale=1" />
+    <meta name="root" content="/" />
+    <title></title>
+    
+
+<link href="/Content/Styles/jquery-ui.css" rel="stylesheet" />
+<link href="/Areas/HelpPage/TestClient.css" rel="stylesheet" />
+<script src="/Content/Scripts/jquery-2.1.1.js"></script>
+<script src="/Content/Scripts/jquery-ui-1.10.4.custom.js"></script>
+<script src="/Areas/HelpPage/jquery.base64.min.js"></script>
+<script src="/Areas/HelpPage/knockout-3.2.0.js"></script>
+<script src="/Areas/HelpPage/WebApiTestClient.js" defer="defer"></script>
+
+</head>
+<body>
+    
+
+<link type="text/css" href="/Areas/HelpPage/HelpPage.css" rel="stylesheet" />
+<div id="body" class="help-page">
+    <section class="featured">
+        <div class="content-wrapper">
+            <p>
+                <a href="/Help">Help Page Home</a>
+            </p>
+        </div>
+    </section>
+    <section class="content-wrapper main-content clear-fix">
+        
+<h1>DELETE api/productdbs/{id}/products</h1>
+<div>
+        <p>Delete some products in product catalog</p>
+
+    <h2>Request Information</h2>
+
+    <h3>URI Parameters</h3>
+        <table class="help-page-table">
+        <thead>
+            <tr><th>Name</th><th>Description</th><th>Type</th><th>Additional information</th></tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td class="parameter-name">id</td>
+                    <td class="parameter-documentation">
+                        <p>product catalog id</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                                <p>Required</p>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+
+
+
+    <h3>Body Parameters</h3>
+
+    <p>deleted product datas</p>
+
+<a href="/Help/ResourceModel?modelName=Fep.Cloud.M2CoreExtension.PdbDeleteDatas">Fep.Cloud.M2CoreExtension.PdbDeleteDatas</a>    <table class="help-page-table">
+        <thead>
+            <tr><th>Name</th><th>Description</th><th>Type</th><th>Additional information</th></tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td class="parameter-name">ProductKeys</td>
+                    <td class="parameter-documentation">
+                        <p>deleted product key values</p>
+                    </td>
+                    <td class="parameter-type">
+                                Collection of string
+
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">MatchKeyField</td>
+                    <td class="parameter-documentation">
+                        <p>Specify the Key for product matching, for example, the ID(key) can be VendorSku</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+
+
+        <h3>Request Formats</h3>
+
+<div>
+        <h4 class="sample-header">application/json, text/json</h4>
+        <div class="sample-content">
+            <span><b>Sample:</b></span>
+<pre class="wrapped">
+{
+  &quot;ProductKeys&quot;: [
+    &quot;sample string 1&quot;,
+    &quot;sample string 2&quot;
+  ],
+  &quot;MatchKeyField&quot;: &quot;sample string 1&quot;
+}
+</pre>
+        </div>
+        <h4 class="sample-header">application/xml, text/xml</h4>
+        <div class="sample-content">
+            <span><b>Sample:</b></span>
+<pre class="wrapped">
+&lt;PdbDeleteDatas&gt;
+  &lt;ProductKeys&gt;
+    &lt;string&gt;sample string 1&lt;/string&gt;
+    &lt;string&gt;sample string 2&lt;/string&gt;
+  &lt;/ProductKeys&gt;
+  &lt;MatchKeyField&gt;sample string 1&lt;/MatchKeyField&gt;
+&lt;/PdbDeleteDatas&gt;
+</pre>
+        </div>
+</div>
+    <h2>Response Information</h2>
+
+    <h3>Resource Description</h3>
+
+    <p>whether sucess</p>
+
+boolean
+        <h3>Response Formats</h3>
+
+<div>
+        <h4 class="sample-header">application/json, text/json</h4>
+        <div class="sample-content">
+            <span><b>Sample:</b></span>
+<pre class="wrapped">
+true
+</pre>
+        </div>
+        <h4 class="sample-header">application/xml, text/xml</h4>
+        <div class="sample-content">
+            <span><b>Sample:</b></span>
+<pre class="wrapped">
+&lt;boolean&gt;true&lt;/boolean&gt;
+</pre>
+        </div>
+</div>
+</div>
+    </section>
+</div>
+
+<button id="testClientButton">Test API</button>
+<div id="testClientDialog" title="DELETE api/productdbs/{id}/products">
+    <input class="httpMethod" readonly="true" spellcheck="false" data-bind="value: HttpMethod" />
+    <input class="uriPath" spellcheck="false" data-bind="value: UriPath" />
+    <div data-bind="visible: UriParameters.length > 0">
+        <h5 class="ui-widget-header">URI parameters</h5>
+        <div class="panel">
+            <div data-bind="foreach: UriParameters">
+                <div style="height:30px;"> 
+                    <input readonly="true" spellcheck="false" tabindex="100" class="uriParameterLabel" data-bind="value: '{' + name + '}'" />
+                    <span>= </span>
+                    <input spellcheck="false" style="width:450px;" data-bind="value: value, valueUpdate: 'afterkeydown', enable: enabled" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <h5 class="ui-widget-header">
+        Headers (F12->Console input $.base64.encode("your apikey") to get the base64 string)
+    </h5>
+    <div class="panel">
+        <div data-bind="foreach: RequestHeaders">
+            <div style="height:30px;">
+                <input class="uriParameterLabel" readonly="true" spellcheck="false" data-bind='value: name, uniqueName: true' />
+                <span>: </span>
+                <input spellcheck="false" style="width:600px" data-bind='value: value, uniqueName: true' />
+            </div>
+        </div>
+    </div>
+    <h5 class="ui-widget-header">
+        <input type='checkbox' data-bind='checked: ShouldShowBody' />Body
+    </h5>
+    <div data-bind="visible: ShouldShowBody">
+        <div data-bind="visible: SampleTypes.length > 0">
+            <span>Samples: </span>
+            <select data-bind="options: SampleTypes, value: RequestMediaType"></select>
+        </div>
+        <pre><textarea id="req-body" class="sampleArea" spellcheck="false" data-bind="value: RequestBody, valueUpdate: 'afterkeydown'" rows="7"></textarea></pre>
+    </div>
+</div>
+<div id="testClientResponseDialog" title="Response for DELETE api/productdbs/{id}/products" data-bind="with: response">
+    <div class="responseStatusDiv">
+        <h5 class="ui-widget-header">Status</h5>
+        <span data-bind="text: status"></span>
+    </div>
+    <div class="responseHeaderDiv" style="display:none;">
+        <h5 class="ui-widget-header">Headers</h5>
+        <textarea spellcheck="false" data-bind="value: headers" class="sampleArea" readonly='readonly' rows="6"></textarea>
+    </div>
+    <div class="responseBodyDiv">
+        <h5 class="ui-widget-header">Body</h5>
+        <textarea spellcheck="false" data-bind="value: content" class="sampleArea" readonly='readonly' rows="10"></textarea>
+                
+        
+    </div>
+</div>
+<script>
+    testClientModel = {
+        HttpMethod: 'DELETE',
+        UriPathTemplate: "api/productdbs/{id}/products",
+        UriParameters: [
+                    { name: "id", value: "" },
+        ],
+        Samples: {
+            "application/json": "%7b%0d%0a++%22ProductKeys%22%3a+%5b%0d%0a++++%22sample+string+1%22%2c%0d%0a++++%22sample+string+2%22%0d%0a++%5d%2c%0d%0a++%22MatchKeyField%22%3a+%22sample+string+1%22%0d%0a%7d","text/json": "%7b%0d%0a++%22ProductKeys%22%3a+%5b%0d%0a++++%22sample+string+1%22%2c%0d%0a++++%22sample+string+2%22%0d%0a++%5d%2c%0d%0a++%22MatchKeyField%22%3a+%22sample+string+1%22%0d%0a%7d","application/xml": "%3cPdbDeleteDatas%3e%0d%0a++%3cProductKeys%3e%0d%0a++++%3cstring%3esample+string+1%3c%2fstring%3e%0d%0a++++%3cstring%3esample+string+2%3c%2fstring%3e%0d%0a++%3c%2fProductKeys%3e%0d%0a++%3cMatchKeyField%3esample+string+1%3c%2fMatchKeyField%3e%0d%0a%3c%2fPdbDeleteDatas%3e","text/xml": "%3cPdbDeleteDatas%3e%0d%0a++%3cProductKeys%3e%0d%0a++++%3cstring%3esample+string+1%3c%2fstring%3e%0d%0a++++%3cstring%3esample+string+2%3c%2fstring%3e%0d%0a++%3c%2fProductKeys%3e%0d%0a++%3cMatchKeyField%3esample+string+1%3c%2fMatchKeyField%3e%0d%0a%3c%2fPdbDeleteDatas%3e"
+        },
+        BaseAddress: '/'
+    };
+</script>
+
+
+</body>
+</html>

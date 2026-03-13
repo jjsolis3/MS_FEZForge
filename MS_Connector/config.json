@@ -1,0 +1,18 @@
+{
+  "api": {
+    "api_key": "13a86750ca5e485aa555217feee6e434",
+    "x_application": null,
+    "secret_key": null,
+    "m2_id": "msphx.user2@seamlessflooring.com"
+  },
+  "local": {
+    "fez_file_path": "C:\\Users\\jsoli\\VS Code\\Python\\MS_Connector\\Output\\FEZ_File"
+  },
+  "output": {
+    "images_dir": "./MS_Connector/Output/Images",
+    "reports_dir": "./MS_Connector/Output/reports",
+    "json_export": "./MS_Connector/Output/project_data.json",
+    "api_output": "./MS_Connector/Output/APi_Output",
+    "project_list": "./MS_Connector/Output/Project_List"
+  }
+}

@@ -1,0 +1,239 @@
+Help Page Home
+
+Sample Code
+php
+Sample:
+// Constants
+define('YOUR_API_KEY', 'your-api-key-here');
+define('THIRD_PARTY_APPLICATION_NAME', 'MyApp');
+define('THIRD_PARTY_SECRET_KEY', 'your-secret-key-here');
+
+// URL parameter from Notification API (or copy from your project list page)
+$projectID = $_GET['projectId'];
+
+$timestamp = strval(time());
+
+// GetHmacSha256Signature
+function getHmacSha256Signature($secretKey, $content) {
+    return base64_encode(hash_hmac('sha256', $content, $secretKey, true));
+}
+
+// Authorization Header
+$auth = YOUR_API_KEY;
+
+// Headers
+$headers = [
+    "Content-Type: application/json",
+    "Accept: application/json",
+    "Authorization: Basic " . base64_encode($auth),
+    "X-Application: " . THIRD_PARTY_APPLICATION_NAME,
+    "X-Timestamp: " . $timestamp,
+    "X-Signature: " . getHmacSha256Signature(THIRD_PARTY_SECRET_KEY, $timestamp)
+];
+
+// Stream Context Options
+$options = array(
+    'http' => array(
+        'method' => 'GET',
+        'header' => implode("\r\n", $headers)
+    )
+);
+
+$url = 'https://cloud.measuresquare.com/api/projects/' . urlencode($projectID);
+
+$context = stream_context_create($options);
+$result = file_get_contents($url, false, $context);
+
+if ($result === FALSE) {
+    $error = error_get_last();
+    die('HTTP failed: ' . $error['message']);
+}
+
+list($version, $status_code, $status_message) = explode(' ', $http_response_header[0], 3);
+
+if ((int)$status_code !== 200) {
+    die("HTTP error status code: $status_code");
+}
+
+$response = json_decode($result);
+
+//do your other work nex 
+                
+Java
+Sample:
+    private static final String YOUR_API_KEY = "your-api-key-here";
+    private static final String THIRD_PARTY_APPLICATION_NAME = "MyApp";
+    private static final String THIRD_PARTY_SECRET_KEY = "your-secret-key-here";
+
+    public static  T executeGetRequest(String projectIdParameter, Class responseType) {
+        String urlString = "https://cloud.measuresquare.com/api/projects/" + projectIdParameter;
+        String responseBody = "";
+
+        try {
+            URL url = new URL(urlString);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+            connection.setRequestMethod("GET");
+            connection.setRequestProperty("Accept", "application/json");
+
+            // Basic Auth: Base64 encode the API key
+            String authHeader = Base64.getEncoder().encodeToString((YOUR_API_KEY + ":").getBytes(StandardCharsets.UTF_8));
+            connection.setRequestProperty("Authorization", "Basic " + authHeader);
+
+            // X-Headers
+            connection.setRequestProperty("X-Application", THIRD_PARTY_APPLICATION_NAME);
+            String timestamp = String.valueOf(Instant.now().getEpochSecond());
+            connection.setRequestProperty("X-Timestamp", timestamp);
+            String signature = getHmacSha256Signature(THIRD_PARTY_SECRET_KEY, timestamp);
+            connection.setRequestProperty("X-Signature", signature);
+
+            int responseCode = connection.getResponseCode();
+            if (responseCode != HttpURLConnection.HTTP_OK) {
+                System.err.println("HTTP Error Code: " + responseCode);
+                return null;
+            }
+
+            BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            String response = in.lines().collect(Collectors.joining());
+            in.close();
+            System.out.println(response);
+
+            //return data, or do what you want to do
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    private static String getHmacSha256Signature(String secretKey, String content) throws Exception {
+        String algorithm = "HmacSHA256";
+        Mac mac = Mac.getInstance(algorithm);
+        SecretKeySpec keySpec = new SecretKeySpec(secretKey.getBytes(StandardCharsets.UTF_8), algorithm);
+        mac.init(keySpec);
+        byte[] hash = mac.doFinal(content.getBytes(StandardCharsets.UTF_8));
+        return Base64.getEncoder().encodeToString(hash);
+    }
+C#
+Sample:
+        string url = "https://cloud,measuresquare.com/api/projects/" + ProjectIdParameter;
+        using (HttpClient client = new HttpClient())
+        {
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+            // Basic Auth: Base64 encode the API key
+            string parameter = Convert.ToBase64String(Encoding.UTF8.GetBytes(string.Format("{0}", YOURAPIKEY)));
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", parameter);
+
+            // X-Headers
+            client.DefaultRequestHeaders.Add("X-Application", THIRD_PARTY_APPLICATION_NAME);
+            string timestamp = DateTimeOffset.UtcNow.ToUnixTimeSeconds().ToString();
+            client.DefaultRequestHeaders.Add("X-Timestamp", timestamp);
+            client.DefaultRequestHeaders.Add("X-Signature", GetHMACSHA256Signature(THIRD_PARTY_SECRET_KEY, timestamp));
+
+            using (HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, url))
+            {
+                using (HttpResponseMessage response = await client.SendAsync(request))
+                {
+                    if (response.StatusCode != HttpStatusCode.OK)
+                        return default(T);
+                    //read the data and convert to your data type
+                    T result = await response.Content.ReadAsAsync();
+                    // return data,or do what you want to do
+                }
+
+            }
+        }
+
+        public string GetHMACSHA256Signature(string secretKey, string content)
+        {
+            byte[] key = Encoding.UTF8.GetBytes(secretKey);
+            byte[] data = Encoding.UTF8.GetBytes(content);
+            using (HMACSHA256 hmac = new HMACSHA256(key))
+            {
+                byte[] hash = hmac.ComputeHash(data);
+                return Convert.ToBase64String(hash);
+            }
+        }
+                
+CURL
+Sample:
+#define THIRD_PARTY_APPLICATION_NAME "MyApp"
+#define THIRD_PARTY_SECRET_KEY "your-secret-key-here"
+
+BOOL B2BWebServices::ExecuteM2URLGETSSL(CString url, CString apiKey)
+{
+    char *versionStr = curl_version();
+    struct curl_slist *list = NULL;
+    CURL* curl = curl_easy_init();
+    if(curl)
+    {
+        sprintf(gBuf, "%s", url);
+        // Tell libcurl the URL
+        curl_easy_setopt(curl,CURLOPT_URL, gBuf);
+        // Tell libcurl what function to call when it has data
+        curl_easy_setopt(curl,CURLOPT_WRITEFUNCTION,Handle_dataXML);
+        // Setup Header for M2 call
+        list = curl_slist_append(list, "Content-Type: application/xml");
+        list = curl_slist_append(list, "Accept: application/xml");
+
+         // X-Application
+         std::string xAppHeader = "X-Application: " + std::string(THIRD_PARTY_APPLICATION_NAME);
+         list = curl_slist_append(list, xAppHeader.c_str());
+
+         // X-Timestamp
+         time_t timestamp = time(nullptr);
+         std::string xTimestampHeader = "X-Timestamp: " + std::to_string(timestamp);
+         list = curl_slist_append(list, xTimestampHeader.c_str());
+
+        // X-Signature -  HMAC-SHA256 Signature
+        std::string signature = GenerateHMACSHA256Sign(THIRD_PARTY_SECRET_KEY, std::to_string(timestamp));
+        std::string xSignatureHeader = "X-Signature: " + signature;
+        list = curl_slist_append(list, xSignatureHeader.c_str());
+
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, list);
+        // User Name is API Key
+        CURLcode retVal = curl_easy_setopt(curl, CURLOPT_USERNAME, apiKey); 
+        // Verify Host
+        CURLcode retVal2 = curl_easy_setopt(curl,CURLOPT_SSL_VERIFYHOST,0L);
+        // Do it!
+        CURLcode res = curl_easy_perform(curl);
+        //get the http codes
+        long http_code = 0;
+        curl_easy_getinfo (curl, CURLINFO_RESPONSE_CODE, &http_code);
+        // if (http_code == 200 && res != CURLE_ABORTED_BY_CALLBACK)
+        curl_easy_cleanup(curl);
+    }
+    else
+        return FALSE;
+    return TRUE;
+}
+
+std::string Base64Encode(const unsigned char* data, size_t len) {
+    BIO* b64 = BIO_new(BIO_f_base64());
+    BIO* bio = BIO_new(BIO_s_mem());
+    bio = BIO_push(b64, bio);
+    BIO_write(bio, data, len);
+    BIO_flush(bio);
+    BUF_MEM* bptr;
+    BIO_get_mem_ptr(bio, &bptr);
+    std::string result(bptr->data, bptr->length);
+    BIO_free_all(bio);
+    return result;
+}
+
+std::string GenerateHMACSHA256Sign(const std::string& key, const std::string& data)
+{
+    unsigned char digest[EVP_MAX_MD_SIZE];
+    unsigned int digest_len;
+
+    HMAC(EVP_sha256(),
+         key.c_str(), key.length(),
+         reinterpret_cast(data.c_str()), data.length(),
+         digest, &digest_len);
+
+    return Base64Encode(digest, digest_len);
+}
+
+                

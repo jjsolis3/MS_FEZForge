@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,maximum-scale=1" />
+    <meta name="root" content="/" />
+    <title></title>
+    
+
+<link href="/Content/Styles/jquery-ui.css" rel="stylesheet" />
+<link href="/Areas/HelpPage/TestClient.css" rel="stylesheet" />
+<script src="/Content/Scripts/jquery-2.1.1.js"></script>
+<script src="/Content/Scripts/jquery-ui-1.10.4.custom.js"></script>
+<script src="/Areas/HelpPage/jquery.base64.min.js"></script>
+<script src="/Areas/HelpPage/knockout-3.2.0.js"></script>
+<script src="/Areas/HelpPage/WebApiTestClient.js" defer="defer"></script>
+
+</head>
+<body>
+    
+
+<link type="text/css" href="/Areas/HelpPage/HelpPage.css" rel="stylesheet" />
+<div id="body" class="help-page">
+    <section class="featured">
+        <div class="content-wrapper">
+            <p>
+                <a href="/Help">Help Page Home</a>
+            </p>
+        </div>
+    </section>
+    <section class="content-wrapper main-content clear-fix">
+        
+<h1>GET api/productdbs/{id}/products</h1>
+<div>
+        <p>Get products from product catalog</p>
+
+    <h2>Request Information</h2>
+
+    <h3>URI Parameters</h3>
+        <table class="help-page-table">
+        <thead>
+            <tr><th>Name</th><th>Description</th><th>Type</th><th>Additional information</th></tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td class="parameter-name">id</td>
+                    <td class="parameter-documentation">
+                        <p>product catalog id</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                                <p>Required</p>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+
+
+
+    <h3>Body Parameters</h3>
+
+    <p></p>
+
+        <p>None.</p>
+
+
+    <h2>Response Information</h2>
+
+    <h3>Resource Description</h3>
+
+    <p>products</p>
+
+        Collection of <a href="/Help/ResourceModel?modelName=Fep.Cloud.M2CoreExtension.CloudFullProduct">Fep.Cloud.M2CoreExtension.CloudFullProduct</a>
+    <table class="help-page-table">
+        <thead>
+            <tr><th>Name</th><th>Description</th><th>Type</th><th>Additional information</th></tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td class="parameter-name">Images</td>
+                    <td class="parameter-documentation">
+                        <p>Images</p>
+                    </td>
+                    <td class="parameter-type">
+                                Collection of string
+
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">Width</td>
+                    <td class="parameter-documentation">
+                        <p>Width</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">Length</td>
+                    <td class="parameter-documentation">
+                        <p>Length</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">Thickness</td>
+                    <td class="parameter-documentation">
+                        <p>Thickness</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">HoriRepeat</td>
+                    <td class="parameter-documentation">
+                        <p>Horizontal Repeat</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">VertRepeat</td>
+                    <td class="parameter-documentation">
+                        <p>Vertical Repeat</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">HoriDrop</td>
+                    <td class="parameter-documentation">
+                        <p>Horizontal Drop</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">VertDrop</td>
+                    <td class="parameter-documentation">
+                        <p>Vertical Drop</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">EstimatingWidth</td>
+                    <td class="parameter-documentation">
+                        <p>[Obsolete] Estimating Width</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">EstimatingLength</td>
+                    <td class="parameter-documentation">
+                        <p>[Obsolete] Estimating Length</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">WidthMargin</td>
+                    <td class="parameter-documentation">
+                        <p>Width Margin</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">LengthMargin</td>
+                    <td class="parameter-documentation">
+                        <p>Length Margin</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">TileCalcMethod</td>
+                    <td class="parameter-documentation">
+                        <p>Tile Calculate Method<br>            Available for  Tile/CarpetTile/VinylTile Product<br>            Enum { WasteAddon, HalfReuse, CutAndFit, NoReuse }<br>            Default value is WasteAddon if TileCalcMethod string is empty or no match the enum</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">TileMinimumWaste</td>
+                    <td class="parameter-documentation">
+                        <p>TileMinimumWaste<br>            Available for  Tile/CarpetTile/VinylTile Product</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">TileShape</td>
+                    <td class="parameter-documentation">
+                        <p>TileShape<br>            Available for  Tile/CarpetTile/VinylTile Product<br>            Enum { Rectangle, RegularTriangle, RegularHexagon, RegularDodecagon, Irregular }<br>            Default value is Rectangle if TileShape string is empty or no match the enum</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">TileEdgeSize</td>
+                    <td class="parameter-documentation">
+                        <p>TileEdgeSize<br>            Available for  Tile/CarpetTile/VinylTile Product</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">WasteAddon</td>
+                    <td class="parameter-documentation">
+                        <p>Waste Addon / Additional Percent<br>            Percentage, for example: "10%"</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">IsAddOn</td>
+                    <td class="parameter-documentation">
+                        <p>IsAddOn</p>
+                    </td>
+                    <td class="parameter-type">
+                        boolean
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">AddOns</td>
+                    <td class="parameter-documentation">
+                        <p>Product Add-ons</p>
+                    </td>
+                    <td class="parameter-type">
+                                Collection of <a href="/Help/ResourceModel?modelName=Fep.Cloud.M2CoreExtension.CloudProductAddOn">Fep.Cloud.M2CoreExtension.CloudProductAddOn</a>
+
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">Datas</td>
+                    <td class="parameter-documentation">
+                        <p>Product Additional Datas</p>
+                    </td>
+                    <td class="parameter-type">
+                        Dictionary of string [key]
+and string [value]
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">NoPiecingTogether</td>
+                    <td class="parameter-documentation">
+                        <p>No Piecing Together<br>            Available for Wall Base/Transition/Linear/Trim/Bullnose Product</p>
+                    </td>
+                    <td class="parameter-type">
+                        boolean
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">BoxRoundUp</td>
+                    <td class="parameter-documentation">
+                        <p>Box Round Up<br>            Available for Labor/Freight Product</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">ID</td>
+                    <td class="parameter-documentation">
+                        <p>No./SKU</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">Type</td>
+                    <td class="parameter-documentation">
+                        <p>Type<br>            Enum { Carpet, Vinyl, CarpetTile, VinylTile, Tile, Hardwood, Laminate, AreaUnderlay, WallBase, Transition, Bullnose, Trim, AreaAdhesive, Grout, Count, Labor, Freight, WallPaper, Concrete, Paint, LinearRegular, AreaSurface }<br>            Default value is Carpet if Type string is empty or no match the enum</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">Trade</td>
+                    <td class="parameter-documentation">
+                        <p>Trade</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">Desc</td>
+                    <td class="parameter-documentation">
+                        <p>Desc</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">Vendor</td>
+                    <td class="parameter-documentation">
+                        <p>Vendor</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">VendorSku</td>
+                    <td class="parameter-documentation">
+                        <p>Vendor SKU</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">Color</td>
+                    <td class="parameter-documentation">
+                        <p>Color<br>            Rgb or rgba, for example: AABBCC or FFAABBCC</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">Unit</td>
+                    <td class="parameter-documentation">
+                        <p>Unit <br>            Enum{ SF, SY, LF, EA, Liter, Gal }</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">Manufacturer</td>
+                    <td class="parameter-documentation">
+                        <p>Manufacturer</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">SalesPrice</td>
+                    <td class="parameter-documentation">
+                        <p>Sales Price</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">CostPrice</td>
+                    <td class="parameter-documentation">
+                        <p>Cost Price</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">BoxName</td>
+                    <td class="parameter-documentation">
+                        <p>BoxName<br>            Enum{ Box, Bag, Barrel, Carton, Day, Hour, Piece, Roll, Pail }</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">SellByBox</td>
+                    <td class="parameter-documentation">
+                        <p>Sell By BoxName</p>
+                    </td>
+                    <td class="parameter-type">
+                        boolean
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">BoxSalesPrice</td>
+                    <td class="parameter-documentation">
+                        <p>BoxName Sales Price</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">BoxCostPrice</td>
+                    <td class="parameter-documentation">
+                        <p>BoxName Cost Price</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">UnitsPerBox</td>
+                    <td class="parameter-documentation">
+                        <p>Unit/BoxName</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">Taxable</td>
+                    <td class="parameter-documentation">
+                        <p>Taxable</p>
+                    </td>
+                    <td class="parameter-type">
+                        boolean
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">Path</td>
+                    <td class="parameter-documentation">
+                        <p>Product/Folder Path</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+
+
+        <h3>Response Formats</h3>
+
+<div>
+        <h4 class="sample-header">application/json, text/json</h4>
+        <div class="sample-content">
+            <span><b>Sample:</b></span>
+<pre class="wrapped">
+[
+  {
+    &quot;Path&quot;: &quot;sample string 1&quot;,
+    &quot;Images&quot;: [
+      &quot;sample string 1&quot;,
+      &quot;sample string 2&quot;
+    ],
+    &quot;Width&quot;: &quot;sample string 2&quot;,
+    &quot;Length&quot;: &quot;sample string 3&quot;,
+    &quot;Thickness&quot;: &quot;sample string 4&quot;,
+    &quot;HoriRepeat&quot;: &quot;sample string 5&quot;,
+    &quot;VertRepeat&quot;: &quot;sample string 6&quot;,
+    &quot;HoriDrop&quot;: &quot;sample string 7&quot;,
+    &quot;VertDrop&quot;: &quot;sample string 8&quot;,
+    &quot;EstimatingWidth&quot;: &quot;sample string 9&quot;,
+    &quot;EstimatingLength&quot;: &quot;sample string 10&quot;,
+    &quot;WidthMargin&quot;: &quot;sample string 11&quot;,
+    &quot;LengthMargin&quot;: &quot;sample string 12&quot;,
+    &quot;TileCalcMethod&quot;: &quot;sample string 13&quot;,
+    &quot;TileMinimumWaste&quot;: &quot;sample string 14&quot;,
+    &quot;TileShape&quot;: &quot;sample string 15&quot;,
+    &quot;TileEdgeSize&quot;: &quot;sample string 16&quot;,
+    &quot;WasteAddon&quot;: &quot;sample string 17&quot;,
+    &quot;IsAddOn&quot;: true,
+    &quot;AddOns&quot;: [
+      {
+        &quot;ID&quot;: &quot;sample string 1&quot;,
+        &quot;Method&quot;: &quot;sample string 2&quot;
+      },
+      {
+        &quot;ID&quot;: &quot;sample string 1&quot;,
+        &quot;Method&quot;: &quot;sample string 2&quot;
+      }
+    ],
+    &quot;Datas&quot;: {
+      &quot;sample string 1&quot;: &quot;sample string 2&quot;,
+      &quot;sample string 3&quot;: &quot;sample string 4&quot;
+    },
+    &quot;NoPiecingTogether&quot;: true,
+    &quot;BoxRoundUp&quot;: &quot;sample string 19&quot;,
+    &quot;ID&quot;: &quot;sample string 20&quot;,
+    &quot;Type&quot;: &quot;sample string 21&quot;,
+    &quot;Trade&quot;: &quot;sample string 22&quot;,
+    &quot;Desc&quot;: &quot;sample string 23&quot;,
+    &quot;Vendor&quot;: &quot;sample string 24&quot;,
+    &quot;VendorSku&quot;: &quot;sample string 25&quot;,
+    &quot;Color&quot;: &quot;sample string 26&quot;,
+    &quot;Unit&quot;: &quot;sample string 27&quot;,
+    &quot;Manufacturer&quot;: &quot;sample string 28&quot;,
+    &quot;SalesPrice&quot;: &quot;sample string 29&quot;,
+    &quot;CostPrice&quot;: &quot;sample string 30&quot;,
+    &quot;BoxName&quot;: &quot;sample string 31&quot;,
+    &quot;SellByBox&quot;: true,
+    &quot;BoxSalesPrice&quot;: &quot;sample string 32&quot;,
+    &quot;BoxCostPrice&quot;: &quot;sample string 33&quot;,
+    &quot;UnitsPerBox&quot;: &quot;sample string 34&quot;,
+    &quot;Taxable&quot;: true
+  },
+  {
+    &quot;Path&quot;: &quot;sample string 1&quot;,
+    &quot;Images&quot;: [
+      &quot;sample string 1&quot;,
+      &quot;sample string 2&quot;
+    ],
+    &quot;Width&quot;: &quot;sample string 2&quot;,
+    &quot;Length&quot;: &quot;sample string 3&quot;,
+    &quot;Thickness&quot;: &quot;sample string 4&quot;,
+    &quot;HoriRepeat&quot;: &quot;sample string 5&quot;,
+    &quot;VertRepeat&quot;: &quot;sample string 6&quot;,
+    &quot;HoriDrop&quot;: &quot;sample string 7&quot;,
+    &quot;VertDrop&quot;: &quot;sample string 8&quot;,
+    &quot;EstimatingWidth&quot;: &quot;sample string 9&quot;,
+    &quot;EstimatingLength&quot;: &quot;sample string 10&quot;,
+    &quot;WidthMargin&quot;: &quot;sample string 11&quot;,
+    &quot;LengthMargin&quot;: &quot;sample string 12&quot;,
+    &quot;TileCalcMethod&quot;: &quot;sample string 13&quot;,
+    &quot;TileMinimumWaste&quot;: &quot;sample string 14&quot;,
+    &quot;TileShape&quot;: &quot;sample string 15&quot;,
+    &quot;TileEdgeSize&quot;: &quot;sample string 16&quot;,
+    &quot;WasteAddon&quot;: &quot;sample string 17&quot;,
+    &quot;IsAddOn&quot;: true,
+    &quot;AddOns&quot;: [
+      {
+        &quot;ID&quot;: &quot;sample string 1&quot;,
+        &quot;Method&quot;: &quot;sample string 2&quot;
+      },
+      {
+        &quot;ID&quot;: &quot;sample string 1&quot;,
+        &quot;Method&quot;: &quot;sample string 2&quot;
+      }
+    ],
+    &quot;Datas&quot;: {
+      &quot;sample string 1&quot;: &quot;sample string 2&quot;,
+      &quot;sample string 3&quot;: &quot;sample string 4&quot;
+    },
+    &quot;NoPiecingTogether&quot;: true,
+    &quot;BoxRoundUp&quot;: &quot;sample string 19&quot;,
+    &quot;ID&quot;: &quot;sample string 20&quot;,
+    &quot;Type&quot;: &quot;sample string 21&quot;,
+    &quot;Trade&quot;: &quot;sample string 22&quot;,
+    &quot;Desc&quot;: &quot;sample string 23&quot;,
+    &quot;Vendor&quot;: &quot;sample string 24&quot;,
+    &quot;VendorSku&quot;: &quot;sample string 25&quot;,
+    &quot;Color&quot;: &quot;sample string 26&quot;,
+    &quot;Unit&quot;: &quot;sample string 27&quot;,
+    &quot;Manufacturer&quot;: &quot;sample string 28&quot;,
+    &quot;SalesPrice&quot;: &quot;sample string 29&quot;,
+    &quot;CostPrice&quot;: &quot;sample string 30&quot;,
+    &quot;BoxName&quot;: &quot;sample string 31&quot;,
+    &quot;SellByBox&quot;: true,
+    &quot;BoxSalesPrice&quot;: &quot;sample string 32&quot;,
+    &quot;BoxCostPrice&quot;: &quot;sample string 33&quot;,
+    &quot;UnitsPerBox&quot;: &quot;sample string 34&quot;,
+    &quot;Taxable&quot;: true
+  }
+]
+</pre>
+        </div>
+        <h4 class="sample-header">application/xml, text/xml</h4>
+        <div class="sample-content">
+            <span><b>Sample:</b></span>
+<pre class="wrapped">
+&lt;ArrayOfCloudFullProduct&gt;
+  &lt;CloudFullProduct&gt;
+    &lt;ID&gt;sample string 20&lt;/ID&gt;
+    &lt;Type&gt;sample string 21&lt;/Type&gt;
+    &lt;Trade&gt;sample string 22&lt;/Trade&gt;
+    &lt;Desc&gt;sample string 23&lt;/Desc&gt;
+    &lt;Vendor&gt;sample string 24&lt;/Vendor&gt;
+    &lt;VendorSku&gt;sample string 25&lt;/VendorSku&gt;
+    &lt;Color&gt;sample string 26&lt;/Color&gt;
+    &lt;Unit&gt;sample string 27&lt;/Unit&gt;
+    &lt;Manufacturer&gt;sample string 28&lt;/Manufacturer&gt;
+    &lt;SalesPrice&gt;sample string 29&lt;/SalesPrice&gt;
+    &lt;CostPrice&gt;sample string 30&lt;/CostPrice&gt;
+    &lt;BoxName&gt;sample string 31&lt;/BoxName&gt;
+    &lt;SellByBox&gt;true&lt;/SellByBox&gt;
+    &lt;BoxSalesPrice&gt;sample string 32&lt;/BoxSalesPrice&gt;
+    &lt;BoxCostPrice&gt;sample string 33&lt;/BoxCostPrice&gt;
+    &lt;UnitsPerBox&gt;sample string 34&lt;/UnitsPerBox&gt;
+    &lt;Taxable&gt;true&lt;/Taxable&gt;
+    &lt;Width&gt;sample string 2&lt;/Width&gt;
+    &lt;Length&gt;sample string 3&lt;/Length&gt;
+    &lt;Thickness&gt;sample string 4&lt;/Thickness&gt;
+    &lt;HoriRepeat&gt;sample string 5&lt;/HoriRepeat&gt;
+    &lt;VertRepeat&gt;sample string 6&lt;/VertRepeat&gt;
+    &lt;HoriDrop&gt;sample string 7&lt;/HoriDrop&gt;
+    &lt;VertDrop&gt;sample string 8&lt;/VertDrop&gt;
+    &lt;WidthMargin&gt;sample string 11&lt;/WidthMargin&gt;
+    &lt;LengthMargin&gt;sample string 12&lt;/LengthMargin&gt;
+    &lt;TileCalcMethod&gt;sample string 13&lt;/TileCalcMethod&gt;
+    &lt;TileMinimumWaste&gt;sample string 14&lt;/TileMinimumWaste&gt;
+    &lt;TileShape&gt;sample string 15&lt;/TileShape&gt;
+    &lt;TileEdgeSize&gt;sample string 16&lt;/TileEdgeSize&gt;
+    &lt;WasteAddon&gt;sample string 17&lt;/WasteAddon&gt;
+    &lt;IsAddOn&gt;true&lt;/IsAddOn&gt;
+    &lt;AddOns&gt;
+      &lt;CloudProductAddOn&gt;
+        &lt;ID&gt;sample string 1&lt;/ID&gt;
+        &lt;Method&gt;sample string 2&lt;/Method&gt;
+      &lt;/CloudProductAddOn&gt;
+      &lt;CloudProductAddOn&gt;
+        &lt;ID&gt;sample string 1&lt;/ID&gt;
+        &lt;Method&gt;sample string 2&lt;/Method&gt;
+      &lt;/CloudProductAddOn&gt;
+    &lt;/AddOns&gt;
+    &lt;Datas&gt;
+      &lt;item key=&quot;sample string 1&quot; value=&quot;sample string 2&quot; /&gt;
+      &lt;item key=&quot;sample string 3&quot; value=&quot;sample string 4&quot; /&gt;
+    &lt;/Datas&gt;
+    &lt;NoPiecingTogether&gt;true&lt;/NoPiecingTogether&gt;
+    &lt;BoxRoundUp&gt;sample string 19&lt;/BoxRoundUp&gt;
+    &lt;Images&gt;
+      &lt;string&gt;sample string 1&lt;/string&gt;
+      &lt;string&gt;sample string 2&lt;/string&gt;
+    &lt;/Images&gt;
+    &lt;Path&gt;sample string 1&lt;/Path&gt;
+  &lt;/CloudFullProduct&gt;
+  &lt;CloudFullProduct&gt;
+    &lt;ID&gt;sample string 20&lt;/ID&gt;
+    &lt;Type&gt;sample string 21&lt;/Type&gt;
+    &lt;Trade&gt;sample string 22&lt;/Trade&gt;
+    &lt;Desc&gt;sample string 23&lt;/Desc&gt;
+    &lt;Vendor&gt;sample string 24&lt;/Vendor&gt;
+    &lt;VendorSku&gt;sample string 25&lt;/VendorSku&gt;
+    &lt;Color&gt;sample string 26&lt;/Color&gt;
+    &lt;Unit&gt;sample string 27&lt;/Unit&gt;
+    &lt;Manufacturer&gt;sample string 28&lt;/Manufacturer&gt;
+    &lt;SalesPrice&gt;sample string 29&lt;/SalesPrice&gt;
+    &lt;CostPrice&gt;sample string 30&lt;/CostPrice&gt;
+    &lt;BoxName&gt;sample string 31&lt;/BoxName&gt;
+    &lt;SellByBox&gt;true&lt;/SellByBox&gt;
+    &lt;BoxSalesPrice&gt;sample string 32&lt;/BoxSalesPrice&gt;
+    &lt;BoxCostPrice&gt;sample string 33&lt;/BoxCostPrice&gt;
+    &lt;UnitsPerBox&gt;sample string 34&lt;/UnitsPerBox&gt;
+    &lt;Taxable&gt;true&lt;/Taxable&gt;
+    &lt;Width&gt;sample string 2&lt;/Width&gt;
+    &lt;Length&gt;sample string 3&lt;/Length&gt;
+    &lt;Thickness&gt;sample string 4&lt;/Thickness&gt;
+    &lt;HoriRepeat&gt;sample string 5&lt;/HoriRepeat&gt;
+    &lt;VertRepeat&gt;sample string 6&lt;/VertRepeat&gt;
+    &lt;HoriDrop&gt;sample string 7&lt;/HoriDrop&gt;
+    &lt;VertDrop&gt;sample string 8&lt;/VertDrop&gt;
+    &lt;WidthMargin&gt;sample string 11&lt;/WidthMargin&gt;
+    &lt;LengthMargin&gt;sample string 12&lt;/LengthMargin&gt;
+    &lt;TileCalcMethod&gt;sample string 13&lt;/TileCalcMethod&gt;
+    &lt;TileMinimumWaste&gt;sample string 14&lt;/TileMinimumWaste&gt;
+    &lt;TileShape&gt;sample string 15&lt;/TileShape&gt;
+    &lt;TileEdgeSize&gt;sample string 16&lt;/TileEdgeSize&gt;
+    &lt;WasteAddon&gt;sample string 17&lt;/WasteAddon&gt;
+    &lt;IsAddOn&gt;true&lt;/IsAddOn&gt;
+    &lt;AddOns&gt;
+      &lt;CloudProductAddOn&gt;
+        &lt;ID&gt;sample string 1&lt;/ID&gt;
+        &lt;Method&gt;sample string 2&lt;/Method&gt;
+      &lt;/CloudProductAddOn&gt;
+      &lt;CloudProductAddOn&gt;
+        &lt;ID&gt;sample string 1&lt;/ID&gt;
+        &lt;Method&gt;sample string 2&lt;/Method&gt;
+      &lt;/CloudProductAddOn&gt;
+    &lt;/AddOns&gt;
+    &lt;Datas&gt;
+      &lt;item key=&quot;sample string 1&quot; value=&quot;sample string 2&quot; /&gt;
+      &lt;item key=&quot;sample string 3&quot; value=&quot;sample string 4&quot; /&gt;
+    &lt;/Datas&gt;
+    &lt;NoPiecingTogether&gt;true&lt;/NoPiecingTogether&gt;
+    &lt;BoxRoundUp&gt;sample string 19&lt;/BoxRoundUp&gt;
+    &lt;Images&gt;
+      &lt;string&gt;sample string 1&lt;/string&gt;
+      &lt;string&gt;sample string 2&lt;/string&gt;
+    &lt;/Images&gt;
+    &lt;Path&gt;sample string 1&lt;/Path&gt;
+  &lt;/CloudFullProduct&gt;
+&lt;/ArrayOfCloudFullProduct&gt;
+</pre>
+        </div>
+</div>
+</div>
+    </section>
+</div>
+
+<button id="testClientButton">Test API</button>
+<div id="testClientDialog" title="GET api/productdbs/{id}/products">
+    <input class="httpMethod" readonly="true" spellcheck="false" data-bind="value: HttpMethod" />
+    <input class="uriPath" spellcheck="false" data-bind="value: UriPath" />
+    <div data-bind="visible: UriParameters.length > 0">
+        <h5 class="ui-widget-header">URI parameters</h5>
+        <div class="panel">
+            <div data-bind="foreach: UriParameters">
+                <div style="height:30px;"> 
+                    <input readonly="true" spellcheck="false" tabindex="100" class="uriParameterLabel" data-bind="value: '{' + name + '}'" />
+                    <span>= </span>
+                    <input spellcheck="false" style="width:450px;" data-bind="value: value, valueUpdate: 'afterkeydown', enable: enabled" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <h5 class="ui-widget-header">
+        Headers (F12->Console input $.base64.encode("your apikey") to get the base64 string)
+    </h5>
+    <div class="panel">
+        <div data-bind="foreach: RequestHeaders">
+            <div style="height:30px;">
+                <input class="uriParameterLabel" readonly="true" spellcheck="false" data-bind='value: name, uniqueName: true' />
+                <span>: </span>
+                <input spellcheck="false" style="width:600px" data-bind='value: value, uniqueName: true' />
+            </div>
+        </div>
+    </div>
+    <h5 class="ui-widget-header">
+        <input type='checkbox' data-bind='checked: ShouldShowBody' />Body
+    </h5>
+    <div data-bind="visible: ShouldShowBody">
+        <div data-bind="visible: SampleTypes.length > 0">
+            <span>Samples: </span>
+            <select data-bind="options: SampleTypes, value: RequestMediaType"></select>
+        </div>
+        <pre><textarea id="req-body" class="sampleArea" spellcheck="false" data-bind="value: RequestBody, valueUpdate: 'afterkeydown'" rows="7"></textarea></pre>
+    </div>
+</div>
+<div id="testClientResponseDialog" title="Response for GET api/productdbs/{id}/products" data-bind="with: response">
+    <div class="responseStatusDiv">
+        <h5 class="ui-widget-header">Status</h5>
+        <span data-bind="text: status"></span>
+    </div>
+    <div class="responseHeaderDiv" style="display:none;">
+        <h5 class="ui-widget-header">Headers</h5>
+        <textarea spellcheck="false" data-bind="value: headers" class="sampleArea" readonly='readonly' rows="6"></textarea>
+    </div>
+    <div class="responseBodyDiv">
+        <h5 class="ui-widget-header">Body</h5>
+        <textarea spellcheck="false" data-bind="value: content" class="sampleArea" readonly='readonly' rows="10"></textarea>
+                
+        
+    </div>
+</div>
+<script>
+    testClientModel = {
+        HttpMethod: 'GET',
+        UriPathTemplate: "api/productdbs/{id}/products",
+        UriParameters: [
+                    { name: "id", value: "" },
+        ],
+        Samples: {
+            
+        },
+        BaseAddress: '/'
+    };
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,1578 @@
+GET api/projects/{projectId}/estimation?withCutImage={withCutImage}
+Get project estimation
+
+Request Information
+URI Parameters
+Name	Description	Type	Additional information
+projectId		string	
+Required
+
+withCutImage		boolean	
+Default value is False
+
+Body Parameters
+None.
+
+Response Information
+Resource Description
+the estimation.
+
+M2Cloud.Services.EstimationDTO
+Name	Description	Type	Additional information
+Mode	
+Mode
+Enum { ByProject, ByLayer, ByPhase }
+
+string	
+None.
+
+EstimationModes	
+EstimateModes
+If Mode is ByProject, will contains only one EstimationModeDTO
+
+Collection of Fep.Cloud.M2CoreExtension.CloudEstimationArea	
+None.
+
+Response Formats
+application/json, text/json
+Sample:
+{
+  "Mode": "sample string 1",
+  "EstimationModes": [
+    {
+      "ShapeId": "sample string 1",
+      "Name": "sample string 2",
+      "EstimationResults": [
+        {
+          "TileEstimation": {
+            "TileCount": 1
+          },
+          "RollEstimation": {
+            "UsedLinearLength": "sample string 1",
+            "Rolls": [
+              {
+                "Index": 1,
+                "Length": "sample string 2",
+                "Width": "sample string 3",
+                "Dyelot": "sample string 4",
+                "CutMargin": "sample string 5",
+                "RoundUpToPatternSize": "sample string 6",
+                "PatternMatchWidth": "sample string 7",
+                "PatternMatchLength": "sample string 8",
+                "RollCuts": [
+                  {
+                    "IndexInRoll": 1,
+                    "IndexInAllRolls": 2,
+                    "Length": "sample string 3",
+                    "Label": "sample string 4",
+                    "PieceCuts": [
+                      {
+                        "IndexInRollCut": 1,
+                        "Label": "sample string 2",
+                        "SourceShape": "sample string 3",
+                        "Width": "sample string 4",
+                        "Length": "sample string 5",
+                        "AutoDyeLot": "sample string 6"
+                      },
+                      {
+                        "IndexInRollCut": 1,
+                        "Label": "sample string 2",
+                        "SourceShape": "sample string 3",
+                        "Width": "sample string 4",
+                        "Length": "sample string 5",
+                        "AutoDyeLot": "sample string 6"
+                      }
+                    ]
+                  },
+                  {
+                    "IndexInRoll": 1,
+                    "IndexInAllRolls": 2,
+                    "Length": "sample string 3",
+                    "Label": "sample string 4",
+                    "PieceCuts": [
+                      {
+                        "IndexInRollCut": 1,
+                        "Label": "sample string 2",
+                        "SourceShape": "sample string 3",
+                        "Width": "sample string 4",
+                        "Length": "sample string 5",
+                        "AutoDyeLot": "sample string 6"
+                      },
+                      {
+                        "IndexInRollCut": 1,
+                        "Label": "sample string 2",
+                        "SourceShape": "sample string 3",
+                        "Width": "sample string 4",
+                        "Length": "sample string 5",
+                        "AutoDyeLot": "sample string 6"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "Index": 1,
+                "Length": "sample string 2",
+                "Width": "sample string 3",
+                "Dyelot": "sample string 4",
+                "CutMargin": "sample string 5",
+                "RoundUpToPatternSize": "sample string 6",
+                "PatternMatchWidth": "sample string 7",
+                "PatternMatchLength": "sample string 8",
+                "RollCuts": [
+                  {
+                    "IndexInRoll": 1,
+                    "IndexInAllRolls": 2,
+                    "Length": "sample string 3",
+                    "Label": "sample string 4",
+                    "PieceCuts": [
+                      {
+                        "IndexInRollCut": 1,
+                        "Label": "sample string 2",
+                        "SourceShape": "sample string 3",
+                        "Width": "sample string 4",
+                        "Length": "sample string 5",
+                        "AutoDyeLot": "sample string 6"
+                      },
+                      {
+                        "IndexInRollCut": 1,
+                        "Label": "sample string 2",
+                        "SourceShape": "sample string 3",
+                        "Width": "sample string 4",
+                        "Length": "sample string 5",
+                        "AutoDyeLot": "sample string 6"
+                      }
+                    ]
+                  },
+                  {
+                    "IndexInRoll": 1,
+                    "IndexInAllRolls": 2,
+                    "Length": "sample string 3",
+                    "Label": "sample string 4",
+                    "PieceCuts": [
+                      {
+                        "IndexInRollCut": 1,
+                        "Label": "sample string 2",
+                        "SourceShape": "sample string 3",
+                        "Width": "sample string 4",
+                        "Length": "sample string 5",
+                        "AutoDyeLot": "sample string 6"
+                      },
+                      {
+                        "IndexInRollCut": 1,
+                        "Label": "sample string 2",
+                        "SourceShape": "sample string 3",
+                        "Width": "sample string 4",
+                        "Length": "sample string 5",
+                        "AutoDyeLot": "sample string 6"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "CutSheetImage": "sample string 2"
+          },
+          "SourceShapes": "sample string 1",
+          "ShapeQty": "sample string 2",
+          "Usage": "sample string 3",
+          "WasteRatio": "sample string 4",
+          "CostAmount": "sample string 5",
+          "SalesAmount": "sample string 6",
+          "Product": {
+            "Width": "sample string 1",
+            "Length": "sample string 2",
+            "Thickness": "sample string 3",
+            "HoriRepeat": "sample string 4",
+            "VertRepeat": "sample string 5",
+            "HoriDrop": "sample string 6",
+            "VertDrop": "sample string 7",
+            "EstimatingWidth": "sample string 8",
+            "EstimatingLength": "sample string 9",
+            "WidthMargin": "sample string 10",
+            "LengthMargin": "sample string 11",
+            "TileCalcMethod": "sample string 12",
+            "TileMinimumWaste": "sample string 13",
+            "TileShape": "sample string 14",
+            "TileEdgeSize": "sample string 15",
+            "WasteAddon": "sample string 16",
+            "IsAddOn": true,
+            "AddOns": [
+              {
+                "ID": "sample string 1",
+                "Method": "sample string 2"
+              },
+              {
+                "ID": "sample string 1",
+                "Method": "sample string 2"
+              }
+            ],
+            "Datas": {
+              "sample string 1": "sample string 2",
+              "sample string 3": "sample string 4"
+            },
+            "NoPiecingTogether": true,
+            "BoxRoundUp": "sample string 18",
+            "ID": "sample string 19",
+            "Type": "sample string 20",
+            "Trade": "sample string 21",
+            "Desc": "sample string 22",
+            "Vendor": "sample string 23",
+            "VendorSku": "sample string 24",
+            "Color": "sample string 25",
+            "Unit": "sample string 26",
+            "Manufacturer": "sample string 27",
+            "SalesPrice": "sample string 28",
+            "CostPrice": "sample string 29",
+            "BoxName": "sample string 30",
+            "SellByBox": true,
+            "BoxSalesPrice": "sample string 31",
+            "BoxCostPrice": "sample string 32",
+            "UnitsPerBox": "sample string 33",
+            "Taxable": true
+          }
+        },
+        {
+          "TileEstimation": {
+            "TileCount": 1
+          },
+          "RollEstimation": {
+            "UsedLinearLength": "sample string 1",
+            "Rolls": [
+              {
+                "Index": 1,
+                "Length": "sample string 2",
+                "Width": "sample string 3",
+                "Dyelot": "sample string 4",
+                "CutMargin": "sample string 5",
+                "RoundUpToPatternSize": "sample string 6",
+                "PatternMatchWidth": "sample string 7",
+                "PatternMatchLength": "sample string 8",
+                "RollCuts": [
+                  {
+                    "IndexInRoll": 1,
+                    "IndexInAllRolls": 2,
+                    "Length": "sample string 3",
+                    "Label": "sample string 4",
+                    "PieceCuts": [
+                      {
+                        "IndexInRollCut": 1,
+                        "Label": "sample string 2",
+                        "SourceShape": "sample string 3",
+                        "Width": "sample string 4",
+                        "Length": "sample string 5",
+                        "AutoDyeLot": "sample string 6"
+                      },
+                      {
+                        "IndexInRollCut": 1,
+                        "Label": "sample string 2",
+                        "SourceShape": "sample string 3",
+                        "Width": "sample string 4",
+                        "Length": "sample string 5",
+                        "AutoDyeLot": "sample string 6"
+                      }
+                    ]
+                  },
+                  {
+                    "IndexInRoll": 1,
+                    "IndexInAllRolls": 2,
+                    "Length": "sample string 3",
+                    "Label": "sample string 4",
+                    "PieceCuts": [
+                      {
+                        "IndexInRollCut": 1,
+                        "Label": "sample string 2",
+                        "SourceShape": "sample string 3",
+                        "Width": "sample string 4",
+                        "Length": "sample string 5",
+                        "AutoDyeLot": "sample string 6"
+                      },
+                      {
+                        "IndexInRollCut": 1,
+                        "Label": "sample string 2",
+                        "SourceShape": "sample string 3",
+                        "Width": "sample string 4",
+                        "Length": "sample string 5",
+                        "AutoDyeLot": "sample string 6"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "Index": 1,
+                "Length": "sample string 2",
+                "Width": "sample string 3",
+                "Dyelot": "sample string 4",
+                "CutMargin": "sample string 5",
+                "RoundUpToPatternSize": "sample string 6",
+                "PatternMatchWidth": "sample string 7",
+                "PatternMatchLength": "sample string 8",
+                "RollCuts": [
+                  {
+                    "IndexInRoll": 1,
+                    "IndexInAllRolls": 2,
+                    "Length": "sample string 3",
+                    "Label": "sample string 4",
+                    "PieceCuts": [
+                      {
+                        "IndexInRollCut": 1,
+                        "Label": "sample string 2",
+                        "SourceShape": "sample string 3",
+                        "Width": "sample string 4",
+                        "Length": "sample string 5",
+                        "AutoDyeLot": "sample string 6"
+                      },
+                      {
+                        "IndexInRollCut": 1,
+                        "Label": "sample string 2",
+                        "SourceShape": "sample string 3",
+                        "Width": "sample string 4",
+                        "Length": "sample string 5",
+                        "AutoDyeLot": "sample string 6"
+                      }
+                    ]
+                  },
+                  {
+                    "IndexInRoll": 1,
+                    "IndexInAllRolls": 2,
+                    "Length": "sample string 3",
+                    "Label": "sample string 4",
+                    "PieceCuts": [
+                      {
+                        "IndexInRollCut": 1,
+                        "Label": "sample string 2",
+                        "SourceShape": "sample string 3",
+                        "Width": "sample string 4",
+                        "Length": "sample string 5",
+                        "AutoDyeLot": "sample string 6"
+                      },
+                      {
+                        "IndexInRollCut": 1,
+                        "Label": "sample string 2",
+                        "SourceShape": "sample string 3",
+                        "Width": "sample string 4",
+                        "Length": "sample string 5",
+                        "AutoDyeLot": "sample string 6"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "CutSheetImage": "sample string 2"
+          },
+          "SourceShapes": "sample string 1",
+          "ShapeQty": "sample string 2",
+          "Usage": "sample string 3",
+          "WasteRatio": "sample string 4",
+          "CostAmount": "sample string 5",
+          "SalesAmount": "sample string 6",
+          "Product": {
+            "Width": "sample string 1",
+            "Length": "sample string 2",
+            "Thickness": "sample string 3",
+            "HoriRepeat": "sample string 4",
+            "VertRepeat": "sample string 5",
+            "HoriDrop": "sample string 6",
+            "VertDrop": "sample string 7",
+            "EstimatingWidth": "sample string 8",
+            "EstimatingLength": "sample string 9",
+            "WidthMargin": "sample string 10",
+            "LengthMargin": "sample string 11",
+            "TileCalcMethod": "sample string 12",
+            "TileMinimumWaste": "sample string 13",
+            "TileShape": "sample string 14",
+            "TileEdgeSize": "sample string 15",
+            "WasteAddon": "sample string 16",
+            "IsAddOn": true,
+            "AddOns": [
+              {
+                "ID": "sample string 1",
+                "Method": "sample string 2"
+              },
+              {
+                "ID": "sample string 1",
+                "Method": "sample string 2"
+              }
+            ],
+            "Datas": {
+              "sample string 1": "sample string 2",
+              "sample string 3": "sample string 4"
+            },
+            "NoPiecingTogether": true,
+            "BoxRoundUp": "sample string 18",
+            "ID": "sample string 19",
+            "Type": "sample string 20",
+            "Trade": "sample string 21",
+            "Desc": "sample string 22",
+            "Vendor": "sample string 23",
+            "VendorSku": "sample string 24",
+            "Color": "sample string 25",
+            "Unit": "sample string 26",
+            "Manufacturer": "sample string 27",
+            "SalesPrice": "sample string 28",
+            "CostPrice": "sample string 29",
+            "BoxName": "sample string 30",
+            "SellByBox": true,
+            "BoxSalesPrice": "sample string 31",
+            "BoxCostPrice": "sample string 32",
+            "UnitsPerBox": "sample string 33",
+            "Taxable": true
+          }
+        }
+      ]
+    },
+    {
+      "ShapeId": "sample string 1",
+      "Name": "sample string 2",
+      "EstimationResults": [
+        {
+          "TileEstimation": {
+            "TileCount": 1
+          },
+          "RollEstimation": {
+            "UsedLinearLength": "sample string 1",
+            "Rolls": [
+              {
+                "Index": 1,
+                "Length": "sample string 2",
+                "Width": "sample string 3",
+                "Dyelot": "sample string 4",
+                "CutMargin": "sample string 5",
+                "RoundUpToPatternSize": "sample string 6",
+                "PatternMatchWidth": "sample string 7",
+                "PatternMatchLength": "sample string 8",
+                "RollCuts": [
+                  {
+                    "IndexInRoll": 1,
+                    "IndexInAllRolls": 2,
+                    "Length": "sample string 3",
+                    "Label": "sample string 4",
+                    "PieceCuts": [
+                      {
+                        "IndexInRollCut": 1,
+                        "Label": "sample string 2",
+                        "SourceShape": "sample string 3",
+                        "Width": "sample string 4",
+                        "Length": "sample string 5",
+                        "AutoDyeLot": "sample string 6"
+                      },
+                      {
+                        "IndexInRollCut": 1,
+                        "Label": "sample string 2",
+                        "SourceShape": "sample string 3",
+                        "Width": "sample string 4",
+                        "Length": "sample string 5",
+                        "AutoDyeLot": "sample string 6"
+                      }
+                    ]
+                  },
+                  {
+                    "IndexInRoll": 1,
+                    "IndexInAllRolls": 2,
+                    "Length": "sample string 3",
+                    "Label": "sample string 4",
+                    "PieceCuts": [
+                      {
+                        "IndexInRollCut": 1,
+                        "Label": "sample string 2",
+                        "SourceShape": "sample string 3",
+                        "Width": "sample string 4",
+                        "Length": "sample string 5",
+                        "AutoDyeLot": "sample string 6"
+                      },
+                      {
+                        "IndexInRollCut": 1,
+                        "Label": "sample string 2",
+                        "SourceShape": "sample string 3",
+                        "Width": "sample string 4",
+                        "Length": "sample string 5",
+                        "AutoDyeLot": "sample string 6"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "Index": 1,
+                "Length": "sample string 2",
+                "Width": "sample string 3",
+                "Dyelot": "sample string 4",
+                "CutMargin": "sample string 5",
+                "RoundUpToPatternSize": "sample string 6",
+                "PatternMatchWidth": "sample string 7",
+                "PatternMatchLength": "sample string 8",
+                "RollCuts": [
+                  {
+                    "IndexInRoll": 1,
+                    "IndexInAllRolls": 2,
+                    "Length": "sample string 3",
+                    "Label": "sample string 4",
+                    "PieceCuts": [
+                      {
+                        "IndexInRollCut": 1,
+                        "Label": "sample string 2",
+                        "SourceShape": "sample string 3",
+                        "Width": "sample string 4",
+                        "Length": "sample string 5",
+                        "AutoDyeLot": "sample string 6"
+                      },
+                      {
+                        "IndexInRollCut": 1,
+                        "Label": "sample string 2",
+                        "SourceShape": "sample string 3",
+                        "Width": "sample string 4",
+                        "Length": "sample string 5",
+                        "AutoDyeLot": "sample string 6"
+                      }
+                    ]
+                  },
+                  {
+                    "IndexInRoll": 1,
+                    "IndexInAllRolls": 2,
+                    "Length": "sample string 3",
+                    "Label": "sample string 4",
+                    "PieceCuts": [
+                      {
+                        "IndexInRollCut": 1,
+                        "Label": "sample string 2",
+                        "SourceShape": "sample string 3",
+                        "Width": "sample string 4",
+                        "Length": "sample string 5",
+                        "AutoDyeLot": "sample string 6"
+                      },
+                      {
+                        "IndexInRollCut": 1,
+                        "Label": "sample string 2",
+                        "SourceShape": "sample string 3",
+                        "Width": "sample string 4",
+                        "Length": "sample string 5",
+                        "AutoDyeLot": "sample string 6"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "CutSheetImage": "sample string 2"
+          },
+          "SourceShapes": "sample string 1",
+          "ShapeQty": "sample string 2",
+          "Usage": "sample string 3",
+          "WasteRatio": "sample string 4",
+          "CostAmount": "sample string 5",
+          "SalesAmount": "sample string 6",
+          "Product": {
+            "Width": "sample string 1",
+            "Length": "sample string 2",
+            "Thickness": "sample string 3",
+            "HoriRepeat": "sample string 4",
+            "VertRepeat": "sample string 5",
+            "HoriDrop": "sample string 6",
+            "VertDrop": "sample string 7",
+            "EstimatingWidth": "sample string 8",
+            "EstimatingLength": "sample string 9",
+            "WidthMargin": "sample string 10",
+            "LengthMargin": "sample string 11",
+            "TileCalcMethod": "sample string 12",
+            "TileMinimumWaste": "sample string 13",
+            "TileShape": "sample string 14",
+            "TileEdgeSize": "sample string 15",
+            "WasteAddon": "sample string 16",
+            "IsAddOn": true,
+            "AddOns": [
+              {
+                "ID": "sample string 1",
+                "Method": "sample string 2"
+              },
+              {
+                "ID": "sample string 1",
+                "Method": "sample string 2"
+              }
+            ],
+            "Datas": {
+              "sample string 1": "sample string 2",
+              "sample string 3": "sample string 4"
+            },
+            "NoPiecingTogether": true,
+            "BoxRoundUp": "sample string 18",
+            "ID": "sample string 19",
+            "Type": "sample string 20",
+            "Trade": "sample string 21",
+            "Desc": "sample string 22",
+            "Vendor": "sample string 23",
+            "VendorSku": "sample string 24",
+            "Color": "sample string 25",
+            "Unit": "sample string 26",
+            "Manufacturer": "sample string 27",
+            "SalesPrice": "sample string 28",
+            "CostPrice": "sample string 29",
+            "BoxName": "sample string 30",
+            "SellByBox": true,
+            "BoxSalesPrice": "sample string 31",
+            "BoxCostPrice": "sample string 32",
+            "UnitsPerBox": "sample string 33",
+            "Taxable": true
+          }
+        },
+        {
+          "TileEstimation": {
+            "TileCount": 1
+          },
+          "RollEstimation": {
+            "UsedLinearLength": "sample string 1",
+            "Rolls": [
+              {
+                "Index": 1,
+                "Length": "sample string 2",
+                "Width": "sample string 3",
+                "Dyelot": "sample string 4",
+                "CutMargin": "sample string 5",
+                "RoundUpToPatternSize": "sample string 6",
+                "PatternMatchWidth": "sample string 7",
+                "PatternMatchLength": "sample string 8",
+                "RollCuts": [
+                  {
+                    "IndexInRoll": 1,
+                    "IndexInAllRolls": 2,
+                    "Length": "sample string 3",
+                    "Label": "sample string 4",
+                    "PieceCuts": [
+                      {
+                        "IndexInRollCut": 1,
+                        "Label": "sample string 2",
+                        "SourceShape": "sample string 3",
+                        "Width": "sample string 4",
+                        "Length": "sample string 5",
+                        "AutoDyeLot": "sample string 6"
+                      },
+                      {
+                        "IndexInRollCut": 1,
+                        "Label": "sample string 2",
+                        "SourceShape": "sample string 3",
+                        "Width": "sample string 4",
+                        "Length": "sample string 5",
+                        "AutoDyeLot": "sample string 6"
+                      }
+                    ]
+                  },
+                  {
+                    "IndexInRoll": 1,
+                    "IndexInAllRolls": 2,
+                    "Length": "sample string 3",
+                    "Label": "sample string 4",
+                    "PieceCuts": [
+                      {
+                        "IndexInRollCut": 1,
+                        "Label": "sample string 2",
+                        "SourceShape": "sample string 3",
+                        "Width": "sample string 4",
+                        "Length": "sample string 5",
+                        "AutoDyeLot": "sample string 6"
+                      },
+                      {
+                        "IndexInRollCut": 1,
+                        "Label": "sample string 2",
+                        "SourceShape": "sample string 3",
+                        "Width": "sample string 4",
+                        "Length": "sample string 5",
+                        "AutoDyeLot": "sample string 6"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "Index": 1,
+                "Length": "sample string 2",
+                "Width": "sample string 3",
+                "Dyelot": "sample string 4",
+                "CutMargin": "sample string 5",
+                "RoundUpToPatternSize": "sample string 6",
+                "PatternMatchWidth": "sample string 7",
+                "PatternMatchLength": "sample string 8",
+                "RollCuts": [
+                  {
+                    "IndexInRoll": 1,
+                    "IndexInAllRolls": 2,
+                    "Length": "sample string 3",
+                    "Label": "sample string 4",
+                    "PieceCuts": [
+                      {
+                        "IndexInRollCut": 1,
+                        "Label": "sample string 2",
+                        "SourceShape": "sample string 3",
+                        "Width": "sample string 4",
+                        "Length": "sample string 5",
+                        "AutoDyeLot": "sample string 6"
+                      },
+                      {
+                        "IndexInRollCut": 1,
+                        "Label": "sample string 2",
+                        "SourceShape": "sample string 3",
+                        "Width": "sample string 4",
+                        "Length": "sample string 5",
+                        "AutoDyeLot": "sample string 6"
+                      }
+                    ]
+                  },
+                  {
+                    "IndexInRoll": 1,
+                    "IndexInAllRolls": 2,
+                    "Length": "sample string 3",
+                    "Label": "sample string 4",
+                    "PieceCuts": [
+                      {
+                        "IndexInRollCut": 1,
+                        "Label": "sample string 2",
+                        "SourceShape": "sample string 3",
+                        "Width": "sample string 4",
+                        "Length": "sample string 5",
+                        "AutoDyeLot": "sample string 6"
+                      },
+                      {
+                        "IndexInRollCut": 1,
+                        "Label": "sample string 2",
+                        "SourceShape": "sample string 3",
+                        "Width": "sample string 4",
+                        "Length": "sample string 5",
+                        "AutoDyeLot": "sample string 6"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "CutSheetImage": "sample string 2"
+          },
+          "SourceShapes": "sample string 1",
+          "ShapeQty": "sample string 2",
+          "Usage": "sample string 3",
+          "WasteRatio": "sample string 4",
+          "CostAmount": "sample string 5",
+          "SalesAmount": "sample string 6",
+          "Product": {
+            "Width": "sample string 1",
+            "Length": "sample string 2",
+            "Thickness": "sample string 3",
+            "HoriRepeat": "sample string 4",
+            "VertRepeat": "sample string 5",
+            "HoriDrop": "sample string 6",
+            "VertDrop": "sample string 7",
+            "EstimatingWidth": "sample string 8",
+            "EstimatingLength": "sample string 9",
+            "WidthMargin": "sample string 10",
+            "LengthMargin": "sample string 11",
+            "TileCalcMethod": "sample string 12",
+            "TileMinimumWaste": "sample string 13",
+            "TileShape": "sample string 14",
+            "TileEdgeSize": "sample string 15",
+            "WasteAddon": "sample string 16",
+            "IsAddOn": true,
+            "AddOns": [
+              {
+                "ID": "sample string 1",
+                "Method": "sample string 2"
+              },
+              {
+                "ID": "sample string 1",
+                "Method": "sample string 2"
+              }
+            ],
+            "Datas": {
+              "sample string 1": "sample string 2",
+              "sample string 3": "sample string 4"
+            },
+            "NoPiecingTogether": true,
+            "BoxRoundUp": "sample string 18",
+            "ID": "sample string 19",
+            "Type": "sample string 20",
+            "Trade": "sample string 21",
+            "Desc": "sample string 22",
+            "Vendor": "sample string 23",
+            "VendorSku": "sample string 24",
+            "Color": "sample string 25",
+            "Unit": "sample string 26",
+            "Manufacturer": "sample string 27",
+            "SalesPrice": "sample string 28",
+            "CostPrice": "sample string 29",
+            "BoxName": "sample string 30",
+            "SellByBox": true,
+            "BoxSalesPrice": "sample string 31",
+            "BoxCostPrice": "sample string 32",
+            "UnitsPerBox": "sample string 33",
+            "Taxable": true
+          }
+        }
+      ]
+    }
+  ]
+}
+application/xml, text/xml
+Sample:
+<EstimationDTO>
+  <Mode>sample string 1</Mode>
+  <EstimationModes>
+    <CloudEstimationArea>
+      <ShapeId>sample string 1</ShapeId>
+      <Name>sample string 2</Name>
+      <EstimationResults>
+        <CloudEstimation>
+          <SourceShapes>sample string 1</SourceShapes>
+          <ShapeQty>sample string 2</ShapeQty>
+          <Usage>sample string 3</Usage>
+          <WasteRatio>sample string 4</WasteRatio>
+          <CostAmount>sample string 5</CostAmount>
+          <SalesAmount>sample string 6</SalesAmount>
+          <Product>
+            <ID>sample string 19</ID>
+            <Type>sample string 20</Type>
+            <Trade>sample string 21</Trade>
+            <Desc>sample string 22</Desc>
+            <Vendor>sample string 23</Vendor>
+            <VendorSku>sample string 24</VendorSku>
+            <Color>sample string 25</Color>
+            <Unit>sample string 26</Unit>
+            <Manufacturer>sample string 27</Manufacturer>
+            <SalesPrice>sample string 28</SalesPrice>
+            <CostPrice>sample string 29</CostPrice>
+            <BoxName>sample string 30</BoxName>
+            <SellByBox>true</SellByBox>
+            <BoxSalesPrice>sample string 31</BoxSalesPrice>
+            <BoxCostPrice>sample string 32</BoxCostPrice>
+            <UnitsPerBox>sample string 33</UnitsPerBox>
+            <Taxable>true</Taxable>
+            <Width>sample string 1</Width>
+            <Length>sample string 2</Length>
+            <Thickness>sample string 3</Thickness>
+            <HoriRepeat>sample string 4</HoriRepeat>
+            <VertRepeat>sample string 5</VertRepeat>
+            <HoriDrop>sample string 6</HoriDrop>
+            <VertDrop>sample string 7</VertDrop>
+            <WidthMargin>sample string 10</WidthMargin>
+            <LengthMargin>sample string 11</LengthMargin>
+            <TileCalcMethod>sample string 12</TileCalcMethod>
+            <TileMinimumWaste>sample string 13</TileMinimumWaste>
+            <TileShape>sample string 14</TileShape>
+            <TileEdgeSize>sample string 15</TileEdgeSize>
+            <WasteAddon>sample string 16</WasteAddon>
+            <IsAddOn>true</IsAddOn>
+            <AddOns>
+              <CloudProductAddOn>
+                <ID>sample string 1</ID>
+                <Method>sample string 2</Method>
+              </CloudProductAddOn>
+              <CloudProductAddOn>
+                <ID>sample string 1</ID>
+                <Method>sample string 2</Method>
+              </CloudProductAddOn>
+            </AddOns>
+            <Datas>
+              <item key="sample string 1" value="sample string 2" />
+              <item key="sample string 3" value="sample string 4" />
+            </Datas>
+            <NoPiecingTogether>true</NoPiecingTogether>
+            <BoxRoundUp>sample string 18</BoxRoundUp>
+          </Product>
+          <TileEstimation>
+            <TileCount>1</TileCount>
+          </TileEstimation>
+          <RollEstimation>
+            <UsedLinearLength>sample string 1</UsedLinearLength>
+            <Rolls>
+              <CloudRoll>
+                <Index>1</Index>
+                <Length>sample string 2</Length>
+                <Width>sample string 3</Width>
+                <Dyelot>sample string 4</Dyelot>
+                <CutMargin>sample string 5</CutMargin>
+                <RoundUpToPatternSize>sample string 6</RoundUpToPatternSize>
+                <PatternMatchWidth>sample string 7</PatternMatchWidth>
+                <PatternMatchLength>sample string 8</PatternMatchLength>
+                <RollCuts>
+                  <CloudRollCut>
+                    <IndexInRoll>1</IndexInRoll>
+                    <IndexInAllRolls>2</IndexInAllRolls>
+                    <Length>sample string 3</Length>
+                    <Label>sample string 4</Label>
+                    <PieceCuts>
+                      <CloudPieceCut>
+                        <IndexInRollCut>1</IndexInRollCut>
+                        <Label>sample string 2</Label>
+                        <SourceShape>sample string 3</SourceShape>
+                        <Width>sample string 4</Width>
+                        <Length>sample string 5</Length>
+                        <AutoDyeLot>sample string 6</AutoDyeLot>
+                      </CloudPieceCut>
+                      <CloudPieceCut>
+                        <IndexInRollCut>1</IndexInRollCut>
+                        <Label>sample string 2</Label>
+                        <SourceShape>sample string 3</SourceShape>
+                        <Width>sample string 4</Width>
+                        <Length>sample string 5</Length>
+                        <AutoDyeLot>sample string 6</AutoDyeLot>
+                      </CloudPieceCut>
+                    </PieceCuts>
+                  </CloudRollCut>
+                  <CloudRollCut>
+                    <IndexInRoll>1</IndexInRoll>
+                    <IndexInAllRolls>2</IndexInAllRolls>
+                    <Length>sample string 3</Length>
+                    <Label>sample string 4</Label>
+                    <PieceCuts>
+                      <CloudPieceCut>
+                        <IndexInRollCut>1</IndexInRollCut>
+                        <Label>sample string 2</Label>
+                        <SourceShape>sample string 3</SourceShape>
+                        <Width>sample string 4</Width>
+                        <Length>sample string 5</Length>
+                        <AutoDyeLot>sample string 6</AutoDyeLot>
+                      </CloudPieceCut>
+                      <CloudPieceCut>
+                        <IndexInRollCut>1</IndexInRollCut>
+                        <Label>sample string 2</Label>
+                        <SourceShape>sample string 3</SourceShape>
+                        <Width>sample string 4</Width>
+                        <Length>sample string 5</Length>
+                        <AutoDyeLot>sample string 6</AutoDyeLot>
+                      </CloudPieceCut>
+                    </PieceCuts>
+                  </CloudRollCut>
+                </RollCuts>
+              </CloudRoll>
+              <CloudRoll>
+                <Index>1</Index>
+                <Length>sample string 2</Length>
+                <Width>sample string 3</Width>
+                <Dyelot>sample string 4</Dyelot>
+                <CutMargin>sample string 5</CutMargin>
+                <RoundUpToPatternSize>sample string 6</RoundUpToPatternSize>
+                <PatternMatchWidth>sample string 7</PatternMatchWidth>
+                <PatternMatchLength>sample string 8</PatternMatchLength>
+                <RollCuts>
+                  <CloudRollCut>
+                    <IndexInRoll>1</IndexInRoll>
+                    <IndexInAllRolls>2</IndexInAllRolls>
+                    <Length>sample string 3</Length>
+                    <Label>sample string 4</Label>
+                    <PieceCuts>
+                      <CloudPieceCut>
+                        <IndexInRollCut>1</IndexInRollCut>
+                        <Label>sample string 2</Label>
+                        <SourceShape>sample string 3</SourceShape>
+                        <Width>sample string 4</Width>
+                        <Length>sample string 5</Length>
+                        <AutoDyeLot>sample string 6</AutoDyeLot>
+                      </CloudPieceCut>
+                      <CloudPieceCut>
+                        <IndexInRollCut>1</IndexInRollCut>
+                        <Label>sample string 2</Label>
+                        <SourceShape>sample string 3</SourceShape>
+                        <Width>sample string 4</Width>
+                        <Length>sample string 5</Length>
+                        <AutoDyeLot>sample string 6</AutoDyeLot>
+                      </CloudPieceCut>
+                    </PieceCuts>
+                  </CloudRollCut>
+                  <CloudRollCut>
+                    <IndexInRoll>1</IndexInRoll>
+                    <IndexInAllRolls>2</IndexInAllRolls>
+                    <Length>sample string 3</Length>
+                    <Label>sample string 4</Label>
+                    <PieceCuts>
+                      <CloudPieceCut>
+                        <IndexInRollCut>1</IndexInRollCut>
+                        <Label>sample string 2</Label>
+                        <SourceShape>sample string 3</SourceShape>
+                        <Width>sample string 4</Width>
+                        <Length>sample string 5</Length>
+                        <AutoDyeLot>sample string 6</AutoDyeLot>
+                      </CloudPieceCut>
+                      <CloudPieceCut>
+                        <IndexInRollCut>1</IndexInRollCut>
+                        <Label>sample string 2</Label>
+                        <SourceShape>sample string 3</SourceShape>
+                        <Width>sample string 4</Width>
+                        <Length>sample string 5</Length>
+                        <AutoDyeLot>sample string 6</AutoDyeLot>
+                      </CloudPieceCut>
+                    </PieceCuts>
+                  </CloudRollCut>
+                </RollCuts>
+              </CloudRoll>
+            </Rolls>
+            <CutSheetImage>sample string 2</CutSheetImage>
+          </RollEstimation>
+        </CloudEstimation>
+        <CloudEstimation>
+          <SourceShapes>sample string 1</SourceShapes>
+          <ShapeQty>sample string 2</ShapeQty>
+          <Usage>sample string 3</Usage>
+          <WasteRatio>sample string 4</WasteRatio>
+          <CostAmount>sample string 5</CostAmount>
+          <SalesAmount>sample string 6</SalesAmount>
+          <Product>
+            <ID>sample string 19</ID>
+            <Type>sample string 20</Type>
+            <Trade>sample string 21</Trade>
+            <Desc>sample string 22</Desc>
+            <Vendor>sample string 23</Vendor>
+            <VendorSku>sample string 24</VendorSku>
+            <Color>sample string 25</Color>
+            <Unit>sample string 26</Unit>
+            <Manufacturer>sample string 27</Manufacturer>
+            <SalesPrice>sample string 28</SalesPrice>
+            <CostPrice>sample string 29</CostPrice>
+            <BoxName>sample string 30</BoxName>
+            <SellByBox>true</SellByBox>
+            <BoxSalesPrice>sample string 31</BoxSalesPrice>
+            <BoxCostPrice>sample string 32</BoxCostPrice>
+            <UnitsPerBox>sample string 33</UnitsPerBox>
+            <Taxable>true</Taxable>
+            <Width>sample string 1</Width>
+            <Length>sample string 2</Length>
+            <Thickness>sample string 3</Thickness>
+            <HoriRepeat>sample string 4</HoriRepeat>
+            <VertRepeat>sample string 5</VertRepeat>
+            <HoriDrop>sample string 6</HoriDrop>
+            <VertDrop>sample string 7</VertDrop>
+            <WidthMargin>sample string 10</WidthMargin>
+            <LengthMargin>sample string 11</LengthMargin>
+            <TileCalcMethod>sample string 12</TileCalcMethod>
+            <TileMinimumWaste>sample string 13</TileMinimumWaste>
+            <TileShape>sample string 14</TileShape>
+            <TileEdgeSize>sample string 15</TileEdgeSize>
+            <WasteAddon>sample string 16</WasteAddon>
+            <IsAddOn>true</IsAddOn>
+            <AddOns>
+              <CloudProductAddOn>
+                <ID>sample string 1</ID>
+                <Method>sample string 2</Method>
+              </CloudProductAddOn>
+              <CloudProductAddOn>
+                <ID>sample string 1</ID>
+                <Method>sample string 2</Method>
+              </CloudProductAddOn>
+            </AddOns>
+            <Datas>
+              <item key="sample string 1" value="sample string 2" />
+              <item key="sample string 3" value="sample string 4" />
+            </Datas>
+            <NoPiecingTogether>true</NoPiecingTogether>
+            <BoxRoundUp>sample string 18</BoxRoundUp>
+          </Product>
+          <TileEstimation>
+            <TileCount>1</TileCount>
+          </TileEstimation>
+          <RollEstimation>
+            <UsedLinearLength>sample string 1</UsedLinearLength>
+            <Rolls>
+              <CloudRoll>
+                <Index>1</Index>
+                <Length>sample string 2</Length>
+                <Width>sample string 3</Width>
+                <Dyelot>sample string 4</Dyelot>
+                <CutMargin>sample string 5</CutMargin>
+                <RoundUpToPatternSize>sample string 6</RoundUpToPatternSize>
+                <PatternMatchWidth>sample string 7</PatternMatchWidth>
+                <PatternMatchLength>sample string 8</PatternMatchLength>
+                <RollCuts>
+                  <CloudRollCut>
+                    <IndexInRoll>1</IndexInRoll>
+                    <IndexInAllRolls>2</IndexInAllRolls>
+                    <Length>sample string 3</Length>
+                    <Label>sample string 4</Label>
+                    <PieceCuts>
+                      <CloudPieceCut>
+                        <IndexInRollCut>1</IndexInRollCut>
+                        <Label>sample string 2</Label>
+                        <SourceShape>sample string 3</SourceShape>
+                        <Width>sample string 4</Width>
+                        <Length>sample string 5</Length>
+                        <AutoDyeLot>sample string 6</AutoDyeLot>
+                      </CloudPieceCut>
+                      <CloudPieceCut>
+                        <IndexInRollCut>1</IndexInRollCut>
+                        <Label>sample string 2</Label>
+                        <SourceShape>sample string 3</SourceShape>
+                        <Width>sample string 4</Width>
+                        <Length>sample string 5</Length>
+                        <AutoDyeLot>sample string 6</AutoDyeLot>
+                      </CloudPieceCut>
+                    </PieceCuts>
+                  </CloudRollCut>
+                  <CloudRollCut>
+                    <IndexInRoll>1</IndexInRoll>
+                    <IndexInAllRolls>2</IndexInAllRolls>
+                    <Length>sample string 3</Length>
+                    <Label>sample string 4</Label>
+                    <PieceCuts>
+                      <CloudPieceCut>
+                        <IndexInRollCut>1</IndexInRollCut>
+                        <Label>sample string 2</Label>
+                        <SourceShape>sample string 3</SourceShape>
+                        <Width>sample string 4</Width>
+                        <Length>sample string 5</Length>
+                        <AutoDyeLot>sample string 6</AutoDyeLot>
+                      </CloudPieceCut>
+                      <CloudPieceCut>
+                        <IndexInRollCut>1</IndexInRollCut>
+                        <Label>sample string 2</Label>
+                        <SourceShape>sample string 3</SourceShape>
+                        <Width>sample string 4</Width>
+                        <Length>sample string 5</Length>
+                        <AutoDyeLot>sample string 6</AutoDyeLot>
+                      </CloudPieceCut>
+                    </PieceCuts>
+                  </CloudRollCut>
+                </RollCuts>
+              </CloudRoll>
+              <CloudRoll>
+                <Index>1</Index>
+                <Length>sample string 2</Length>
+                <Width>sample string 3</Width>
+                <Dyelot>sample string 4</Dyelot>
+                <CutMargin>sample string 5</CutMargin>
+                <RoundUpToPatternSize>sample string 6</RoundUpToPatternSize>
+                <PatternMatchWidth>sample string 7</PatternMatchWidth>
+                <PatternMatchLength>sample string 8</PatternMatchLength>
+                <RollCuts>
+                  <CloudRollCut>
+                    <IndexInRoll>1</IndexInRoll>
+                    <IndexInAllRolls>2</IndexInAllRolls>
+                    <Length>sample string 3</Length>
+                    <Label>sample string 4</Label>
+                    <PieceCuts>
+                      <CloudPieceCut>
+                        <IndexInRollCut>1</IndexInRollCut>
+                        <Label>sample string 2</Label>
+                        <SourceShape>sample string 3</SourceShape>
+                        <Width>sample string 4</Width>
+                        <Length>sample string 5</Length>
+                        <AutoDyeLot>sample string 6</AutoDyeLot>
+                      </CloudPieceCut>
+                      <CloudPieceCut>
+                        <IndexInRollCut>1</IndexInRollCut>
+                        <Label>sample string 2</Label>
+                        <SourceShape>sample string 3</SourceShape>
+                        <Width>sample string 4</Width>
+                        <Length>sample string 5</Length>
+                        <AutoDyeLot>sample string 6</AutoDyeLot>
+                      </CloudPieceCut>
+                    </PieceCuts>
+                  </CloudRollCut>
+                  <CloudRollCut>
+                    <IndexInRoll>1</IndexInRoll>
+                    <IndexInAllRolls>2</IndexInAllRolls>
+                    <Length>sample string 3</Length>
+                    <Label>sample string 4</Label>
+                    <PieceCuts>
+                      <CloudPieceCut>
+                        <IndexInRollCut>1</IndexInRollCut>
+                        <Label>sample string 2</Label>
+                        <SourceShape>sample string 3</SourceShape>
+                        <Width>sample string 4</Width>
+                        <Length>sample string 5</Length>
+                        <AutoDyeLot>sample string 6</AutoDyeLot>
+                      </CloudPieceCut>
+                      <CloudPieceCut>
+                        <IndexInRollCut>1</IndexInRollCut>
+                        <Label>sample string 2</Label>
+                        <SourceShape>sample string 3</SourceShape>
+                        <Width>sample string 4</Width>
+                        <Length>sample string 5</Length>
+                        <AutoDyeLot>sample string 6</AutoDyeLot>
+                      </CloudPieceCut>
+                    </PieceCuts>
+                  </CloudRollCut>
+                </RollCuts>
+              </CloudRoll>
+            </Rolls>
+            <CutSheetImage>sample string 2</CutSheetImage>
+          </RollEstimation>
+        </CloudEstimation>
+      </EstimationResults>
+    </CloudEstimationArea>
+    <CloudEstimationArea>
+      <ShapeId>sample string 1</ShapeId>
+      <Name>sample string 2</Name>
+      <EstimationResults>
+        <CloudEstimation>
+          <SourceShapes>sample string 1</SourceShapes>
+          <ShapeQty>sample string 2</ShapeQty>
+          <Usage>sample string 3</Usage>
+          <WasteRatio>sample string 4</WasteRatio>
+          <CostAmount>sample string 5</CostAmount>
+          <SalesAmount>sample string 6</SalesAmount>
+          <Product>
+            <ID>sample string 19</ID>
+            <Type>sample string 20</Type>
+            <Trade>sample string 21</Trade>
+            <Desc>sample string 22</Desc>
+            <Vendor>sample string 23</Vendor>
+            <VendorSku>sample string 24</VendorSku>
+            <Color>sample string 25</Color>
+            <Unit>sample string 26</Unit>
+            <Manufacturer>sample string 27</Manufacturer>
+            <SalesPrice>sample string 28</SalesPrice>
+            <CostPrice>sample string 29</CostPrice>
+            <BoxName>sample string 30</BoxName>
+            <SellByBox>true</SellByBox>
+            <BoxSalesPrice>sample string 31</BoxSalesPrice>
+            <BoxCostPrice>sample string 32</BoxCostPrice>
+            <UnitsPerBox>sample string 33</UnitsPerBox>
+            <Taxable>true</Taxable>
+            <Width>sample string 1</Width>
+            <Length>sample string 2</Length>
+            <Thickness>sample string 3</Thickness>
+            <HoriRepeat>sample string 4</HoriRepeat>
+            <VertRepeat>sample string 5</VertRepeat>
+            <HoriDrop>sample string 6</HoriDrop>
+            <VertDrop>sample string 7</VertDrop>
+            <WidthMargin>sample string 10</WidthMargin>
+            <LengthMargin>sample string 11</LengthMargin>
+            <TileCalcMethod>sample string 12</TileCalcMethod>
+            <TileMinimumWaste>sample string 13</TileMinimumWaste>
+            <TileShape>sample string 14</TileShape>
+            <TileEdgeSize>sample string 15</TileEdgeSize>
+            <WasteAddon>sample string 16</WasteAddon>
+            <IsAddOn>true</IsAddOn>
+            <AddOns>
+              <CloudProductAddOn>
+                <ID>sample string 1</ID>
+                <Method>sample string 2</Method>
+              </CloudProductAddOn>
+              <CloudProductAddOn>
+                <ID>sample string 1</ID>
+                <Method>sample string 2</Method>
+              </CloudProductAddOn>
+            </AddOns>
+            <Datas>
+              <item key="sample string 1" value="sample string 2" />
+              <item key="sample string 3" value="sample string 4" />
+            </Datas>
+            <NoPiecingTogether>true</NoPiecingTogether>
+            <BoxRoundUp>sample string 18</BoxRoundUp>
+          </Product>
+          <TileEstimation>
+            <TileCount>1</TileCount>
+          </TileEstimation>
+          <RollEstimation>
+            <UsedLinearLength>sample string 1</UsedLinearLength>
+            <Rolls>
+              <CloudRoll>
+                <Index>1</Index>
+                <Length>sample string 2</Length>
+                <Width>sample string 3</Width>
+                <Dyelot>sample string 4</Dyelot>
+                <CutMargin>sample string 5</CutMargin>
+                <RoundUpToPatternSize>sample string 6</RoundUpToPatternSize>
+                <PatternMatchWidth>sample string 7</PatternMatchWidth>
+                <PatternMatchLength>sample string 8</PatternMatchLength>
+                <RollCuts>
+                  <CloudRollCut>
+                    <IndexInRoll>1</IndexInRoll>
+                    <IndexInAllRolls>2</IndexInAllRolls>
+                    <Length>sample string 3</Length>
+                    <Label>sample string 4</Label>
+                    <PieceCuts>
+                      <CloudPieceCut>
+                        <IndexInRollCut>1</IndexInRollCut>
+                        <Label>sample string 2</Label>
+                        <SourceShape>sample string 3</SourceShape>
+                        <Width>sample string 4</Width>
+                        <Length>sample string 5</Length>
+                        <AutoDyeLot>sample string 6</AutoDyeLot>
+                      </CloudPieceCut>
+                      <CloudPieceCut>
+                        <IndexInRollCut>1</IndexInRollCut>
+                        <Label>sample string 2</Label>
+                        <SourceShape>sample string 3</SourceShape>
+                        <Width>sample string 4</Width>
+                        <Length>sample string 5</Length>
+                        <AutoDyeLot>sample string 6</AutoDyeLot>
+                      </CloudPieceCut>
+                    </PieceCuts>
+                  </CloudRollCut>
+                  <CloudRollCut>
+                    <IndexInRoll>1</IndexInRoll>
+                    <IndexInAllRolls>2</IndexInAllRolls>
+                    <Length>sample string 3</Length>
+                    <Label>sample string 4</Label>
+                    <PieceCuts>
+                      <CloudPieceCut>
+                        <IndexInRollCut>1</IndexInRollCut>
+                        <Label>sample string 2</Label>
+                        <SourceShape>sample string 3</SourceShape>
+                        <Width>sample string 4</Width>
+                        <Length>sample string 5</Length>
+                        <AutoDyeLot>sample string 6</AutoDyeLot>
+                      </CloudPieceCut>
+                      <CloudPieceCut>
+                        <IndexInRollCut>1</IndexInRollCut>
+                        <Label>sample string 2</Label>
+                        <SourceShape>sample string 3</SourceShape>
+                        <Width>sample string 4</Width>
+                        <Length>sample string 5</Length>
+                        <AutoDyeLot>sample string 6</AutoDyeLot>
+                      </CloudPieceCut>
+                    </PieceCuts>
+                  </CloudRollCut>
+                </RollCuts>
+              </CloudRoll>
+              <CloudRoll>
+                <Index>1</Index>
+                <Length>sample string 2</Length>
+                <Width>sample string 3</Width>
+                <Dyelot>sample string 4</Dyelot>
+                <CutMargin>sample string 5</CutMargin>
+                <RoundUpToPatternSize>sample string 6</RoundUpToPatternSize>
+                <PatternMatchWidth>sample string 7</PatternMatchWidth>
+                <PatternMatchLength>sample string 8</PatternMatchLength>
+                <RollCuts>
+                  <CloudRollCut>
+                    <IndexInRoll>1</IndexInRoll>
+                    <IndexInAllRolls>2</IndexInAllRolls>
+                    <Length>sample string 3</Length>
+                    <Label>sample string 4</Label>
+                    <PieceCuts>
+                      <CloudPieceCut>
+                        <IndexInRollCut>1</IndexInRollCut>
+                        <Label>sample string 2</Label>
+                        <SourceShape>sample string 3</SourceShape>
+                        <Width>sample string 4</Width>
+                        <Length>sample string 5</Length>
+                        <AutoDyeLot>sample string 6</AutoDyeLot>
+                      </CloudPieceCut>
+                      <CloudPieceCut>
+                        <IndexInRollCut>1</IndexInRollCut>
+                        <Label>sample string 2</Label>
+                        <SourceShape>sample string 3</SourceShape>
+                        <Width>sample string 4</Width>
+                        <Length>sample string 5</Length>
+                        <AutoDyeLot>sample string 6</AutoDyeLot>
+                      </CloudPieceCut>
+                    </PieceCuts>
+                  </CloudRollCut>
+                  <CloudRollCut>
+                    <IndexInRoll>1</IndexInRoll>
+                    <IndexInAllRolls>2</IndexInAllRolls>
+                    <Length>sample string 3</Length>
+                    <Label>sample string 4</Label>
+                    <PieceCuts>
+                      <CloudPieceCut>
+                        <IndexInRollCut>1</IndexInRollCut>
+                        <Label>sample string 2</Label>
+                        <SourceShape>sample string 3</SourceShape>
+                        <Width>sample string 4</Width>
+                        <Length>sample string 5</Length>
+                        <AutoDyeLot>sample string 6</AutoDyeLot>
+                      </CloudPieceCut>
+                      <CloudPieceCut>
+                        <IndexInRollCut>1</IndexInRollCut>
+                        <Label>sample string 2</Label>
+                        <SourceShape>sample string 3</SourceShape>
+                        <Width>sample string 4</Width>
+                        <Length>sample string 5</Length>
+                        <AutoDyeLot>sample string 6</AutoDyeLot>
+                      </CloudPieceCut>
+                    </PieceCuts>
+                  </CloudRollCut>
+                </RollCuts>
+              </CloudRoll>
+            </Rolls>
+            <CutSheetImage>sample string 2</CutSheetImage>
+          </RollEstimation>
+        </CloudEstimation>
+        <CloudEstimation>
+          <SourceShapes>sample string 1</SourceShapes>
+          <ShapeQty>sample string 2</ShapeQty>
+          <Usage>sample string 3</Usage>
+          <WasteRatio>sample string 4</WasteRatio>
+          <CostAmount>sample string 5</CostAmount>
+          <SalesAmount>sample string 6</SalesAmount>
+          <Product>
+            <ID>sample string 19</ID>
+            <Type>sample string 20</Type>
+            <Trade>sample string 21</Trade>
+            <Desc>sample string 22</Desc>
+            <Vendor>sample string 23</Vendor>
+            <VendorSku>sample string 24</VendorSku>
+            <Color>sample string 25</Color>
+            <Unit>sample string 26</Unit>
+            <Manufacturer>sample string 27</Manufacturer>
+            <SalesPrice>sample string 28</SalesPrice>
+            <CostPrice>sample string 29</CostPrice>
+            <BoxName>sample string 30</BoxName>
+            <SellByBox>true</SellByBox>
+            <BoxSalesPrice>sample string 31</BoxSalesPrice>
+            <BoxCostPrice>sample string 32</BoxCostPrice>
+            <UnitsPerBox>sample string 33</UnitsPerBox>
+            <Taxable>true</Taxable>
+            <Width>sample string 1</Width>
+            <Length>sample string 2</Length>
+            <Thickness>sample string 3</Thickness>
+            <HoriRepeat>sample string 4</HoriRepeat>
+            <VertRepeat>sample string 5</VertRepeat>
+            <HoriDrop>sample string 6</HoriDrop>
+            <VertDrop>sample string 7</VertDrop>
+            <WidthMargin>sample string 10</WidthMargin>
+            <LengthMargin>sample string 11</LengthMargin>
+            <TileCalcMethod>sample string 12</TileCalcMethod>
+            <TileMinimumWaste>sample string 13</TileMinimumWaste>
+            <TileShape>sample string 14</TileShape>
+            <TileEdgeSize>sample string 15</TileEdgeSize>
+            <WasteAddon>sample string 16</WasteAddon>
+            <IsAddOn>true</IsAddOn>
+            <AddOns>
+              <CloudProductAddOn>
+                <ID>sample string 1</ID>
+                <Method>sample string 2</Method>
+              </CloudProductAddOn>
+              <CloudProductAddOn>
+                <ID>sample string 1</ID>
+                <Method>sample string 2</Method>
+              </CloudProductAddOn>
+            </AddOns>
+            <Datas>
+              <item key="sample string 1" value="sample string 2" />
+              <item key="sample string 3" value="sample string 4" />
+            </Datas>
+            <NoPiecingTogether>true</NoPiecingTogether>
+            <BoxRoundUp>sample string 18</BoxRoundUp>
+          </Product>
+          <TileEstimation>
+            <TileCount>1</TileCount>
+          </TileEstimation>
+          <RollEstimation>
+            <UsedLinearLength>sample string 1</UsedLinearLength>
+            <Rolls>
+              <CloudRoll>
+                <Index>1</Index>
+                <Length>sample string 2</Length>
+                <Width>sample string 3</Width>
+                <Dyelot>sample string 4</Dyelot>
+                <CutMargin>sample string 5</CutMargin>
+                <RoundUpToPatternSize>sample string 6</RoundUpToPatternSize>
+                <PatternMatchWidth>sample string 7</PatternMatchWidth>
+                <PatternMatchLength>sample string 8</PatternMatchLength>
+                <RollCuts>
+                  <CloudRollCut>
+                    <IndexInRoll>1</IndexInRoll>
+                    <IndexInAllRolls>2</IndexInAllRolls>
+                    <Length>sample string 3</Length>
+                    <Label>sample string 4</Label>
+                    <PieceCuts>
+                      <CloudPieceCut>
+                        <IndexInRollCut>1</IndexInRollCut>
+                        <Label>sample string 2</Label>
+                        <SourceShape>sample string 3</SourceShape>
+                        <Width>sample string 4</Width>
+                        <Length>sample string 5</Length>
+                        <AutoDyeLot>sample string 6</AutoDyeLot>
+                      </CloudPieceCut>
+                      <CloudPieceCut>
+                        <IndexInRollCut>1</IndexInRollCut>
+                        <Label>sample string 2</Label>
+                        <SourceShape>sample string 3</SourceShape>
+                        <Width>sample string 4</Width>
+                        <Length>sample string 5</Length>
+                        <AutoDyeLot>sample string 6</AutoDyeLot>
+                      </CloudPieceCut>
+                    </PieceCuts>
+                  </CloudRollCut>
+                  <CloudRollCut>
+                    <IndexInRoll>1</IndexInRoll>
+                    <IndexInAllRolls>2</IndexInAllRolls>
+                    <Length>sample string 3</Length>
+                    <Label>sample string 4</Label>
+                    <PieceCuts>
+                      <CloudPieceCut>
+                        <IndexInRollCut>1</IndexInRollCut>
+                        <Label>sample string 2</Label>
+                        <SourceShape>sample string 3</SourceShape>
+                        <Width>sample string 4</Width>
+                        <Length>sample string 5</Length>
+                        <AutoDyeLot>sample string 6</AutoDyeLot>
+                      </CloudPieceCut>
+                      <CloudPieceCut>
+                        <IndexInRollCut>1</IndexInRollCut>
+                        <Label>sample string 2</Label>
+                        <SourceShape>sample string 3</SourceShape>
+                        <Width>sample string 4</Width>
+                        <Length>sample string 5</Length>
+                        <AutoDyeLot>sample string 6</AutoDyeLot>
+                      </CloudPieceCut>
+                    </PieceCuts>
+                  </CloudRollCut>
+                </RollCuts>
+              </CloudRoll>
+              <CloudRoll>
+                <Index>1</Index>
+                <Length>sample string 2</Length>
+                <Width>sample string 3</Width>
+                <Dyelot>sample string 4</Dyelot>
+                <CutMargin>sample string 5</CutMargin>
+                <RoundUpToPatternSize>sample string 6</RoundUpToPatternSize>
+                <PatternMatchWidth>sample string 7</PatternMatchWidth>
+                <PatternMatchLength>sample string 8</PatternMatchLength>
+                <RollCuts>
+                  <CloudRollCut>
+                    <IndexInRoll>1</IndexInRoll>
+                    <IndexInAllRolls>2</IndexInAllRolls>
+                    <Length>sample string 3</Length>
+                    <Label>sample string 4</Label>
+                    <PieceCuts>
+                      <CloudPieceCut>
+                        <IndexInRollCut>1</IndexInRollCut>
+                        <Label>sample string 2</Label>
+                        <SourceShape>sample string 3</SourceShape>
+                        <Width>sample string 4</Width>
+                        <Length>sample string 5</Length>
+                        <AutoDyeLot>sample string 6</AutoDyeLot>
+                      </CloudPieceCut>
+                      <CloudPieceCut>
+                        <IndexInRollCut>1</IndexInRollCut>
+                        <Label>sample string 2</Label>
+                        <SourceShape>sample string 3</SourceShape>
+                        <Width>sample string 4</Width>
+                        <Length>sample string 5</Length>
+                        <AutoDyeLot>sample string 6</AutoDyeLot>
+                      </CloudPieceCut>
+                    </PieceCuts>
+                  </CloudRollCut>
+                  <CloudRollCut>
+                    <IndexInRoll>1</IndexInRoll>
+                    <IndexInAllRolls>2</IndexInAllRolls>
+                    <Length>sample string 3</Length>
+                    <Label>sample string 4</Label>
+                    <PieceCuts>
+                      <CloudPieceCut>
+                        <IndexInRollCut>1</IndexInRollCut>
+                        <Label>sample string 2</Label>
+                        <SourceShape>sample string 3</SourceShape>
+                        <Width>sample string 4</Width>
+                        <Length>sample string 5</Length>
+                        <AutoDyeLot>sample string 6</AutoDyeLot>
+                      </CloudPieceCut>
+                      <CloudPieceCut>
+                        <IndexInRollCut>1</IndexInRollCut>
+                        <Label>sample string 2</Label>
+                        <SourceShape>sample string 3</SourceShape>
+                        <Width>sample string 4</Width>
+                        <Length>sample string 5</Length>
+                        <AutoDyeLot>sample string 6</AutoDyeLot>
+                      </CloudPieceCut>
+                    </PieceCuts>
+                  </CloudRollCut>
+                </RollCuts>
+              </CloudRoll>
+            </Rolls>
+            <CutSheetImage>sample string 2</CutSheetImage>
+          </RollEstimation>
+        </CloudEstimation>
+      </EstimationResults>
+    </CloudEstimationArea>
+  </EstimationModes>
+</EstimationDTO>

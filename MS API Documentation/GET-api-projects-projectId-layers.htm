@@ -1,0 +1,1733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,maximum-scale=1" />
+    <meta name="root" content="/" />
+    <title></title>
+    
+
+<link href="/Content/Styles/jquery-ui.css" rel="stylesheet" />
+<link href="/Areas/HelpPage/TestClient.css" rel="stylesheet" />
+<script src="/Content/Scripts/jquery-2.1.1.js"></script>
+<script src="/Content/Scripts/jquery-ui-1.10.4.custom.js"></script>
+<script src="/Areas/HelpPage/jquery.base64.min.js"></script>
+<script src="/Areas/HelpPage/knockout-3.2.0.js"></script>
+<script src="/Areas/HelpPage/WebApiTestClient.js" defer="defer"></script>
+
+</head>
+<body>
+    
+
+<link type="text/css" href="/Areas/HelpPage/HelpPage.css" rel="stylesheet" />
+<div id="body" class="help-page">
+    <section class="featured">
+        <div class="content-wrapper">
+            <p>
+                <a href="/Help">Help Page Home</a>
+            </p>
+        </div>
+    </section>
+    <section class="content-wrapper main-content clear-fix">
+        
+<h1>GET api/projects/{projectId}/layers</h1>
+<div>
+        <p>Get layer info, include Rooms(Wall/Window/Door/Elevation) and Stairs</p>
+
+    <h2>Request Information</h2>
+
+    <h3>URI Parameters</h3>
+        <table class="help-page-table">
+        <thead>
+            <tr><th>Name</th><th>Description</th><th>Type</th><th>Additional information</th></tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td class="parameter-name">projectId</td>
+                    <td class="parameter-documentation">
+                        <p>Project ID</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                                <p>Required</p>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+
+
+
+    <h3>Body Parameters</h3>
+
+    <p></p>
+
+        <p>None.</p>
+
+
+    <h2>Response Information</h2>
+
+    <h3>Resource Description</h3>
+
+    <p>the layers and rooms</p>
+
+        Collection of <a href="/Help/ResourceModel?modelName=Fep.Cloud.M2CoreExtension.CloudLayer">Fep.Cloud.M2CoreExtension.CloudLayer</a>
+    <table class="help-page-table">
+        <thead>
+            <tr><th>Name</th><th>Description</th><th>Type</th><th>Additional information</th></tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td class="parameter-name">ShapeId</td>
+                    <td class="parameter-documentation">
+                        <p>Id</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">Name</td>
+                    <td class="parameter-documentation">
+                        <p>Name</p>
+                    </td>
+                    <td class="parameter-type">
+                        string
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">Index</td>
+                    <td class="parameter-documentation">
+                        <p>Layer Index</p>
+                    </td>
+                    <td class="parameter-type">
+                        integer
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">Rooms</td>
+                    <td class="parameter-documentation">
+                        <p>Rooms</p>
+                    </td>
+                    <td class="parameter-type">
+                                Collection of <a href="/Help/ResourceModel?modelName=Fep.Cloud.M2CoreExtension.CloudRoom">Fep.Cloud.M2CoreExtension.CloudRoom</a>
+
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">Stairs</td>
+                    <td class="parameter-documentation">
+                        <p>Stairs</p>
+                    </td>
+                    <td class="parameter-type">
+                                Collection of <a href="/Help/ResourceModel?modelName=Fep.Cloud.M2CoreExtension.CloudStair">Fep.Cloud.M2CoreExtension.CloudStair</a>
+
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">TopElevations</td>
+                    <td class="parameter-documentation">
+                        <p>TopElevations</p>
+                    </td>
+                    <td class="parameter-type">
+                                Collection of <a href="/Help/ResourceModel?modelName=Fep.Cloud.M2CoreExtension.CloudElevation">Fep.Cloud.M2CoreExtension.CloudElevation</a>
+
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">Segments</td>
+                    <td class="parameter-documentation">
+                        <p>Segments</p>
+                    </td>
+                    <td class="parameter-type">
+                                Collection of <a href="/Help/ResourceModel?modelName=Fep.Cloud.M2CoreExtension.CloudSegment">Fep.Cloud.M2CoreExtension.CloudSegment</a>
+
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">IndividualEAs</td>
+                    <td class="parameter-documentation">
+                        <p>Count Items</p>
+                    </td>
+                    <td class="parameter-type">
+                                Collection of <a href="/Help/ResourceModel?modelName=Fep.Cloud.M2CoreExtension.CloudCount">Fep.Cloud.M2CoreExtension.CloudCount</a>
+
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">HasRooms</td>
+                    <td class="parameter-documentation">
+                        <p>Layer contains any of the room</p>
+                    </td>
+                    <td class="parameter-type">
+                        boolean
+                    </td>
+                    <td class="parameter-annotations">
+                            <p>None.</p>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+
+
+        <h3>Response Formats</h3>
+
+<div>
+        <h4 class="sample-header">application/json, text/json</h4>
+        <div class="sample-content">
+            <span><b>Sample:</b></span>
+<pre class="wrapped">
+[
+  {
+    &quot;Index&quot;: 1,
+    &quot;Rooms&quot;: [
+      {
+        &quot;FloorArea&quot;: &quot;sample string 1&quot;,
+        &quot;FloorPerimeter&quot;: &quot;sample string 2&quot;,
+        &quot;Walls&quot;: [
+          {
+            &quot;ShapeId&quot;: &quot;sample string 1&quot;,
+            &quot;Thickness&quot;: &quot;sample string 2&quot;,
+            &quot;Length&quot;: &quot;sample string 3&quot;,
+            &quot;Height&quot;: &quot;sample string 4&quot;,
+            &quot;IsMissingWall&quot;: true,
+            &quot;Doors&quot;: [
+              {
+                &quot;Width&quot;: &quot;sample string 1&quot;,
+                &quot;Height&quot;: &quot;sample string 2&quot;,
+                &quot;Style&quot;: &quot;sample string 3&quot;,
+                &quot;OpenOnLeft&quot;: true,
+                &quot;OpenInRoom&quot;: true,
+                &quot;ShapeId&quot;: &quot;sample string 6&quot;,
+                &quot;Name&quot;: &quot;sample string 7&quot;
+              },
+              {
+                &quot;Width&quot;: &quot;sample string 1&quot;,
+                &quot;Height&quot;: &quot;sample string 2&quot;,
+                &quot;Style&quot;: &quot;sample string 3&quot;,
+                &quot;OpenOnLeft&quot;: true,
+                &quot;OpenInRoom&quot;: true,
+                &quot;ShapeId&quot;: &quot;sample string 6&quot;,
+                &quot;Name&quot;: &quot;sample string 7&quot;
+              }
+            ],
+            &quot;Windows&quot;: [
+              {
+                &quot;Width&quot;: &quot;sample string 1&quot;,
+                &quot;Height&quot;: &quot;sample string 2&quot;,
+                &quot;DistanceFromFloor&quot;: &quot;sample string 3&quot;,
+                &quot;ShapeId&quot;: &quot;sample string 4&quot;,
+                &quot;Name&quot;: &quot;sample string 5&quot;
+              },
+              {
+                &quot;Width&quot;: &quot;sample string 1&quot;,
+                &quot;Height&quot;: &quot;sample string 2&quot;,
+                &quot;DistanceFromFloor&quot;: &quot;sample string 3&quot;,
+                &quot;ShapeId&quot;: &quot;sample string 4&quot;,
+                &quot;Name&quot;: &quot;sample string 5&quot;
+              }
+            ],
+            &quot;Elevations&quot;: [
+              {
+                &quot;Height&quot;: &quot;sample string 1&quot;,
+                &quot;IsRecess&quot;: true,
+                &quot;ShapeId&quot;: &quot;sample string 3&quot;,
+                &quot;Name&quot;: &quot;sample string 4&quot;
+              },
+              {
+                &quot;Height&quot;: &quot;sample string 1&quot;,
+                &quot;IsRecess&quot;: true,
+                &quot;ShapeId&quot;: &quot;sample string 3&quot;,
+                &quot;Name&quot;: &quot;sample string 4&quot;
+              }
+            ]
+          },
+          {
+            &quot;ShapeId&quot;: &quot;sample string 1&quot;,
+            &quot;Thickness&quot;: &quot;sample string 2&quot;,
+            &quot;Length&quot;: &quot;sample string 3&quot;,
+            &quot;Height&quot;: &quot;sample string 4&quot;,
+            &quot;IsMissingWall&quot;: true,
+            &quot;Doors&quot;: [
+              {
+                &quot;Width&quot;: &quot;sample string 1&quot;,
+                &quot;Height&quot;: &quot;sample string 2&quot;,
+                &quot;Style&quot;: &quot;sample string 3&quot;,
+                &quot;OpenOnLeft&quot;: true,
+                &quot;OpenInRoom&quot;: true,
+                &quot;ShapeId&quot;: &quot;sample string 6&quot;,
+                &quot;Name&quot;: &quot;sample string 7&quot;
+              },
+              {
+                &quot;Width&quot;: &quot;sample string 1&quot;,
+                &quot;Height&quot;: &quot;sample string 2&quot;,
+                &quot;Style&quot;: &quot;sample string 3&quot;,
+                &quot;OpenOnLeft&quot;: true,
+                &quot;OpenInRoom&quot;: true,
+                &quot;ShapeId&quot;: &quot;sample string 6&quot;,
+                &quot;Name&quot;: &quot;sample string 7&quot;
+              }
+            ],
+            &quot;Windows&quot;: [
+              {
+                &quot;Width&quot;: &quot;sample string 1&quot;,
+                &quot;Height&quot;: &quot;sample string 2&quot;,
+                &quot;DistanceFromFloor&quot;: &quot;sample string 3&quot;,
+                &quot;ShapeId&quot;: &quot;sample string 4&quot;,
+                &quot;Name&quot;: &quot;sample string 5&quot;
+              },
+              {
+                &quot;Width&quot;: &quot;sample string 1&quot;,
+                &quot;Height&quot;: &quot;sample string 2&quot;,
+                &quot;DistanceFromFloor&quot;: &quot;sample string 3&quot;,
+                &quot;ShapeId&quot;: &quot;sample string 4&quot;,
+                &quot;Name&quot;: &quot;sample string 5&quot;
+              }
+            ],
+            &quot;Elevations&quot;: [
+              {
+                &quot;Height&quot;: &quot;sample string 1&quot;,
+                &quot;IsRecess&quot;: true,
+                &quot;ShapeId&quot;: &quot;sample string 3&quot;,
+                &quot;Name&quot;: &quot;sample string 4&quot;
+              },
+              {
+                &quot;Height&quot;: &quot;sample string 1&quot;,
+                &quot;IsRecess&quot;: true,
+                &quot;ShapeId&quot;: &quot;sample string 3&quot;,
+                &quot;Name&quot;: &quot;sample string 4&quot;
+              }
+            ]
+          }
+        ],
+        &quot;Elevations&quot;: [
+          {
+            &quot;Height&quot;: &quot;sample string 1&quot;,
+            &quot;IsRecess&quot;: true,
+            &quot;ShapeId&quot;: &quot;sample string 3&quot;,
+            &quot;Name&quot;: &quot;sample string 4&quot;
+          },
+          {
+            &quot;Height&quot;: &quot;sample string 1&quot;,
+            &quot;IsRecess&quot;: true,
+            &quot;ShapeId&quot;: &quot;sample string 3&quot;,
+            &quot;Name&quot;: &quot;sample string 4&quot;
+          }
+        ],
+        &quot;ShapeId&quot;: &quot;sample string 3&quot;,
+        &quot;Name&quot;: &quot;sample string 4&quot;
+      },
+      {
+        &quot;FloorArea&quot;: &quot;sample string 1&quot;,
+        &quot;FloorPerimeter&quot;: &quot;sample string 2&quot;,
+        &quot;Walls&quot;: [
+          {
+            &quot;ShapeId&quot;: &quot;sample string 1&quot;,
+            &quot;Thickness&quot;: &quot;sample string 2&quot;,
+            &quot;Length&quot;: &quot;sample string 3&quot;,
+            &quot;Height&quot;: &quot;sample string 4&quot;,
+            &quot;IsMissingWall&quot;: true,
+            &quot;Doors&quot;: [
+              {
+                &quot;Width&quot;: &quot;sample string 1&quot;,
+                &quot;Height&quot;: &quot;sample string 2&quot;,
+                &quot;Style&quot;: &quot;sample string 3&quot;,
+                &quot;OpenOnLeft&quot;: true,
+                &quot;OpenInRoom&quot;: true,
+                &quot;ShapeId&quot;: &quot;sample string 6&quot;,
+                &quot;Name&quot;: &quot;sample string 7&quot;
+              },
+              {
+                &quot;Width&quot;: &quot;sample string 1&quot;,
+                &quot;Height&quot;: &quot;sample string 2&quot;,
+                &quot;Style&quot;: &quot;sample string 3&quot;,
+                &quot;OpenOnLeft&quot;: true,
+                &quot;OpenInRoom&quot;: true,
+                &quot;ShapeId&quot;: &quot;sample string 6&quot;,
+                &quot;Name&quot;: &quot;sample string 7&quot;
+              }
+            ],
+            &quot;Windows&quot;: [
+              {
+                &quot;Width&quot;: &quot;sample string 1&quot;,
+                &quot;Height&quot;: &quot;sample string 2&quot;,
+                &quot;DistanceFromFloor&quot;: &quot;sample string 3&quot;,
+                &quot;ShapeId&quot;: &quot;sample string 4&quot;,
+                &quot;Name&quot;: &quot;sample string 5&quot;
+              },
+              {
+                &quot;Width&quot;: &quot;sample string 1&quot;,
+                &quot;Height&quot;: &quot;sample string 2&quot;,
+                &quot;DistanceFromFloor&quot;: &quot;sample string 3&quot;,
+                &quot;ShapeId&quot;: &quot;sample string 4&quot;,
+                &quot;Name&quot;: &quot;sample string 5&quot;
+              }
+            ],
+            &quot;Elevations&quot;: [
+              {
+                &quot;Height&quot;: &quot;sample string 1&quot;,
+                &quot;IsRecess&quot;: true,
+                &quot;ShapeId&quot;: &quot;sample string 3&quot;,
+                &quot;Name&quot;: &quot;sample string 4&quot;
+              },
+              {
+                &quot;Height&quot;: &quot;sample string 1&quot;,
+                &quot;IsRecess&quot;: true,
+                &quot;ShapeId&quot;: &quot;sample string 3&quot;,
+                &quot;Name&quot;: &quot;sample string 4&quot;
+              }
+            ]
+          },
+          {
+            &quot;ShapeId&quot;: &quot;sample string 1&quot;,
+            &quot;Thickness&quot;: &quot;sample string 2&quot;,
+            &quot;Length&quot;: &quot;sample string 3&quot;,
+            &quot;Height&quot;: &quot;sample string 4&quot;,
+            &quot;IsMissingWall&quot;: true,
+            &quot;Doors&quot;: [
+              {
+                &quot;Width&quot;: &quot;sample string 1&quot;,
+                &quot;Height&quot;: &quot;sample string 2&quot;,
+                &quot;Style&quot;: &quot;sample string 3&quot;,
+                &quot;OpenOnLeft&quot;: true,
+                &quot;OpenInRoom&quot;: true,
+                &quot;ShapeId&quot;: &quot;sample string 6&quot;,
+                &quot;Name&quot;: &quot;sample string 7&quot;
+              },
+              {
+                &quot;Width&quot;: &quot;sample string 1&quot;,
+                &quot;Height&quot;: &quot;sample string 2&quot;,
+                &quot;Style&quot;: &quot;sample string 3&quot;,
+                &quot;OpenOnLeft&quot;: true,
+                &quot;OpenInRoom&quot;: true,
+                &quot;ShapeId&quot;: &quot;sample string 6&quot;,
+                &quot;Name&quot;: &quot;sample string 7&quot;
+              }
+            ],
+            &quot;Windows&quot;: [
+              {
+                &quot;Width&quot;: &quot;sample string 1&quot;,
+                &quot;Height&quot;: &quot;sample string 2&quot;,
+                &quot;DistanceFromFloor&quot;: &quot;sample string 3&quot;,
+                &quot;ShapeId&quot;: &quot;sample string 4&quot;,
+                &quot;Name&quot;: &quot;sample string 5&quot;
+              },
+              {
+                &quot;Width&quot;: &quot;sample string 1&quot;,
+                &quot;Height&quot;: &quot;sample string 2&quot;,
+                &quot;DistanceFromFloor&quot;: &quot;sample string 3&quot;,
+                &quot;ShapeId&quot;: &quot;sample string 4&quot;,
+                &quot;Name&quot;: &quot;sample string 5&quot;
+              }
+            ],
+            &quot;Elevations&quot;: [
+              {
+                &quot;Height&quot;: &quot;sample string 1&quot;,
+                &quot;IsRecess&quot;: true,
+                &quot;ShapeId&quot;: &quot;sample string 3&quot;,
+                &quot;Name&quot;: &quot;sample string 4&quot;
+              },
+              {
+                &quot;Height&quot;: &quot;sample string 1&quot;,
+                &quot;IsRecess&quot;: true,
+                &quot;ShapeId&quot;: &quot;sample string 3&quot;,
+                &quot;Name&quot;: &quot;sample string 4&quot;
+              }
+            ]
+          }
+        ],
+        &quot;Elevations&quot;: [
+          {
+            &quot;Height&quot;: &quot;sample string 1&quot;,
+            &quot;IsRecess&quot;: true,
+            &quot;ShapeId&quot;: &quot;sample string 3&quot;,
+            &quot;Name&quot;: &quot;sample string 4&quot;
+          },
+          {
+            &quot;Height&quot;: &quot;sample string 1&quot;,
+            &quot;IsRecess&quot;: true,
+            &quot;ShapeId&quot;: &quot;sample string 3&quot;,
+            &quot;Name&quot;: &quot;sample string 4&quot;
+          }
+        ],
+        &quot;ShapeId&quot;: &quot;sample string 3&quot;,
+        &quot;Name&quot;: &quot;sample string 4&quot;
+      }
+    ],
+    &quot;Stairs&quot;: [
+      {
+        &quot;Width&quot;: &quot;sample string 1&quot;,
+        &quot;StairUnits&quot;: [
+          {
+            &quot;Riser&quot;: &quot;sample string 1&quot;,
+            &quot;Tread&quot;: &quot;sample string 2&quot;,
+            &quot;StepThickness&quot;: &quot;sample string 3&quot;,
+            &quot;Nosing&quot;: &quot;sample string 4&quot;,
+            &quot;Steps&quot;: 5
+          },
+          {
+            &quot;Riser&quot;: &quot;sample string 1&quot;,
+            &quot;Tread&quot;: &quot;sample string 2&quot;,
+            &quot;StepThickness&quot;: &quot;sample string 3&quot;,
+            &quot;Nosing&quot;: &quot;sample string 4&quot;,
+            &quot;Steps&quot;: 5
+          }
+        ],
+        &quot;ShapeId&quot;: &quot;sample string 2&quot;,
+        &quot;Name&quot;: &quot;sample string 3&quot;
+      },
+      {
+        &quot;Width&quot;: &quot;sample string 1&quot;,
+        &quot;StairUnits&quot;: [
+          {
+            &quot;Riser&quot;: &quot;sample string 1&quot;,
+            &quot;Tread&quot;: &quot;sample string 2&quot;,
+            &quot;StepThickness&quot;: &quot;sample string 3&quot;,
+            &quot;Nosing&quot;: &quot;sample string 4&quot;,
+            &quot;Steps&quot;: 5
+          },
+          {
+            &quot;Riser&quot;: &quot;sample string 1&quot;,
+            &quot;Tread&quot;: &quot;sample string 2&quot;,
+            &quot;StepThickness&quot;: &quot;sample string 3&quot;,
+            &quot;Nosing&quot;: &quot;sample string 4&quot;,
+            &quot;Steps&quot;: 5
+          }
+        ],
+        &quot;ShapeId&quot;: &quot;sample string 2&quot;,
+        &quot;Name&quot;: &quot;sample string 3&quot;
+      }
+    ],
+    &quot;TopElevations&quot;: [
+      {
+        &quot;Height&quot;: &quot;sample string 1&quot;,
+        &quot;IsRecess&quot;: true,
+        &quot;ShapeId&quot;: &quot;sample string 3&quot;,
+        &quot;Name&quot;: &quot;sample string 4&quot;
+      },
+      {
+        &quot;Height&quot;: &quot;sample string 1&quot;,
+        &quot;IsRecess&quot;: true,
+        &quot;ShapeId&quot;: &quot;sample string 3&quot;,
+        &quot;Name&quot;: &quot;sample string 4&quot;
+      }
+    ],
+    &quot;Segments&quot;: [
+      {
+        &quot;ShapeId&quot;: &quot;sample string 1&quot;,
+        &quot;Name&quot;: &quot;sample string 2&quot;
+      },
+      {
+        &quot;ShapeId&quot;: &quot;sample string 1&quot;,
+        &quot;Name&quot;: &quot;sample string 2&quot;
+      }
+    ],
+    &quot;IndividualEAs&quot;: [
+      {
+        &quot;Repetition&quot;: 1,
+        &quot;ShapeId&quot;: &quot;sample string 2&quot;,
+        &quot;Name&quot;: &quot;sample string 3&quot;
+      },
+      {
+        &quot;Repetition&quot;: 1,
+        &quot;ShapeId&quot;: &quot;sample string 2&quot;,
+        &quot;Name&quot;: &quot;sample string 3&quot;
+      }
+    ],
+    &quot;HasRooms&quot;: true,
+    &quot;ShapeId&quot;: &quot;sample string 3&quot;,
+    &quot;Name&quot;: &quot;sample string 4&quot;
+  },
+  {
+    &quot;Index&quot;: 1,
+    &quot;Rooms&quot;: [
+      {
+        &quot;FloorArea&quot;: &quot;sample string 1&quot;,
+        &quot;FloorPerimeter&quot;: &quot;sample string 2&quot;,
+        &quot;Walls&quot;: [
+          {
+            &quot;ShapeId&quot;: &quot;sample string 1&quot;,
+            &quot;Thickness&quot;: &quot;sample string 2&quot;,
+            &quot;Length&quot;: &quot;sample string 3&quot;,
+            &quot;Height&quot;: &quot;sample string 4&quot;,
+            &quot;IsMissingWall&quot;: true,
+            &quot;Doors&quot;: [
+              {
+                &quot;Width&quot;: &quot;sample string 1&quot;,
+                &quot;Height&quot;: &quot;sample string 2&quot;,
+                &quot;Style&quot;: &quot;sample string 3&quot;,
+                &quot;OpenOnLeft&quot;: true,
+                &quot;OpenInRoom&quot;: true,
+                &quot;ShapeId&quot;: &quot;sample string 6&quot;,
+                &quot;Name&quot;: &quot;sample string 7&quot;
+              },
+              {
+                &quot;Width&quot;: &quot;sample string 1&quot;,
+                &quot;Height&quot;: &quot;sample string 2&quot;,
+                &quot;Style&quot;: &quot;sample string 3&quot;,
+                &quot;OpenOnLeft&quot;: true,
+                &quot;OpenInRoom&quot;: true,
+                &quot;ShapeId&quot;: &quot;sample string 6&quot;,
+                &quot;Name&quot;: &quot;sample string 7&quot;
+              }
+            ],
+            &quot;Windows&quot;: [
+              {
+                &quot;Width&quot;: &quot;sample string 1&quot;,
+                &quot;Height&quot;: &quot;sample string 2&quot;,
+                &quot;DistanceFromFloor&quot;: &quot;sample string 3&quot;,
+                &quot;ShapeId&quot;: &quot;sample string 4&quot;,
+                &quot;Name&quot;: &quot;sample string 5&quot;
+              },
+              {
+                &quot;Width&quot;: &quot;sample string 1&quot;,
+                &quot;Height&quot;: &quot;sample string 2&quot;,
+                &quot;DistanceFromFloor&quot;: &quot;sample string 3&quot;,
+                &quot;ShapeId&quot;: &quot;sample string 4&quot;,
+                &quot;Name&quot;: &quot;sample string 5&quot;
+              }
+            ],
+            &quot;Elevations&quot;: [
+              {
+                &quot;Height&quot;: &quot;sample string 1&quot;,
+                &quot;IsRecess&quot;: true,
+                &quot;ShapeId&quot;: &quot;sample string 3&quot;,
+                &quot;Name&quot;: &quot;sample string 4&quot;
+              },
+              {
+                &quot;Height&quot;: &quot;sample string 1&quot;,
+                &quot;IsRecess&quot;: true,
+                &quot;ShapeId&quot;: &quot;sample string 3&quot;,
+                &quot;Name&quot;: &quot;sample string 4&quot;
+              }
+            ]
+          },
+          {
+            &quot;ShapeId&quot;: &quot;sample string 1&quot;,
+            &quot;Thickness&quot;: &quot;sample string 2&quot;,
+            &quot;Length&quot;: &quot;sample string 3&quot;,
+            &quot;Height&quot;: &quot;sample string 4&quot;,
+            &quot;IsMissingWall&quot;: true,
+            &quot;Doors&quot;: [
+              {
+                &quot;Width&quot;: &quot;sample string 1&quot;,
+                &quot;Height&quot;: &quot;sample string 2&quot;,
+                &quot;Style&quot;: &quot;sample string 3&quot;,
+                &quot;OpenOnLeft&quot;: true,
+                &quot;OpenInRoom&quot;: true,
+                &quot;ShapeId&quot;: &quot;sample string 6&quot;,
+                &quot;Name&quot;: &quot;sample string 7&quot;
+              },
+              {
+                &quot;Width&quot;: &quot;sample string 1&quot;,
+                &quot;Height&quot;: &quot;sample string 2&quot;,
+                &quot;Style&quot;: &quot;sample string 3&quot;,
+                &quot;OpenOnLeft&quot;: true,
+                &quot;OpenInRoom&quot;: true,
+                &quot;ShapeId&quot;: &quot;sample string 6&quot;,
+                &quot;Name&quot;: &quot;sample string 7&quot;
+              }
+            ],
+            &quot;Windows&quot;: [
+              {
+                &quot;Width&quot;: &quot;sample string 1&quot;,
+                &quot;Height&quot;: &quot;sample string 2&quot;,
+                &quot;DistanceFromFloor&quot;: &quot;sample string 3&quot;,
+                &quot;ShapeId&quot;: &quot;sample string 4&quot;,
+                &quot;Name&quot;: &quot;sample string 5&quot;
+              },
+              {
+                &quot;Width&quot;: &quot;sample string 1&quot;,
+                &quot;Height&quot;: &quot;sample string 2&quot;,
+                &quot;DistanceFromFloor&quot;: &quot;sample string 3&quot;,
+                &quot;ShapeId&quot;: &quot;sample string 4&quot;,
+                &quot;Name&quot;: &quot;sample string 5&quot;
+              }
+            ],
+            &quot;Elevations&quot;: [
+              {
+                &quot;Height&quot;: &quot;sample string 1&quot;,
+                &quot;IsRecess&quot;: true,
+                &quot;ShapeId&quot;: &quot;sample string 3&quot;,
+                &quot;Name&quot;: &quot;sample string 4&quot;
+              },
+              {
+                &quot;Height&quot;: &quot;sample string 1&quot;,
+                &quot;IsRecess&quot;: true,
+                &quot;ShapeId&quot;: &quot;sample string 3&quot;,
+                &quot;Name&quot;: &quot;sample string 4&quot;
+              }
+            ]
+          }
+        ],
+        &quot;Elevations&quot;: [
+          {
+            &quot;Height&quot;: &quot;sample string 1&quot;,
+            &quot;IsRecess&quot;: true,
+            &quot;ShapeId&quot;: &quot;sample string 3&quot;,
+            &quot;Name&quot;: &quot;sample string 4&quot;
+          },
+          {
+            &quot;Height&quot;: &quot;sample string 1&quot;,
+            &quot;IsRecess&quot;: true,
+            &quot;ShapeId&quot;: &quot;sample string 3&quot;,
+            &quot;Name&quot;: &quot;sample string 4&quot;
+          }
+        ],
+        &quot;ShapeId&quot;: &quot;sample string 3&quot;,
+        &quot;Name&quot;: &quot;sample string 4&quot;
+      },
+      {
+        &quot;FloorArea&quot;: &quot;sample string 1&quot;,
+        &quot;FloorPerimeter&quot;: &quot;sample string 2&quot;,
+        &quot;Walls&quot;: [
+          {
+            &quot;ShapeId&quot;: &quot;sample string 1&quot;,
+            &quot;Thickness&quot;: &quot;sample string 2&quot;,
+            &quot;Length&quot;: &quot;sample string 3&quot;,
+            &quot;Height&quot;: &quot;sample string 4&quot;,
+            &quot;IsMissingWall&quot;: true,
+            &quot;Doors&quot;: [
+              {
+                &quot;Width&quot;: &quot;sample string 1&quot;,
+                &quot;Height&quot;: &quot;sample string 2&quot;,
+                &quot;Style&quot;: &quot;sample string 3&quot;,
+                &quot;OpenOnLeft&quot;: true,
+                &quot;OpenInRoom&quot;: true,
+                &quot;ShapeId&quot;: &quot;sample string 6&quot;,
+                &quot;Name&quot;: &quot;sample string 7&quot;
+              },
+              {
+                &quot;Width&quot;: &quot;sample string 1&quot;,
+                &quot;Height&quot;: &quot;sample string 2&quot;,
+                &quot;Style&quot;: &quot;sample string 3&quot;,
+                &quot;OpenOnLeft&quot;: true,
+                &quot;OpenInRoom&quot;: true,
+                &quot;ShapeId&quot;: &quot;sample string 6&quot;,
+                &quot;Name&quot;: &quot;sample string 7&quot;
+              }
+            ],
+            &quot;Windows&quot;: [
+              {
+                &quot;Width&quot;: &quot;sample string 1&quot;,
+                &quot;Height&quot;: &quot;sample string 2&quot;,
+                &quot;DistanceFromFloor&quot;: &quot;sample string 3&quot;,
+                &quot;ShapeId&quot;: &quot;sample string 4&quot;,
+                &quot;Name&quot;: &quot;sample string 5&quot;
+              },
+              {
+                &quot;Width&quot;: &quot;sample string 1&quot;,
+                &quot;Height&quot;: &quot;sample string 2&quot;,
+                &quot;DistanceFromFloor&quot;: &quot;sample string 3&quot;,
+                &quot;ShapeId&quot;: &quot;sample string 4&quot;,
+                &quot;Name&quot;: &quot;sample string 5&quot;
+              }
+            ],
+            &quot;Elevations&quot;: [
+              {
+                &quot;Height&quot;: &quot;sample string 1&quot;,
+                &quot;IsRecess&quot;: true,
+                &quot;ShapeId&quot;: &quot;sample string 3&quot;,
+                &quot;Name&quot;: &quot;sample string 4&quot;
+              },
+              {
+                &quot;Height&quot;: &quot;sample string 1&quot;,
+                &quot;IsRecess&quot;: true,
+                &quot;ShapeId&quot;: &quot;sample string 3&quot;,
+                &quot;Name&quot;: &quot;sample string 4&quot;
+              }
+            ]
+          },
+          {
+            &quot;ShapeId&quot;: &quot;sample string 1&quot;,
+            &quot;Thickness&quot;: &quot;sample string 2&quot;,
+            &quot;Length&quot;: &quot;sample string 3&quot;,
+            &quot;Height&quot;: &quot;sample string 4&quot;,
+            &quot;IsMissingWall&quot;: true,
+            &quot;Doors&quot;: [
+              {
+                &quot;Width&quot;: &quot;sample string 1&quot;,
+                &quot;Height&quot;: &quot;sample string 2&quot;,
+                &quot;Style&quot;: &quot;sample string 3&quot;,
+                &quot;OpenOnLeft&quot;: true,
+                &quot;OpenInRoom&quot;: true,
+                &quot;ShapeId&quot;: &quot;sample string 6&quot;,
+                &quot;Name&quot;: &quot;sample string 7&quot;
+              },
+              {
+                &quot;Width&quot;: &quot;sample string 1&quot;,
+                &quot;Height&quot;: &quot;sample string 2&quot;,
+                &quot;Style&quot;: &quot;sample string 3&quot;,
+                &quot;OpenOnLeft&quot;: true,
+                &quot;OpenInRoom&quot;: true,
+                &quot;ShapeId&quot;: &quot;sample string 6&quot;,
+                &quot;Name&quot;: &quot;sample string 7&quot;
+              }
+            ],
+            &quot;Windows&quot;: [
+              {
+                &quot;Width&quot;: &quot;sample string 1&quot;,
+                &quot;Height&quot;: &quot;sample string 2&quot;,
+                &quot;DistanceFromFloor&quot;: &quot;sample string 3&quot;,
+                &quot;ShapeId&quot;: &quot;sample string 4&quot;,
+                &quot;Name&quot;: &quot;sample string 5&quot;
+              },
+              {
+                &quot;Width&quot;: &quot;sample string 1&quot;,
+                &quot;Height&quot;: &quot;sample string 2&quot;,
+                &quot;DistanceFromFloor&quot;: &quot;sample string 3&quot;,
+                &quot;ShapeId&quot;: &quot;sample string 4&quot;,
+                &quot;Name&quot;: &quot;sample string 5&quot;
+              }
+            ],
+            &quot;Elevations&quot;: [
+              {
+                &quot;Height&quot;: &quot;sample string 1&quot;,
+                &quot;IsRecess&quot;: true,
+                &quot;ShapeId&quot;: &quot;sample string 3&quot;,
+                &quot;Name&quot;: &quot;sample string 4&quot;
+              },
+              {
+                &quot;Height&quot;: &quot;sample string 1&quot;,
+                &quot;IsRecess&quot;: true,
+                &quot;ShapeId&quot;: &quot;sample string 3&quot;,
+                &quot;Name&quot;: &quot;sample string 4&quot;
+              }
+            ]
+          }
+        ],
+        &quot;Elevations&quot;: [
+          {
+            &quot;Height&quot;: &quot;sample string 1&quot;,
+            &quot;IsRecess&quot;: true,
+            &quot;ShapeId&quot;: &quot;sample string 3&quot;,
+            &quot;Name&quot;: &quot;sample string 4&quot;
+          },
+          {
+            &quot;Height&quot;: &quot;sample string 1&quot;,
+            &quot;IsRecess&quot;: true,
+            &quot;ShapeId&quot;: &quot;sample string 3&quot;,
+            &quot;Name&quot;: &quot;sample string 4&quot;
+          }
+        ],
+        &quot;ShapeId&quot;: &quot;sample string 3&quot;,
+        &quot;Name&quot;: &quot;sample string 4&quot;
+      }
+    ],
+    &quot;Stairs&quot;: [
+      {
+        &quot;Width&quot;: &quot;sample string 1&quot;,
+        &quot;StairUnits&quot;: [
+          {
+            &quot;Riser&quot;: &quot;sample string 1&quot;,
+            &quot;Tread&quot;: &quot;sample string 2&quot;,
+            &quot;StepThickness&quot;: &quot;sample string 3&quot;,
+            &quot;Nosing&quot;: &quot;sample string 4&quot;,
+            &quot;Steps&quot;: 5
+          },
+          {
+            &quot;Riser&quot;: &quot;sample string 1&quot;,
+            &quot;Tread&quot;: &quot;sample string 2&quot;,
+            &quot;StepThickness&quot;: &quot;sample string 3&quot;,
+            &quot;Nosing&quot;: &quot;sample string 4&quot;,
+            &quot;Steps&quot;: 5
+          }
+        ],
+        &quot;ShapeId&quot;: &quot;sample string 2&quot;,
+        &quot;Name&quot;: &quot;sample string 3&quot;
+      },
+      {
+        &quot;Width&quot;: &quot;sample string 1&quot;,
+        &quot;StairUnits&quot;: [
+          {
+            &quot;Riser&quot;: &quot;sample string 1&quot;,
+            &quot;Tread&quot;: &quot;sample string 2&quot;,
+            &quot;StepThickness&quot;: &quot;sample string 3&quot;,
+            &quot;Nosing&quot;: &quot;sample string 4&quot;,
+            &quot;Steps&quot;: 5
+          },
+          {
+            &quot;Riser&quot;: &quot;sample string 1&quot;,
+            &quot;Tread&quot;: &quot;sample string 2&quot;,
+            &quot;StepThickness&quot;: &quot;sample string 3&quot;,
+            &quot;Nosing&quot;: &quot;sample string 4&quot;,
+            &quot;Steps&quot;: 5
+          }
+        ],
+        &quot;ShapeId&quot;: &quot;sample string 2&quot;,
+        &quot;Name&quot;: &quot;sample string 3&quot;
+      }
+    ],
+    &quot;TopElevations&quot;: [
+      {
+        &quot;Height&quot;: &quot;sample string 1&quot;,
+        &quot;IsRecess&quot;: true,
+        &quot;ShapeId&quot;: &quot;sample string 3&quot;,
+        &quot;Name&quot;: &quot;sample string 4&quot;
+      },
+      {
+        &quot;Height&quot;: &quot;sample string 1&quot;,
+        &quot;IsRecess&quot;: true,
+        &quot;ShapeId&quot;: &quot;sample string 3&quot;,
+        &quot;Name&quot;: &quot;sample string 4&quot;
+      }
+    ],
+    &quot;Segments&quot;: [
+      {
+        &quot;ShapeId&quot;: &quot;sample string 1&quot;,
+        &quot;Name&quot;: &quot;sample string 2&quot;
+      },
+      {
+        &quot;ShapeId&quot;: &quot;sample string 1&quot;,
+        &quot;Name&quot;: &quot;sample string 2&quot;
+      }
+    ],
+    &quot;IndividualEAs&quot;: [
+      {
+        &quot;Repetition&quot;: 1,
+        &quot;ShapeId&quot;: &quot;sample string 2&quot;,
+        &quot;Name&quot;: &quot;sample string 3&quot;
+      },
+      {
+        &quot;Repetition&quot;: 1,
+        &quot;ShapeId&quot;: &quot;sample string 2&quot;,
+        &quot;Name&quot;: &quot;sample string 3&quot;
+      }
+    ],
+    &quot;HasRooms&quot;: true,
+    &quot;ShapeId&quot;: &quot;sample string 3&quot;,
+    &quot;Name&quot;: &quot;sample string 4&quot;
+  }
+]
+</pre>
+        </div>
+        <h4 class="sample-header">application/xml, text/xml</h4>
+        <div class="sample-content">
+            <span><b>Sample:</b></span>
+<pre class="wrapped">
+&lt;ArrayOfCloudLayer&gt;
+  &lt;CloudLayer&gt;
+    &lt;ShapeId&gt;sample string 3&lt;/ShapeId&gt;
+    &lt;Name&gt;sample string 4&lt;/Name&gt;
+    &lt;HasRooms&gt;true&lt;/HasRooms&gt;
+    &lt;Index&gt;1&lt;/Index&gt;
+    &lt;Rooms&gt;
+      &lt;CloudRoom&gt;
+        &lt;ShapeId&gt;sample string 3&lt;/ShapeId&gt;
+        &lt;Name&gt;sample string 4&lt;/Name&gt;
+        &lt;FloorArea&gt;sample string 1&lt;/FloorArea&gt;
+        &lt;FloorPerimeter&gt;sample string 2&lt;/FloorPerimeter&gt;
+        &lt;Walls&gt;
+          &lt;CloudWall&gt;
+            &lt;ShapeId&gt;sample string 1&lt;/ShapeId&gt;
+            &lt;Thickness&gt;sample string 2&lt;/Thickness&gt;
+            &lt;Length&gt;sample string 3&lt;/Length&gt;
+            &lt;Height&gt;sample string 4&lt;/Height&gt;
+            &lt;IsMissingWall&gt;true&lt;/IsMissingWall&gt;
+            &lt;Doors&gt;
+              &lt;CloudDoor&gt;
+                &lt;ShapeId&gt;sample string 6&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 7&lt;/Name&gt;
+                &lt;Width&gt;sample string 1&lt;/Width&gt;
+                &lt;Height&gt;sample string 2&lt;/Height&gt;
+                &lt;Style&gt;sample string 3&lt;/Style&gt;
+                &lt;OpenOnLeft&gt;true&lt;/OpenOnLeft&gt;
+                &lt;OpenInRoom&gt;true&lt;/OpenInRoom&gt;
+              &lt;/CloudDoor&gt;
+              &lt;CloudDoor&gt;
+                &lt;ShapeId&gt;sample string 6&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 7&lt;/Name&gt;
+                &lt;Width&gt;sample string 1&lt;/Width&gt;
+                &lt;Height&gt;sample string 2&lt;/Height&gt;
+                &lt;Style&gt;sample string 3&lt;/Style&gt;
+                &lt;OpenOnLeft&gt;true&lt;/OpenOnLeft&gt;
+                &lt;OpenInRoom&gt;true&lt;/OpenInRoom&gt;
+              &lt;/CloudDoor&gt;
+            &lt;/Doors&gt;
+            &lt;Windows&gt;
+              &lt;CloudWindow&gt;
+                &lt;ShapeId&gt;sample string 4&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 5&lt;/Name&gt;
+                &lt;Width&gt;sample string 1&lt;/Width&gt;
+                &lt;Height&gt;sample string 2&lt;/Height&gt;
+                &lt;DistanceFromFloor&gt;sample string 3&lt;/DistanceFromFloor&gt;
+              &lt;/CloudWindow&gt;
+              &lt;CloudWindow&gt;
+                &lt;ShapeId&gt;sample string 4&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 5&lt;/Name&gt;
+                &lt;Width&gt;sample string 1&lt;/Width&gt;
+                &lt;Height&gt;sample string 2&lt;/Height&gt;
+                &lt;DistanceFromFloor&gt;sample string 3&lt;/DistanceFromFloor&gt;
+              &lt;/CloudWindow&gt;
+            &lt;/Windows&gt;
+            &lt;Elevations&gt;
+              &lt;CloudElevation&gt;
+                &lt;ShapeId&gt;sample string 3&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 4&lt;/Name&gt;
+                &lt;Height&gt;sample string 1&lt;/Height&gt;
+                &lt;IsRecess&gt;true&lt;/IsRecess&gt;
+              &lt;/CloudElevation&gt;
+              &lt;CloudElevation&gt;
+                &lt;ShapeId&gt;sample string 3&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 4&lt;/Name&gt;
+                &lt;Height&gt;sample string 1&lt;/Height&gt;
+                &lt;IsRecess&gt;true&lt;/IsRecess&gt;
+              &lt;/CloudElevation&gt;
+            &lt;/Elevations&gt;
+          &lt;/CloudWall&gt;
+          &lt;CloudWall&gt;
+            &lt;ShapeId&gt;sample string 1&lt;/ShapeId&gt;
+            &lt;Thickness&gt;sample string 2&lt;/Thickness&gt;
+            &lt;Length&gt;sample string 3&lt;/Length&gt;
+            &lt;Height&gt;sample string 4&lt;/Height&gt;
+            &lt;IsMissingWall&gt;true&lt;/IsMissingWall&gt;
+            &lt;Doors&gt;
+              &lt;CloudDoor&gt;
+                &lt;ShapeId&gt;sample string 6&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 7&lt;/Name&gt;
+                &lt;Width&gt;sample string 1&lt;/Width&gt;
+                &lt;Height&gt;sample string 2&lt;/Height&gt;
+                &lt;Style&gt;sample string 3&lt;/Style&gt;
+                &lt;OpenOnLeft&gt;true&lt;/OpenOnLeft&gt;
+                &lt;OpenInRoom&gt;true&lt;/OpenInRoom&gt;
+              &lt;/CloudDoor&gt;
+              &lt;CloudDoor&gt;
+                &lt;ShapeId&gt;sample string 6&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 7&lt;/Name&gt;
+                &lt;Width&gt;sample string 1&lt;/Width&gt;
+                &lt;Height&gt;sample string 2&lt;/Height&gt;
+                &lt;Style&gt;sample string 3&lt;/Style&gt;
+                &lt;OpenOnLeft&gt;true&lt;/OpenOnLeft&gt;
+                &lt;OpenInRoom&gt;true&lt;/OpenInRoom&gt;
+              &lt;/CloudDoor&gt;
+            &lt;/Doors&gt;
+            &lt;Windows&gt;
+              &lt;CloudWindow&gt;
+                &lt;ShapeId&gt;sample string 4&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 5&lt;/Name&gt;
+                &lt;Width&gt;sample string 1&lt;/Width&gt;
+                &lt;Height&gt;sample string 2&lt;/Height&gt;
+                &lt;DistanceFromFloor&gt;sample string 3&lt;/DistanceFromFloor&gt;
+              &lt;/CloudWindow&gt;
+              &lt;CloudWindow&gt;
+                &lt;ShapeId&gt;sample string 4&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 5&lt;/Name&gt;
+                &lt;Width&gt;sample string 1&lt;/Width&gt;
+                &lt;Height&gt;sample string 2&lt;/Height&gt;
+                &lt;DistanceFromFloor&gt;sample string 3&lt;/DistanceFromFloor&gt;
+              &lt;/CloudWindow&gt;
+            &lt;/Windows&gt;
+            &lt;Elevations&gt;
+              &lt;CloudElevation&gt;
+                &lt;ShapeId&gt;sample string 3&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 4&lt;/Name&gt;
+                &lt;Height&gt;sample string 1&lt;/Height&gt;
+                &lt;IsRecess&gt;true&lt;/IsRecess&gt;
+              &lt;/CloudElevation&gt;
+              &lt;CloudElevation&gt;
+                &lt;ShapeId&gt;sample string 3&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 4&lt;/Name&gt;
+                &lt;Height&gt;sample string 1&lt;/Height&gt;
+                &lt;IsRecess&gt;true&lt;/IsRecess&gt;
+              &lt;/CloudElevation&gt;
+            &lt;/Elevations&gt;
+          &lt;/CloudWall&gt;
+        &lt;/Walls&gt;
+        &lt;Elevations&gt;
+          &lt;CloudElevation&gt;
+            &lt;ShapeId&gt;sample string 3&lt;/ShapeId&gt;
+            &lt;Name&gt;sample string 4&lt;/Name&gt;
+            &lt;Height&gt;sample string 1&lt;/Height&gt;
+            &lt;IsRecess&gt;true&lt;/IsRecess&gt;
+          &lt;/CloudElevation&gt;
+          &lt;CloudElevation&gt;
+            &lt;ShapeId&gt;sample string 3&lt;/ShapeId&gt;
+            &lt;Name&gt;sample string 4&lt;/Name&gt;
+            &lt;Height&gt;sample string 1&lt;/Height&gt;
+            &lt;IsRecess&gt;true&lt;/IsRecess&gt;
+          &lt;/CloudElevation&gt;
+        &lt;/Elevations&gt;
+      &lt;/CloudRoom&gt;
+      &lt;CloudRoom&gt;
+        &lt;ShapeId&gt;sample string 3&lt;/ShapeId&gt;
+        &lt;Name&gt;sample string 4&lt;/Name&gt;
+        &lt;FloorArea&gt;sample string 1&lt;/FloorArea&gt;
+        &lt;FloorPerimeter&gt;sample string 2&lt;/FloorPerimeter&gt;
+        &lt;Walls&gt;
+          &lt;CloudWall&gt;
+            &lt;ShapeId&gt;sample string 1&lt;/ShapeId&gt;
+            &lt;Thickness&gt;sample string 2&lt;/Thickness&gt;
+            &lt;Length&gt;sample string 3&lt;/Length&gt;
+            &lt;Height&gt;sample string 4&lt;/Height&gt;
+            &lt;IsMissingWall&gt;true&lt;/IsMissingWall&gt;
+            &lt;Doors&gt;
+              &lt;CloudDoor&gt;
+                &lt;ShapeId&gt;sample string 6&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 7&lt;/Name&gt;
+                &lt;Width&gt;sample string 1&lt;/Width&gt;
+                &lt;Height&gt;sample string 2&lt;/Height&gt;
+                &lt;Style&gt;sample string 3&lt;/Style&gt;
+                &lt;OpenOnLeft&gt;true&lt;/OpenOnLeft&gt;
+                &lt;OpenInRoom&gt;true&lt;/OpenInRoom&gt;
+              &lt;/CloudDoor&gt;
+              &lt;CloudDoor&gt;
+                &lt;ShapeId&gt;sample string 6&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 7&lt;/Name&gt;
+                &lt;Width&gt;sample string 1&lt;/Width&gt;
+                &lt;Height&gt;sample string 2&lt;/Height&gt;
+                &lt;Style&gt;sample string 3&lt;/Style&gt;
+                &lt;OpenOnLeft&gt;true&lt;/OpenOnLeft&gt;
+                &lt;OpenInRoom&gt;true&lt;/OpenInRoom&gt;
+              &lt;/CloudDoor&gt;
+            &lt;/Doors&gt;
+            &lt;Windows&gt;
+              &lt;CloudWindow&gt;
+                &lt;ShapeId&gt;sample string 4&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 5&lt;/Name&gt;
+                &lt;Width&gt;sample string 1&lt;/Width&gt;
+                &lt;Height&gt;sample string 2&lt;/Height&gt;
+                &lt;DistanceFromFloor&gt;sample string 3&lt;/DistanceFromFloor&gt;
+              &lt;/CloudWindow&gt;
+              &lt;CloudWindow&gt;
+                &lt;ShapeId&gt;sample string 4&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 5&lt;/Name&gt;
+                &lt;Width&gt;sample string 1&lt;/Width&gt;
+                &lt;Height&gt;sample string 2&lt;/Height&gt;
+                &lt;DistanceFromFloor&gt;sample string 3&lt;/DistanceFromFloor&gt;
+              &lt;/CloudWindow&gt;
+            &lt;/Windows&gt;
+            &lt;Elevations&gt;
+              &lt;CloudElevation&gt;
+                &lt;ShapeId&gt;sample string 3&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 4&lt;/Name&gt;
+                &lt;Height&gt;sample string 1&lt;/Height&gt;
+                &lt;IsRecess&gt;true&lt;/IsRecess&gt;
+              &lt;/CloudElevation&gt;
+              &lt;CloudElevation&gt;
+                &lt;ShapeId&gt;sample string 3&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 4&lt;/Name&gt;
+                &lt;Height&gt;sample string 1&lt;/Height&gt;
+                &lt;IsRecess&gt;true&lt;/IsRecess&gt;
+              &lt;/CloudElevation&gt;
+            &lt;/Elevations&gt;
+          &lt;/CloudWall&gt;
+          &lt;CloudWall&gt;
+            &lt;ShapeId&gt;sample string 1&lt;/ShapeId&gt;
+            &lt;Thickness&gt;sample string 2&lt;/Thickness&gt;
+            &lt;Length&gt;sample string 3&lt;/Length&gt;
+            &lt;Height&gt;sample string 4&lt;/Height&gt;
+            &lt;IsMissingWall&gt;true&lt;/IsMissingWall&gt;
+            &lt;Doors&gt;
+              &lt;CloudDoor&gt;
+                &lt;ShapeId&gt;sample string 6&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 7&lt;/Name&gt;
+                &lt;Width&gt;sample string 1&lt;/Width&gt;
+                &lt;Height&gt;sample string 2&lt;/Height&gt;
+                &lt;Style&gt;sample string 3&lt;/Style&gt;
+                &lt;OpenOnLeft&gt;true&lt;/OpenOnLeft&gt;
+                &lt;OpenInRoom&gt;true&lt;/OpenInRoom&gt;
+              &lt;/CloudDoor&gt;
+              &lt;CloudDoor&gt;
+                &lt;ShapeId&gt;sample string 6&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 7&lt;/Name&gt;
+                &lt;Width&gt;sample string 1&lt;/Width&gt;
+                &lt;Height&gt;sample string 2&lt;/Height&gt;
+                &lt;Style&gt;sample string 3&lt;/Style&gt;
+                &lt;OpenOnLeft&gt;true&lt;/OpenOnLeft&gt;
+                &lt;OpenInRoom&gt;true&lt;/OpenInRoom&gt;
+              &lt;/CloudDoor&gt;
+            &lt;/Doors&gt;
+            &lt;Windows&gt;
+              &lt;CloudWindow&gt;
+                &lt;ShapeId&gt;sample string 4&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 5&lt;/Name&gt;
+                &lt;Width&gt;sample string 1&lt;/Width&gt;
+                &lt;Height&gt;sample string 2&lt;/Height&gt;
+                &lt;DistanceFromFloor&gt;sample string 3&lt;/DistanceFromFloor&gt;
+              &lt;/CloudWindow&gt;
+              &lt;CloudWindow&gt;
+                &lt;ShapeId&gt;sample string 4&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 5&lt;/Name&gt;
+                &lt;Width&gt;sample string 1&lt;/Width&gt;
+                &lt;Height&gt;sample string 2&lt;/Height&gt;
+                &lt;DistanceFromFloor&gt;sample string 3&lt;/DistanceFromFloor&gt;
+              &lt;/CloudWindow&gt;
+            &lt;/Windows&gt;
+            &lt;Elevations&gt;
+              &lt;CloudElevation&gt;
+                &lt;ShapeId&gt;sample string 3&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 4&lt;/Name&gt;
+                &lt;Height&gt;sample string 1&lt;/Height&gt;
+                &lt;IsRecess&gt;true&lt;/IsRecess&gt;
+              &lt;/CloudElevation&gt;
+              &lt;CloudElevation&gt;
+                &lt;ShapeId&gt;sample string 3&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 4&lt;/Name&gt;
+                &lt;Height&gt;sample string 1&lt;/Height&gt;
+                &lt;IsRecess&gt;true&lt;/IsRecess&gt;
+              &lt;/CloudElevation&gt;
+            &lt;/Elevations&gt;
+          &lt;/CloudWall&gt;
+        &lt;/Walls&gt;
+        &lt;Elevations&gt;
+          &lt;CloudElevation&gt;
+            &lt;ShapeId&gt;sample string 3&lt;/ShapeId&gt;
+            &lt;Name&gt;sample string 4&lt;/Name&gt;
+            &lt;Height&gt;sample string 1&lt;/Height&gt;
+            &lt;IsRecess&gt;true&lt;/IsRecess&gt;
+          &lt;/CloudElevation&gt;
+          &lt;CloudElevation&gt;
+            &lt;ShapeId&gt;sample string 3&lt;/ShapeId&gt;
+            &lt;Name&gt;sample string 4&lt;/Name&gt;
+            &lt;Height&gt;sample string 1&lt;/Height&gt;
+            &lt;IsRecess&gt;true&lt;/IsRecess&gt;
+          &lt;/CloudElevation&gt;
+        &lt;/Elevations&gt;
+      &lt;/CloudRoom&gt;
+    &lt;/Rooms&gt;
+    &lt;Stairs&gt;
+      &lt;CloudStair&gt;
+        &lt;ShapeId&gt;sample string 2&lt;/ShapeId&gt;
+        &lt;Name&gt;sample string 3&lt;/Name&gt;
+        &lt;Width&gt;sample string 1&lt;/Width&gt;
+        &lt;StairUnits&gt;
+          &lt;CloudStairUnit&gt;
+            &lt;Riser&gt;sample string 1&lt;/Riser&gt;
+            &lt;Tread&gt;sample string 2&lt;/Tread&gt;
+            &lt;StepThickness&gt;sample string 3&lt;/StepThickness&gt;
+            &lt;Nosing&gt;sample string 4&lt;/Nosing&gt;
+            &lt;Steps&gt;5&lt;/Steps&gt;
+          &lt;/CloudStairUnit&gt;
+          &lt;CloudStairUnit&gt;
+            &lt;Riser&gt;sample string 1&lt;/Riser&gt;
+            &lt;Tread&gt;sample string 2&lt;/Tread&gt;
+            &lt;StepThickness&gt;sample string 3&lt;/StepThickness&gt;
+            &lt;Nosing&gt;sample string 4&lt;/Nosing&gt;
+            &lt;Steps&gt;5&lt;/Steps&gt;
+          &lt;/CloudStairUnit&gt;
+        &lt;/StairUnits&gt;
+      &lt;/CloudStair&gt;
+      &lt;CloudStair&gt;
+        &lt;ShapeId&gt;sample string 2&lt;/ShapeId&gt;
+        &lt;Name&gt;sample string 3&lt;/Name&gt;
+        &lt;Width&gt;sample string 1&lt;/Width&gt;
+        &lt;StairUnits&gt;
+          &lt;CloudStairUnit&gt;
+            &lt;Riser&gt;sample string 1&lt;/Riser&gt;
+            &lt;Tread&gt;sample string 2&lt;/Tread&gt;
+            &lt;StepThickness&gt;sample string 3&lt;/StepThickness&gt;
+            &lt;Nosing&gt;sample string 4&lt;/Nosing&gt;
+            &lt;Steps&gt;5&lt;/Steps&gt;
+          &lt;/CloudStairUnit&gt;
+          &lt;CloudStairUnit&gt;
+            &lt;Riser&gt;sample string 1&lt;/Riser&gt;
+            &lt;Tread&gt;sample string 2&lt;/Tread&gt;
+            &lt;StepThickness&gt;sample string 3&lt;/StepThickness&gt;
+            &lt;Nosing&gt;sample string 4&lt;/Nosing&gt;
+            &lt;Steps&gt;5&lt;/Steps&gt;
+          &lt;/CloudStairUnit&gt;
+        &lt;/StairUnits&gt;
+      &lt;/CloudStair&gt;
+    &lt;/Stairs&gt;
+    &lt;TopElevations&gt;
+      &lt;CloudElevation&gt;
+        &lt;ShapeId&gt;sample string 3&lt;/ShapeId&gt;
+        &lt;Name&gt;sample string 4&lt;/Name&gt;
+        &lt;Height&gt;sample string 1&lt;/Height&gt;
+        &lt;IsRecess&gt;true&lt;/IsRecess&gt;
+      &lt;/CloudElevation&gt;
+      &lt;CloudElevation&gt;
+        &lt;ShapeId&gt;sample string 3&lt;/ShapeId&gt;
+        &lt;Name&gt;sample string 4&lt;/Name&gt;
+        &lt;Height&gt;sample string 1&lt;/Height&gt;
+        &lt;IsRecess&gt;true&lt;/IsRecess&gt;
+      &lt;/CloudElevation&gt;
+    &lt;/TopElevations&gt;
+    &lt;Segments&gt;
+      &lt;CloudSegment&gt;
+        &lt;ShapeId&gt;sample string 1&lt;/ShapeId&gt;
+        &lt;Name&gt;sample string 2&lt;/Name&gt;
+      &lt;/CloudSegment&gt;
+      &lt;CloudSegment&gt;
+        &lt;ShapeId&gt;sample string 1&lt;/ShapeId&gt;
+        &lt;Name&gt;sample string 2&lt;/Name&gt;
+      &lt;/CloudSegment&gt;
+    &lt;/Segments&gt;
+    &lt;IndividualEAs&gt;
+      &lt;CloudCount&gt;
+        &lt;ShapeId&gt;sample string 2&lt;/ShapeId&gt;
+        &lt;Name&gt;sample string 3&lt;/Name&gt;
+        &lt;Repetition&gt;1&lt;/Repetition&gt;
+      &lt;/CloudCount&gt;
+      &lt;CloudCount&gt;
+        &lt;ShapeId&gt;sample string 2&lt;/ShapeId&gt;
+        &lt;Name&gt;sample string 3&lt;/Name&gt;
+        &lt;Repetition&gt;1&lt;/Repetition&gt;
+      &lt;/CloudCount&gt;
+    &lt;/IndividualEAs&gt;
+  &lt;/CloudLayer&gt;
+  &lt;CloudLayer&gt;
+    &lt;ShapeId&gt;sample string 3&lt;/ShapeId&gt;
+    &lt;Name&gt;sample string 4&lt;/Name&gt;
+    &lt;HasRooms&gt;true&lt;/HasRooms&gt;
+    &lt;Index&gt;1&lt;/Index&gt;
+    &lt;Rooms&gt;
+      &lt;CloudRoom&gt;
+        &lt;ShapeId&gt;sample string 3&lt;/ShapeId&gt;
+        &lt;Name&gt;sample string 4&lt;/Name&gt;
+        &lt;FloorArea&gt;sample string 1&lt;/FloorArea&gt;
+        &lt;FloorPerimeter&gt;sample string 2&lt;/FloorPerimeter&gt;
+        &lt;Walls&gt;
+          &lt;CloudWall&gt;
+            &lt;ShapeId&gt;sample string 1&lt;/ShapeId&gt;
+            &lt;Thickness&gt;sample string 2&lt;/Thickness&gt;
+            &lt;Length&gt;sample string 3&lt;/Length&gt;
+            &lt;Height&gt;sample string 4&lt;/Height&gt;
+            &lt;IsMissingWall&gt;true&lt;/IsMissingWall&gt;
+            &lt;Doors&gt;
+              &lt;CloudDoor&gt;
+                &lt;ShapeId&gt;sample string 6&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 7&lt;/Name&gt;
+                &lt;Width&gt;sample string 1&lt;/Width&gt;
+                &lt;Height&gt;sample string 2&lt;/Height&gt;
+                &lt;Style&gt;sample string 3&lt;/Style&gt;
+                &lt;OpenOnLeft&gt;true&lt;/OpenOnLeft&gt;
+                &lt;OpenInRoom&gt;true&lt;/OpenInRoom&gt;
+              &lt;/CloudDoor&gt;
+              &lt;CloudDoor&gt;
+                &lt;ShapeId&gt;sample string 6&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 7&lt;/Name&gt;
+                &lt;Width&gt;sample string 1&lt;/Width&gt;
+                &lt;Height&gt;sample string 2&lt;/Height&gt;
+                &lt;Style&gt;sample string 3&lt;/Style&gt;
+                &lt;OpenOnLeft&gt;true&lt;/OpenOnLeft&gt;
+                &lt;OpenInRoom&gt;true&lt;/OpenInRoom&gt;
+              &lt;/CloudDoor&gt;
+            &lt;/Doors&gt;
+            &lt;Windows&gt;
+              &lt;CloudWindow&gt;
+                &lt;ShapeId&gt;sample string 4&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 5&lt;/Name&gt;
+                &lt;Width&gt;sample string 1&lt;/Width&gt;
+                &lt;Height&gt;sample string 2&lt;/Height&gt;
+                &lt;DistanceFromFloor&gt;sample string 3&lt;/DistanceFromFloor&gt;
+              &lt;/CloudWindow&gt;
+              &lt;CloudWindow&gt;
+                &lt;ShapeId&gt;sample string 4&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 5&lt;/Name&gt;
+                &lt;Width&gt;sample string 1&lt;/Width&gt;
+                &lt;Height&gt;sample string 2&lt;/Height&gt;
+                &lt;DistanceFromFloor&gt;sample string 3&lt;/DistanceFromFloor&gt;
+              &lt;/CloudWindow&gt;
+            &lt;/Windows&gt;
+            &lt;Elevations&gt;
+              &lt;CloudElevation&gt;
+                &lt;ShapeId&gt;sample string 3&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 4&lt;/Name&gt;
+                &lt;Height&gt;sample string 1&lt;/Height&gt;
+                &lt;IsRecess&gt;true&lt;/IsRecess&gt;
+              &lt;/CloudElevation&gt;
+              &lt;CloudElevation&gt;
+                &lt;ShapeId&gt;sample string 3&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 4&lt;/Name&gt;
+                &lt;Height&gt;sample string 1&lt;/Height&gt;
+                &lt;IsRecess&gt;true&lt;/IsRecess&gt;
+              &lt;/CloudElevation&gt;
+            &lt;/Elevations&gt;
+          &lt;/CloudWall&gt;
+          &lt;CloudWall&gt;
+            &lt;ShapeId&gt;sample string 1&lt;/ShapeId&gt;
+            &lt;Thickness&gt;sample string 2&lt;/Thickness&gt;
+            &lt;Length&gt;sample string 3&lt;/Length&gt;
+            &lt;Height&gt;sample string 4&lt;/Height&gt;
+            &lt;IsMissingWall&gt;true&lt;/IsMissingWall&gt;
+            &lt;Doors&gt;
+              &lt;CloudDoor&gt;
+                &lt;ShapeId&gt;sample string 6&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 7&lt;/Name&gt;
+                &lt;Width&gt;sample string 1&lt;/Width&gt;
+                &lt;Height&gt;sample string 2&lt;/Height&gt;
+                &lt;Style&gt;sample string 3&lt;/Style&gt;
+                &lt;OpenOnLeft&gt;true&lt;/OpenOnLeft&gt;
+                &lt;OpenInRoom&gt;true&lt;/OpenInRoom&gt;
+              &lt;/CloudDoor&gt;
+              &lt;CloudDoor&gt;
+                &lt;ShapeId&gt;sample string 6&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 7&lt;/Name&gt;
+                &lt;Width&gt;sample string 1&lt;/Width&gt;
+                &lt;Height&gt;sample string 2&lt;/Height&gt;
+                &lt;Style&gt;sample string 3&lt;/Style&gt;
+                &lt;OpenOnLeft&gt;true&lt;/OpenOnLeft&gt;
+                &lt;OpenInRoom&gt;true&lt;/OpenInRoom&gt;
+              &lt;/CloudDoor&gt;
+            &lt;/Doors&gt;
+            &lt;Windows&gt;
+              &lt;CloudWindow&gt;
+                &lt;ShapeId&gt;sample string 4&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 5&lt;/Name&gt;
+                &lt;Width&gt;sample string 1&lt;/Width&gt;
+                &lt;Height&gt;sample string 2&lt;/Height&gt;
+                &lt;DistanceFromFloor&gt;sample string 3&lt;/DistanceFromFloor&gt;
+              &lt;/CloudWindow&gt;
+              &lt;CloudWindow&gt;
+                &lt;ShapeId&gt;sample string 4&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 5&lt;/Name&gt;
+                &lt;Width&gt;sample string 1&lt;/Width&gt;
+                &lt;Height&gt;sample string 2&lt;/Height&gt;
+                &lt;DistanceFromFloor&gt;sample string 3&lt;/DistanceFromFloor&gt;
+              &lt;/CloudWindow&gt;
+            &lt;/Windows&gt;
+            &lt;Elevations&gt;
+              &lt;CloudElevation&gt;
+                &lt;ShapeId&gt;sample string 3&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 4&lt;/Name&gt;
+                &lt;Height&gt;sample string 1&lt;/Height&gt;
+                &lt;IsRecess&gt;true&lt;/IsRecess&gt;
+              &lt;/CloudElevation&gt;
+              &lt;CloudElevation&gt;
+                &lt;ShapeId&gt;sample string 3&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 4&lt;/Name&gt;
+                &lt;Height&gt;sample string 1&lt;/Height&gt;
+                &lt;IsRecess&gt;true&lt;/IsRecess&gt;
+              &lt;/CloudElevation&gt;
+            &lt;/Elevations&gt;
+          &lt;/CloudWall&gt;
+        &lt;/Walls&gt;
+        &lt;Elevations&gt;
+          &lt;CloudElevation&gt;
+            &lt;ShapeId&gt;sample string 3&lt;/ShapeId&gt;
+            &lt;Name&gt;sample string 4&lt;/Name&gt;
+            &lt;Height&gt;sample string 1&lt;/Height&gt;
+            &lt;IsRecess&gt;true&lt;/IsRecess&gt;
+          &lt;/CloudElevation&gt;
+          &lt;CloudElevation&gt;
+            &lt;ShapeId&gt;sample string 3&lt;/ShapeId&gt;
+            &lt;Name&gt;sample string 4&lt;/Name&gt;
+            &lt;Height&gt;sample string 1&lt;/Height&gt;
+            &lt;IsRecess&gt;true&lt;/IsRecess&gt;
+          &lt;/CloudElevation&gt;
+        &lt;/Elevations&gt;
+      &lt;/CloudRoom&gt;
+      &lt;CloudRoom&gt;
+        &lt;ShapeId&gt;sample string 3&lt;/ShapeId&gt;
+        &lt;Name&gt;sample string 4&lt;/Name&gt;
+        &lt;FloorArea&gt;sample string 1&lt;/FloorArea&gt;
+        &lt;FloorPerimeter&gt;sample string 2&lt;/FloorPerimeter&gt;
+        &lt;Walls&gt;
+          &lt;CloudWall&gt;
+            &lt;ShapeId&gt;sample string 1&lt;/ShapeId&gt;
+            &lt;Thickness&gt;sample string 2&lt;/Thickness&gt;
+            &lt;Length&gt;sample string 3&lt;/Length&gt;
+            &lt;Height&gt;sample string 4&lt;/Height&gt;
+            &lt;IsMissingWall&gt;true&lt;/IsMissingWall&gt;
+            &lt;Doors&gt;
+              &lt;CloudDoor&gt;
+                &lt;ShapeId&gt;sample string 6&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 7&lt;/Name&gt;
+                &lt;Width&gt;sample string 1&lt;/Width&gt;
+                &lt;Height&gt;sample string 2&lt;/Height&gt;
+                &lt;Style&gt;sample string 3&lt;/Style&gt;
+                &lt;OpenOnLeft&gt;true&lt;/OpenOnLeft&gt;
+                &lt;OpenInRoom&gt;true&lt;/OpenInRoom&gt;
+              &lt;/CloudDoor&gt;
+              &lt;CloudDoor&gt;
+                &lt;ShapeId&gt;sample string 6&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 7&lt;/Name&gt;
+                &lt;Width&gt;sample string 1&lt;/Width&gt;
+                &lt;Height&gt;sample string 2&lt;/Height&gt;
+                &lt;Style&gt;sample string 3&lt;/Style&gt;
+                &lt;OpenOnLeft&gt;true&lt;/OpenOnLeft&gt;
+                &lt;OpenInRoom&gt;true&lt;/OpenInRoom&gt;
+              &lt;/CloudDoor&gt;
+            &lt;/Doors&gt;
+            &lt;Windows&gt;
+              &lt;CloudWindow&gt;
+                &lt;ShapeId&gt;sample string 4&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 5&lt;/Name&gt;
+                &lt;Width&gt;sample string 1&lt;/Width&gt;
+                &lt;Height&gt;sample string 2&lt;/Height&gt;
+                &lt;DistanceFromFloor&gt;sample string 3&lt;/DistanceFromFloor&gt;
+              &lt;/CloudWindow&gt;
+              &lt;CloudWindow&gt;
+                &lt;ShapeId&gt;sample string 4&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 5&lt;/Name&gt;
+                &lt;Width&gt;sample string 1&lt;/Width&gt;
+                &lt;Height&gt;sample string 2&lt;/Height&gt;
+                &lt;DistanceFromFloor&gt;sample string 3&lt;/DistanceFromFloor&gt;
+              &lt;/CloudWindow&gt;
+            &lt;/Windows&gt;
+            &lt;Elevations&gt;
+              &lt;CloudElevation&gt;
+                &lt;ShapeId&gt;sample string 3&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 4&lt;/Name&gt;
+                &lt;Height&gt;sample string 1&lt;/Height&gt;
+                &lt;IsRecess&gt;true&lt;/IsRecess&gt;
+              &lt;/CloudElevation&gt;
+              &lt;CloudElevation&gt;
+                &lt;ShapeId&gt;sample string 3&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 4&lt;/Name&gt;
+                &lt;Height&gt;sample string 1&lt;/Height&gt;
+                &lt;IsRecess&gt;true&lt;/IsRecess&gt;
+              &lt;/CloudElevation&gt;
+            &lt;/Elevations&gt;
+          &lt;/CloudWall&gt;
+          &lt;CloudWall&gt;
+            &lt;ShapeId&gt;sample string 1&lt;/ShapeId&gt;
+            &lt;Thickness&gt;sample string 2&lt;/Thickness&gt;
+            &lt;Length&gt;sample string 3&lt;/Length&gt;
+            &lt;Height&gt;sample string 4&lt;/Height&gt;
+            &lt;IsMissingWall&gt;true&lt;/IsMissingWall&gt;
+            &lt;Doors&gt;
+              &lt;CloudDoor&gt;
+                &lt;ShapeId&gt;sample string 6&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 7&lt;/Name&gt;
+                &lt;Width&gt;sample string 1&lt;/Width&gt;
+                &lt;Height&gt;sample string 2&lt;/Height&gt;
+                &lt;Style&gt;sample string 3&lt;/Style&gt;
+                &lt;OpenOnLeft&gt;true&lt;/OpenOnLeft&gt;
+                &lt;OpenInRoom&gt;true&lt;/OpenInRoom&gt;
+              &lt;/CloudDoor&gt;
+              &lt;CloudDoor&gt;
+                &lt;ShapeId&gt;sample string 6&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 7&lt;/Name&gt;
+                &lt;Width&gt;sample string 1&lt;/Width&gt;
+                &lt;Height&gt;sample string 2&lt;/Height&gt;
+                &lt;Style&gt;sample string 3&lt;/Style&gt;
+                &lt;OpenOnLeft&gt;true&lt;/OpenOnLeft&gt;
+                &lt;OpenInRoom&gt;true&lt;/OpenInRoom&gt;
+              &lt;/CloudDoor&gt;
+            &lt;/Doors&gt;
+            &lt;Windows&gt;
+              &lt;CloudWindow&gt;
+                &lt;ShapeId&gt;sample string 4&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 5&lt;/Name&gt;
+                &lt;Width&gt;sample string 1&lt;/Width&gt;
+                &lt;Height&gt;sample string 2&lt;/Height&gt;
+                &lt;DistanceFromFloor&gt;sample string 3&lt;/DistanceFromFloor&gt;
+              &lt;/CloudWindow&gt;
+              &lt;CloudWindow&gt;
+                &lt;ShapeId&gt;sample string 4&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 5&lt;/Name&gt;
+                &lt;Width&gt;sample string 1&lt;/Width&gt;
+                &lt;Height&gt;sample string 2&lt;/Height&gt;
+                &lt;DistanceFromFloor&gt;sample string 3&lt;/DistanceFromFloor&gt;
+              &lt;/CloudWindow&gt;
+            &lt;/Windows&gt;
+            &lt;Elevations&gt;
+              &lt;CloudElevation&gt;
+                &lt;ShapeId&gt;sample string 3&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 4&lt;/Name&gt;
+                &lt;Height&gt;sample string 1&lt;/Height&gt;
+                &lt;IsRecess&gt;true&lt;/IsRecess&gt;
+              &lt;/CloudElevation&gt;
+              &lt;CloudElevation&gt;
+                &lt;ShapeId&gt;sample string 3&lt;/ShapeId&gt;
+                &lt;Name&gt;sample string 4&lt;/Name&gt;
+                &lt;Height&gt;sample string 1&lt;/Height&gt;
+                &lt;IsRecess&gt;true&lt;/IsRecess&gt;
+              &lt;/CloudElevation&gt;
+            &lt;/Elevations&gt;
+          &lt;/CloudWall&gt;
+        &lt;/Walls&gt;
+        &lt;Elevations&gt;
+          &lt;CloudElevation&gt;
+            &lt;ShapeId&gt;sample string 3&lt;/ShapeId&gt;
+            &lt;Name&gt;sample string 4&lt;/Name&gt;
+            &lt;Height&gt;sample string 1&lt;/Height&gt;
+            &lt;IsRecess&gt;true&lt;/IsRecess&gt;
+          &lt;/CloudElevation&gt;
+          &lt;CloudElevation&gt;
+            &lt;ShapeId&gt;sample string 3&lt;/ShapeId&gt;
+            &lt;Name&gt;sample string 4&lt;/Name&gt;
+            &lt;Height&gt;sample string 1&lt;/Height&gt;
+            &lt;IsRecess&gt;true&lt;/IsRecess&gt;
+          &lt;/CloudElevation&gt;
+        &lt;/Elevations&gt;
+      &lt;/CloudRoom&gt;
+    &lt;/Rooms&gt;
+    &lt;Stairs&gt;
+      &lt;CloudStair&gt;
+        &lt;ShapeId&gt;sample string 2&lt;/ShapeId&gt;
+        &lt;Name&gt;sample string 3&lt;/Name&gt;
+        &lt;Width&gt;sample string 1&lt;/Width&gt;
+        &lt;StairUnits&gt;
+          &lt;CloudStairUnit&gt;
+            &lt;Riser&gt;sample string 1&lt;/Riser&gt;
+            &lt;Tread&gt;sample string 2&lt;/Tread&gt;
+            &lt;StepThickness&gt;sample string 3&lt;/StepThickness&gt;
+            &lt;Nosing&gt;sample string 4&lt;/Nosing&gt;
+            &lt;Steps&gt;5&lt;/Steps&gt;
+          &lt;/CloudStairUnit&gt;
+          &lt;CloudStairUnit&gt;
+            &lt;Riser&gt;sample string 1&lt;/Riser&gt;
+            &lt;Tread&gt;sample string 2&lt;/Tread&gt;
+            &lt;StepThickness&gt;sample string 3&lt;/StepThickness&gt;
+            &lt;Nosing&gt;sample string 4&lt;/Nosing&gt;
+            &lt;Steps&gt;5&lt;/Steps&gt;
+          &lt;/CloudStairUnit&gt;
+        &lt;/StairUnits&gt;
+      &lt;/CloudStair&gt;
+      &lt;CloudStair&gt;
+        &lt;ShapeId&gt;sample string 2&lt;/ShapeId&gt;
+        &lt;Name&gt;sample string 3&lt;/Name&gt;
+        &lt;Width&gt;sample string 1&lt;/Width&gt;
+        &lt;StairUnits&gt;
+          &lt;CloudStairUnit&gt;
+            &lt;Riser&gt;sample string 1&lt;/Riser&gt;
+            &lt;Tread&gt;sample string 2&lt;/Tread&gt;
+            &lt;StepThickness&gt;sample string 3&lt;/StepThickness&gt;
+            &lt;Nosing&gt;sample string 4&lt;/Nosing&gt;
+            &lt;Steps&gt;5&lt;/Steps&gt;
+          &lt;/CloudStairUnit&gt;
+          &lt;CloudStairUnit&gt;
+            &lt;Riser&gt;sample string 1&lt;/Riser&gt;
+            &lt;Tread&gt;sample string 2&lt;/Tread&gt;
+            &lt;StepThickness&gt;sample string 3&lt;/StepThickness&gt;
+            &lt;Nosing&gt;sample string 4&lt;/Nosing&gt;
+            &lt;Steps&gt;5&lt;/Steps&gt;
+          &lt;/CloudStairUnit&gt;
+        &lt;/StairUnits&gt;
+      &lt;/CloudStair&gt;
+    &lt;/Stairs&gt;
+    &lt;TopElevations&gt;
+      &lt;CloudElevation&gt;
+        &lt;ShapeId&gt;sample string 3&lt;/ShapeId&gt;
+        &lt;Name&gt;sample string 4&lt;/Name&gt;
+        &lt;Height&gt;sample string 1&lt;/Height&gt;
+        &lt;IsRecess&gt;true&lt;/IsRecess&gt;
+      &lt;/CloudElevation&gt;
+      &lt;CloudElevation&gt;
+        &lt;ShapeId&gt;sample string 3&lt;/ShapeId&gt;
+        &lt;Name&gt;sample string 4&lt;/Name&gt;
+        &lt;Height&gt;sample string 1&lt;/Height&gt;
+        &lt;IsRecess&gt;true&lt;/IsRecess&gt;
+      &lt;/CloudElevation&gt;
+    &lt;/TopElevations&gt;
+    &lt;Segments&gt;
+      &lt;CloudSegment&gt;
+        &lt;ShapeId&gt;sample string 1&lt;/ShapeId&gt;
+        &lt;Name&gt;sample string 2&lt;/Name&gt;
+      &lt;/CloudSegment&gt;
+      &lt;CloudSegment&gt;
+        &lt;ShapeId&gt;sample string 1&lt;/ShapeId&gt;
+        &lt;Name&gt;sample string 2&lt;/Name&gt;
+      &lt;/CloudSegment&gt;
+    &lt;/Segments&gt;
+    &lt;IndividualEAs&gt;
+      &lt;CloudCount&gt;
+        &lt;ShapeId&gt;sample string 2&lt;/ShapeId&gt;
+        &lt;Name&gt;sample string 3&lt;/Name&gt;
+        &lt;Repetition&gt;1&lt;/Repetition&gt;
+      &lt;/CloudCount&gt;
+      &lt;CloudCount&gt;
+        &lt;ShapeId&gt;sample string 2&lt;/ShapeId&gt;
+        &lt;Name&gt;sample string 3&lt;/Name&gt;
+        &lt;Repetition&gt;1&lt;/Repetition&gt;
+      &lt;/CloudCount&gt;
+    &lt;/IndividualEAs&gt;
+  &lt;/CloudLayer&gt;
+&lt;/ArrayOfCloudLayer&gt;
+</pre>
+        </div>
+</div>
+</div>
+    </section>
+</div>
+
+<button id="testClientButton">Test API</button>
+<div id="testClientDialog" title="GET api/projects/{projectId}/layers">
+    <input class="httpMethod" readonly="true" spellcheck="false" data-bind="value: HttpMethod" />
+    <input class="uriPath" spellcheck="false" data-bind="value: UriPath" />
+    <div data-bind="visible: UriParameters.length > 0">
+        <h5 class="ui-widget-header">URI parameters</h5>
+        <div class="panel">
+            <div data-bind="foreach: UriParameters">
+                <div style="height:30px;"> 
+                    <input readonly="true" spellcheck="false" tabindex="100" class="uriParameterLabel" data-bind="value: '{' + name + '}'" />
+                    <span>= </span>
+                    <input spellcheck="false" style="width:450px;" data-bind="value: value, valueUpdate: 'afterkeydown', enable: enabled" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <h5 class="ui-widget-header">
+        Headers (F12->Console input $.base64.encode("your apikey") to get the base64 string)
+    </h5>
+    <div class="panel">
+        <div data-bind="foreach: RequestHeaders">
+            <div style="height:30px;">
+                <input class="uriParameterLabel" readonly="true" spellcheck="false" data-bind='value: name, uniqueName: true' />
+                <span>: </span>
+                <input spellcheck="false" style="width:600px" data-bind='value: value, uniqueName: true' />
+            </div>
+        </div>
+    </div>
+    <h5 class="ui-widget-header">
+        <input type='checkbox' data-bind='checked: ShouldShowBody' />Body
+    </h5>
+    <div data-bind="visible: ShouldShowBody">
+        <div data-bind="visible: SampleTypes.length > 0">
+            <span>Samples: </span>
+            <select data-bind="options: SampleTypes, value: RequestMediaType"></select>
+        </div>
+        <pre><textarea id="req-body" class="sampleArea" spellcheck="false" data-bind="value: RequestBody, valueUpdate: 'afterkeydown'" rows="7"></textarea></pre>
+    </div>
+</div>
+<div id="testClientResponseDialog" title="Response for GET api/projects/{projectId}/layers" data-bind="with: response">
+    <div class="responseStatusDiv">
+        <h5 class="ui-widget-header">Status</h5>
+        <span data-bind="text: status"></span>
+    </div>
+    <div class="responseHeaderDiv" style="display:none;">
+        <h5 class="ui-widget-header">Headers</h5>
+        <textarea spellcheck="false" data-bind="value: headers" class="sampleArea" readonly='readonly' rows="6"></textarea>
+    </div>
+    <div class="responseBodyDiv">
+        <h5 class="ui-widget-header">Body</h5>
+        <textarea spellcheck="false" data-bind="value: content" class="sampleArea" readonly='readonly' rows="10"></textarea>
+                
+        
+    </div>
+</div>
+<script>
+    testClientModel = {
+        HttpMethod: 'GET',
+        UriPathTemplate: "api/projects/{projectId}/layers",
+        UriParameters: [
+                    { name: "projectId", value: "" },
+        ],
+        Samples: {
+            
+        },
+        BaseAddress: '/'
+    };
+</script>
+
+
+</body>
+</html>
