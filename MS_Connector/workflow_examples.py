@@ -9,12 +9,15 @@ This demonstrates real-world use cases:
 """
 
 import json
+import re
+import time
 from pathlib import Path
 from datetime import datetime
 from measuresquare_extractor import (
     MeasureSquareAPIClient,
     MeasureSquareExtractor
 )
+from typing import List, Dict, Optional
 
 
 # =============================================================================
@@ -467,6 +470,223 @@ def backup_all_projects(api_key, m2_id, backup_dir="./project_backups"):
     
     print("\n" + "="*60)
     print(f"Successfully backed up: {successful}/{len(projects)} projects")
+
+
+# =============================================================================
+# Use Case 6: Batch PDF Export with Filtering
+# =============================================================================
+
+class BatchPDFExporter:
+    """
+    Export PDFs from multiple projects with filtering support.
+
+    Features:
+    - Export all projects
+    - Export a filtered subset by name list, ID list, or name pattern
+    - Respects MeasureSquare rate limits (10 PDFs/min, 1s between calls)
+    - Progress tracking
+    - Load filter list from a text file
+    """
+
+    # MeasureSquare rate limits for PDF endpoint
+    MIN_INTERVAL_SECONDS = 1.5  # slightly above 1s minimum to be safe
+    PAUSE_EVERY_N = 9  # pause after every 9 downloads (limit is 10/min)
+    PAUSE_DURATION = 60  # seconds to pause for rate limit reset
+
+    def __init__(self, api_key: str, m2_id: str,
+                 x_application: str = None, secret_key: str = None):
+        self.client = MeasureSquareAPIClient(api_key, x_application, secret_key)
+        self.m2_id = m2_id
+        self._last_download_time = 0
+        self._download_count = 0
+
+    def _get_all_projects(self) -> List[Dict]:
+        """Get all projects using pagination."""
+        from cloud_api_complete_workflow import CloudAPIWorkflow
+        workflow = CloudAPIWorkflow(self.client.api_key, self.m2_id)
+        return workflow.get_all_projects()
+
+    def _apply_rate_limit(self):
+        """Enforce rate limiting between PDF downloads."""
+        # Enforce minimum interval
+        elapsed = time.time() - self._last_download_time
+        if elapsed < self.MIN_INTERVAL_SECONDS:
+            time.sleep(self.MIN_INTERVAL_SECONDS - elapsed)
+
+        # Pause every N downloads to respect 10/min limit
+        self._download_count += 1
+        if self._download_count % self.PAUSE_EVERY_N == 0:
+            print(f"   Rate limit pause ({self.PAUSE_DURATION}s after {self._download_count} downloads)...")
+            time.sleep(self.PAUSE_DURATION)
+
+    def _download_single_pdf(self, project: Dict, output_dir: Path) -> Optional[str]:
+        """
+        Download a single project's PDF with rate limiting.
+
+        Returns:
+            Path to saved PDF, or None on failure.
+        """
+        project_id = project['ProjectId']
+        project_name = project.get('Name', 'Unnamed').replace('/', '-')
+
+        # Create safe filename
+        safe_name = "".join(c for c in project_name
+                            if c.isalnum() or c in (' ', '-', '_'))
+        pdf_filename = f"{safe_name}_{project_id[:8]}.pdf"
+        pdf_path = output_dir / pdf_filename
+
+        try:
+            self._apply_rate_limit()
+            self._last_download_time = time.time()
+            self.client.download_pdf(project_id, output_path=str(pdf_path))
+            return str(pdf_path)
+        except Exception as e:
+            print(f"   Failed: {e}")
+            return None
+
+    def export_all(self, output_dir: str = "./pdf_exports") -> Dict:
+        """
+        Export PDFs for all projects.
+
+        Args:
+            output_dir: Directory to save PDFs
+
+        Returns:
+            Summary dict with counts and file paths
+        """
+        projects = self._get_all_projects()
+        return self._export_projects(projects, output_dir)
+
+    def export_filtered(self, filter_list: List[str],
+                        output_dir: str = "./pdf_exports",
+                        match_by: str = "name") -> Dict:
+        """
+        Export PDFs only for projects matching a filter list.
+
+        Args:
+            filter_list: List of project names or IDs to include
+            output_dir: Directory to save PDFs
+            match_by: "name" to match by project name, "id" to match by ProjectId
+
+        Returns:
+            Summary dict
+        """
+        all_projects = self._get_all_projects()
+
+        filter_set = {item.strip().lower() for item in filter_list}
+
+        if match_by == "id":
+            matched = [p for p in all_projects
+                       if p['ProjectId'].lower() in filter_set]
+        else:
+            matched = [p for p in all_projects
+                       if p.get('Name', '').strip().lower() in filter_set]
+
+        print(f"Matched {len(matched)} of {len(filter_list)} filter entries "
+              f"(from {len(all_projects)} total projects)")
+
+        return self._export_projects(matched, output_dir)
+
+    def export_by_pattern(self, pattern: str,
+                          output_dir: str = "./pdf_exports") -> Dict:
+        """
+        Export PDFs for projects whose names match a regex or substring pattern.
+
+        Args:
+            pattern: Regex pattern or substring to match project names
+            output_dir: Directory to save PDFs
+
+        Returns:
+            Summary dict
+        """
+        all_projects = self._get_all_projects()
+
+        try:
+            regex = re.compile(pattern, re.IGNORECASE)
+            matched = [p for p in all_projects
+                       if regex.search(p.get('Name', ''))]
+        except re.error:
+            # Fall back to substring match
+            pattern_lower = pattern.lower()
+            matched = [p for p in all_projects
+                       if pattern_lower in p.get('Name', '').lower()]
+
+        print(f"Pattern '{pattern}' matched {len(matched)} projects")
+
+        return self._export_projects(matched, output_dir)
+
+    def export_from_file(self, filter_file: str,
+                         output_dir: str = "./pdf_exports",
+                         match_by: str = "name") -> Dict:
+        """
+        Export PDFs for projects listed in a text file (one per line).
+
+        Args:
+            filter_file: Path to text file with project names/IDs, one per line
+            output_dir: Directory to save PDFs
+            match_by: "name" or "id"
+
+        Returns:
+            Summary dict
+        """
+        filter_path = Path(filter_file)
+        if not filter_path.exists():
+            raise FileNotFoundError(f"Filter file not found: {filter_file}")
+
+        lines = filter_path.read_text().strip().splitlines()
+        filter_list = [line.strip() for line in lines if line.strip()]
+
+        print(f"Loaded {len(filter_list)} entries from {filter_file}")
+        return self.export_filtered(filter_list, output_dir, match_by)
+
+    def _export_projects(self, projects: List[Dict], output_dir: str) -> Dict:
+        """
+        Internal method to export PDFs for a list of projects.
+
+        Returns:
+            Summary dict with 'successful', 'failed', 'total', 'files'
+        """
+        output_path = Path(output_dir)
+        output_path.mkdir(parents=True, exist_ok=True)
+
+        total = len(projects)
+        if total == 0:
+            print("No projects to export.")
+            return {'successful': 0, 'failed': 0, 'total': 0, 'files': []}
+
+        print(f"\nExporting {total} project PDF(s) to: {output_path}")
+        print("=" * 60)
+
+        self._download_count = 0
+        successful = []
+        failed = []
+
+        for i, project in enumerate(projects, 1):
+            name = project.get('Name', 'Unnamed')
+            print(f"[{i}/{total}] {name}")
+
+            path = self._download_single_pdf(project, output_path)
+            if path:
+                file_size = Path(path).stat().st_size / 1024
+                print(f"   Saved ({file_size:.1f} KB)")
+                successful.append(path)
+            else:
+                failed.append(name)
+
+        # Summary
+        print("\n" + "=" * 60)
+        print(f"Export complete: {len(successful)}/{total} successful")
+        if failed:
+            print(f"Failed ({len(failed)}):")
+            for name in failed:
+                print(f"  - {name}")
+
+        return {
+            'successful': len(successful),
+            'failed': len(failed),
+            'total': total,
+            'files': successful
+        }
 
 
 # =============================================================================

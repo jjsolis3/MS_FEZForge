@@ -21,17 +21,24 @@ PyPDF2>=3.0.0
 # - datetime (timestamps)
 # - io (in-memory file operations)
 
+# For building a standalone Windows executable
+# Why: Bundles Python + all dependencies into a single .exe file
+pyinstaller>=6.0.0
+
 # Optional: If you want to add more features
 # Uncomment these if needed:
 
+# For professional PDF generation from local FEZ files
+# reportlab>=4.0
+
 # For prettier JSON output
-# pip install pygments
+# pygments
 
 # For progress bars during downloads
-# pip install tqdm
+# tqdm
 
 # For Excel export
-# pip install openpyxl
+# openpyxl
 
 # For advanced XML parsing
-# pip install lxml
+# lxml

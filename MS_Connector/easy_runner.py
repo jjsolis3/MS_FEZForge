@@ -18,6 +18,21 @@ from tkinter  import filedialog
 # Add current directory to path so imports work
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
+
+def get_resource_path(relative_path):
+    """
+    Get path to a bundled resource, works both in dev and PyInstaller .exe mode.
+
+    When running as a PyInstaller bundle, files are extracted to a temp directory.
+    This function resolves the correct path in both cases.
+    """
+    if getattr(sys, 'frozen', False):
+        # Running as PyInstaller bundle
+        base_path = sys._MEIPASS
+    else:
+        base_path = os.path.dirname(os.path.abspath(__file__))
+    return os.path.join(base_path, relative_path)
+
 def pick_file_dialog(title, filetypes, initialdir=None):
     """Open a Windows file picker and return the selected file path or None."""
     root = tk.Tk()
@@ -48,14 +63,17 @@ def pick_folder_dialog(title, initialdir=None):
 
 def load_config():
     """Load configuration from config.json"""
+    # Check current directory first, then bundled resource path
     config_path = Path("config.json")
-    
+    if not config_path.exists():
+        config_path = Path(get_resource_path("config.json"))
+
     if not config_path.exists():
         print("Creating config.json template...")
         create_config_template()
         print("Please edit config.json with your credentials and run again.")
         return None
-    
+
     with open(config_path) as f:
         return json.load(f)
     
@@ -1465,6 +1483,166 @@ def generate_project_list_report(config):
     input("\nPress Enter to continue...")
 
 
+def cloud_text_edit(config):
+    """Option 13: Edit cloud project text (names, rooms, metadata)"""
+    clear_screen()
+    print_header()
+    print("CLOUD TEXT EDITOR")
+    print("-" * 70)
+    print()
+
+    api_key = config['api']['api_key']
+    m2_id = config['api']['m2_id']
+    x_app = config['api'].get('x_application')
+    secret = config['api'].get('secret_key')
+
+    try:
+        from cloud_text_editor import CloudTextEditor
+        editor = CloudTextEditor(api_key, m2_id, x_app, secret)
+
+        print("What would you like to edit?")
+        print("  1. Rename a project")
+        print("  2. Update project metadata (contact, address, notes)")
+        print("  3. View room names in a project")
+        print("  4. Rename rooms in a project (interactive)")
+        print("  0. Back to main menu")
+        print()
+
+        sub_choice = input("Choice: ").strip()
+
+        if sub_choice == '1':
+            # List projects first
+            print("\nFetching projects...")
+            projects = editor.list_projects()
+            for i, p in enumerate(projects[:20], 1):
+                print(f"  {i}. {p['Name']}  (ID: {p['ProjectId']})")
+            if len(projects) > 20:
+                print(f"  ... and {len(projects) - 20} more")
+
+            pid = input("\nEnter Project ID: ").strip()
+            new_name = input("New project name: ").strip()
+            if pid and new_name:
+                editor.update_project_name(pid, new_name)
+
+        elif sub_choice == '2':
+            pid = input("Enter Project ID: ").strip()
+            if not pid:
+                print("No Project ID entered.")
+            else:
+                print("\nEnter new values (leave blank to skip):")
+                fields = {}
+                for field in ['ContactName', 'Email', 'Phone', 'Street',
+                              'City', 'State', 'ZipCode', 'ProjectNote']:
+                    val = input(f"  {field}: ").strip()
+                    if val:
+                        fields[field] = val
+                if fields:
+                    editor.update_project_info(pid, fields)
+                else:
+                    print("No fields to update.")
+
+        elif sub_choice == '3':
+            pid = input("Enter Project ID: ").strip()
+            if pid:
+                rooms = editor.get_room_names(pid)
+                if rooms:
+                    print(f"\nRooms ({len(rooms)}):")
+                    for i, r in enumerate(rooms, 1):
+                        print(f"  {i}. {r['name']}")
+                else:
+                    print("No rooms found.")
+
+        elif sub_choice == '4':
+            pid = input("Enter Project ID: ").strip()
+            if pid:
+                editor.rename_rooms_interactive(pid)
+
+    except ImportError:
+        print("\nERROR: cloud_text_editor module not found.")
+    except Exception as e:
+        print(f"\nERROR: {e}")
+        import traceback
+        traceback.print_exc()
+
+    input("\nPress Enter to continue...")
+
+
+def batch_pdf_export(config):
+    """Option 14: Batch export PDFs with filtering"""
+    clear_screen()
+    print_header()
+    print("BATCH PDF EXPORT WITH FILTERING")
+    print("-" * 70)
+    print()
+
+    api_key = config['api']['api_key']
+    m2_id = config['api']['m2_id']
+    x_app = config['api'].get('x_application')
+    secret = config['api'].get('secret_key')
+
+    try:
+        from workflow_examples import BatchPDFExporter
+        exporter = BatchPDFExporter(api_key, m2_id, x_app, secret)
+
+        print("Export mode:")
+        print("  1. Export ALL projects")
+        print("  2. Export by name pattern (search/regex)")
+        print("  3. Export from a filter list file (one name per line)")
+        print("  0. Back to main menu")
+        print()
+
+        sub_choice = input("Choice: ").strip()
+
+        if sub_choice == '0':
+            return
+
+        # Pick output folder
+        output_dir = pick_folder_dialog("Select output folder for PDFs")
+        if not output_dir:
+            output_dir = input("Enter output directory path (or press Enter for ./pdf_exports): ").strip()
+            if not output_dir:
+                output_dir = "./pdf_exports"
+
+        if sub_choice == '1':
+            result = exporter.export_all(output_dir)
+
+        elif sub_choice == '2':
+            pattern = input("Enter search pattern: ").strip()
+            if pattern:
+                result = exporter.export_by_pattern(pattern, output_dir)
+            else:
+                print("No pattern entered.")
+                return
+
+        elif sub_choice == '3':
+            filter_file = pick_file_dialog(
+                "Select filter list file",
+                filetypes=[("Text files", "*.txt"), ("All files", "*.*")]
+            )
+            if not filter_file:
+                filter_file = input("Enter path to filter file: ").strip()
+            if filter_file:
+                result = exporter.export_from_file(filter_file, output_dir)
+            else:
+                print("No filter file specified.")
+                return
+
+        else:
+            print("Invalid choice.")
+            return
+
+        print(f"\nResults: {result['successful']} exported, {result['failed']} failed")
+
+    except ImportError:
+        print("\nERROR: Required modules not found.")
+    except Exception as e:
+        print(f"\nERROR: {e}")
+        import traceback
+        traceback.print_exc()
+
+    input("\nPress Enter to continue...")
+
+
 def main_menu():
     """Main menu loop"""
     while True:
@@ -1472,7 +1650,7 @@ def main_menu():
         config = load_config()
         if not config:
             return
-        
+
         clear_screen()
         print("\nConfiguration loaded:")
         print(f"  API Key: {'*' * 10}{config['api']['api_key'][-4:]}")
@@ -1483,27 +1661,31 @@ def main_menu():
         print("What would you like to do?")
         print()
         print("\n  LOCAL FILE OPTIONS:")
-        print("  1. 📄 Generate PDF from local FEZ file (basic quality)")
-        print("  2. ✏️  Edit FEZ file (rename rooms, update products)")
+        print("  1. Generate PDF from local FEZ file (basic quality)")
+        print("  2. Edit FEZ file (rename rooms, update products)")
         print()
         print("  CLOUD API OPTIONS:")
-        print("  3. ☁️  Upload FEZ to cloud & get high-quality PDF")
-        print("  4. 📊 Get all cloud projects (handles 400+)")
-        print("  5. 🔍 Filter & extract specific cloud projects (with PDF filtering)")
-        print("  6. 📝 Update cloud project metadata")
-        print("  7. 📦 Extract materials/products from projects")
-        print("  8. 📋 Generate project list report (with ProjectId)")
-        print("  9. 🔄 Batch update projects from CSV")
+        print("  3. Upload FEZ to cloud & get high-quality PDF")
+        print("  4. Get all cloud projects (handles 400+)")
+        print("  5. Filter & extract specific cloud projects (with PDF filtering)")
+        print("  6. Update cloud project metadata")
+        print("  7. Extract materials/products from projects")
+        print("  8. Generate project list report (with ProjectId)")
+        print("  9. Batch update projects from CSV")
+        print()
+        print("  TEXT EDITING & BATCH EXPORT:")
+        print("  13. Edit cloud project text (names, rooms, metadata)")
+        print("  14. Batch export PDFs (all or filtered)")
         print()
         print("  OTHER:")
-        print("  10. 🔌 Test cloud API connection")
-        print("  11. 📚 Batch convert multiple local FEZ files")
-        print("  12. ❓ Help & Documentation")
-        print("  0. 🚪 Exit")
+        print("  10. Test cloud API connection")
+        print("  11. Batch convert multiple local FEZ files")
+        print("  12. Help & Documentation")
+        print("  0. Exit")
         print()
-        
-        choice = input("Enter your choice (0-12): ").strip()
-        
+
+        choice = input("Enter your choice (0-14): ").strip()
+
         if choice == '1':
             generate_pdf_from_fez()
         elif choice == '2':
@@ -1528,11 +1710,15 @@ def main_menu():
             batch_convert_fez_files()
         elif choice == '12':
             show_help()
+        elif choice == '13':
+            cloud_text_edit(config)
+        elif choice == '14':
+            batch_pdf_export(config)
         elif choice == '0':
-            print("\n👋 Goodbye!")
+            print("\nGoodbye!")
             sys.exit(0)
         else:
-            print("\n❌ Invalid choice. Please enter 0-11.")
+            print("\nInvalid choice. Please enter 0-14.")
             input("\nPress Enter to continue...")
 
 

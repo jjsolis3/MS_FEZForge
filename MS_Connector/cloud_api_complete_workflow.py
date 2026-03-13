@@ -466,6 +466,39 @@ class CloudAPIWorkflow:
         return limits
     
     # =========================================================================
+    # DOWNLOAD FEZ FILE FROM CLOUD
+    # =========================================================================
+
+    def download_fez(self, project_id: str, save_path: str = None) -> str:
+        """
+        Download a project's FEZ file from the cloud
+
+        Args:
+            project_id: Project ID to download
+            save_path: Path to save the FEZ file. If None, saves to temp directory.
+
+        Returns:
+            Path to the downloaded FEZ file
+        """
+        import tempfile
+
+        url = f"{self.base_url}/projects/{project_id}/download"
+        headers = self._get_headers('application/octet-stream')
+
+        response = self.session.get(url, headers=headers)
+        response.raise_for_status()
+
+        if save_path is None:
+            temp_dir = tempfile.mkdtemp(prefix="ms_fez_")
+            save_path = str(Path(temp_dir) / f"{project_id}.fez")
+
+        Path(save_path).parent.mkdir(parents=True, exist_ok=True)
+        Path(save_path).write_bytes(response.content)
+
+        print(f"   Downloaded FEZ to: {save_path}")
+        return save_path
+
+    # =========================================================================
     # COMPLETE WORKFLOW: Upload → Update → Extract
     # =========================================================================
     
